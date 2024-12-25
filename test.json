@@ -21,6 +21,31 @@
                     "attribute": "src"
                 },
                 "href": "a"
+            },
+            "featured": {
+                "url": "https://animeheaven.me/new.php",
+                "documentSelector": "div.chart.bc1",
+                "title": "a.c",
+                "image": {
+                    "url": "img",
+                    "attribute": "src"
+                },
+                "href": "a"
+            },
+            "details": {
+                "baseURL": "https://animeheaven.me/",
+                "aliases": {
+                    "selector": "",
+                    "attribute": ""
+                },
+                "synopsis": "div.infodes.c",
+                "airdate": "",
+                "stars": ""
+            },
+            "episodes": {
+                "selector": "div.linetitle2 a",
+                "order": "reversed",
+                "pattern": ""
             }
         }
     ]
