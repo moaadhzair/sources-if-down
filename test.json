@@ -1,0 +1,27 @@
+{
+    "name": "Animenosub",
+    "version": "1.0.0",
+    "author": {
+        "name": "sobet",
+        "website": "https://google.com"
+    },
+    "iconURL": "https://animenosub.to/wp-content/uploads/2024/02/Animenosub-logo.png",
+    "stream": "MP4",
+    "language": "EN",
+    "extractor": "normal",
+    "module": [
+        {
+            "search": {
+                "url": "https://animenosub.to/?s={query}",
+                "parameter": "query",
+                "documentSelector": "div.bsx",
+                "title": "div.tt",
+                "image": {
+                    "url": "img",
+                    "attribute": "src"
+                },
+                "href": "a"
+            }
+        }
+    ]
+}
