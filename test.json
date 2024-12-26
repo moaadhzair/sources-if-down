@@ -14,7 +14,7 @@
             "search": {
                 "url": "https://animenosub.to/",
                 "parameter": "s",
-                "documentSelector": "div.listupd",
+                "documentSelector": "div.bsx",
                 "title": "div.tt",
                 "image": {
                     "url": "img",
