@@ -12,7 +12,7 @@
     "module": [
         {
             "search": {
-                "url": "https://animenosub.to/?s=",
+                "url": "https://animenosub.to/",
                 "parameter": "s",
                 "documentSelector": "div.bsx",
                 "title": "div.tt",
