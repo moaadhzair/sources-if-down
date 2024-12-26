@@ -14,13 +14,15 @@
             "search": {
                 "url": "https://animenosub.to/",
                 "parameter": "s",
-                "documentSelector": "div.listupd",
+                "documentSelector": "div.listupd article",
                 "title": "div.tt",
                 "image": {
                     "url": "img",
                     "attribute": "src"
-                },
-                "href": "a"
+            },
+            "href": {
+                "selector": "a",
+                "attribute": "href"
             },
             "featured": {
                 "url": "https://animeheaven.me/new.php",
