@@ -12,8 +12,8 @@
     "module": [
         {
             "search": {
-                "url": "https://animenosub.to/?s={query}",
-                "parameter": "query",
+                "url": "https://animenosub.to/?s=",
+                "parameter": "s",
                 "documentSelector": "div.bsx",
                 "title": "div.tt",
                 "image": {
