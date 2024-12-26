@@ -19,10 +19,8 @@
                 "image": {
                     "url": "img",
                     "attribute": "src"
-            },
-            "href": {
-                "selector": "a",
-                "attribute": "href"
+             },
+                "href": "a"
             },
             "featured": {
                 "url": "https://animeheaven.me/new.php",
