@@ -43,7 +43,7 @@
                 "stars": ""
             },
             "episodes": {
-                "selector": "div.linetitle2 a",
+                "selector": "div.eplister a",
                 "order": "reversed",
                 "pattern": ""
             }
