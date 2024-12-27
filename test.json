@@ -39,7 +39,7 @@
                     "attribute": ""
                 },
                 "synopsis": "div.entry-content",
-                "airdate": "div.spe.split",
+                "airdate": "div.spe > span.split",
                 "stars": ""
             },
             "episodes": {
