@@ -33,12 +33,12 @@
                 "href": "a"
             },
             "details": {
-                "baseURL": "https://animeheaven.me/",
+                "baseURL": "https://animenosub.to/",
                 "aliases": {
                     "selector": "",
                     "attribute": ""
                 },
-                "synopsis": "div.infodes.c",
+                "synopsis": "div.entry-content",
                 "airdate": "",
                 "stars": ""
             },
