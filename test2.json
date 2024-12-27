@@ -1,0 +1,52 @@
+{
+    "name": "Animenosub",
+    "version": "1.0.0",
+    "author": {
+        "name": "50/50",
+        "website": "https://github.com/50n50"
+    },
+    "iconURL": "https://i3.wp.com/animenosub.to/wp-content/uploads/2024/04/cropped-favicon-192x192.png",
+    "stream": "HLS",
+    "language": "EN",
+    "extractor": "normal",
+    "module": [
+        {
+            "search": {
+                "url": "https://animenosub.to/",
+                "parameter": "s",
+                "documentSelector": "div.bsx",
+                "title": "div.tt",
+                "image": {
+                    "url": "img",
+                    "attribute": "src"
+             },
+                "href": "a"
+            },
+            "featured": {
+                "url": "https://animeheaven.me/new.php",
+                "documentSelector": "div.chart.bc1",
+                "title": "a.c",
+                "image": {
+                    "url": "img",
+                    "attribute": "src"
+                },
+                "href": "a"
+            },
+            "details": {
+                "baseURL": "https://animenosub.to/",
+                "aliases": {
+                    "selector": "",
+                    "attribute": ""
+                },
+                "synopsis": "div.entry-content",
+                "airdate": "",
+                "stars": ""
+            },
+            "episodes": {
+                "selector": "div.eplister a",
+                "order": "reversed",
+                "pattern": ""
+            }
+        }
+    ]
+}
