@@ -14,7 +14,7 @@
             "search": {
                 "url": "https://grani.me/",
                 "parameter": "s",
-                "documentSelector": "div.iepbox",
+                "documentSelector": "div.iep",
                 "title": "a.cona",
                 "image": {
                     "url": "img",
