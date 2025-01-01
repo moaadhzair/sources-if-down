@@ -14,8 +14,8 @@
             "search": {
                 "url": "http://m.iyinghua.com/search/",
                 "parameter": "blank",
-                "documentSelector": "div.itemimg",
-                "title": "div.itemimgtext",
+                "documentSelector": "li.item",
+                "title": "a.itemtext",
                 "image": {
                     "url": "img",
                     "attribute": "src"
