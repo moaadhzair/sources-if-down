@@ -7,14 +7,14 @@
     },
     "iconURL": "https://i0.wp.com/grani.me/wp-content/uploads/2024/12/cropped-GA-192x192.png",
     "stream": "MP4",
-    "language": "EN",
+    "language": "CH",
     "extractor": "normal",
     "module": [
         {
             "search": {
                 "url": "http://m.iyinghua.com/search/",
                 "parameter": "blank",
-                "documentSelector": "li.item",
+                "documentSelector": "div.itemimg",
                 "title": "div.itemimgtext",
                 "image": {
                     "url": "img",
