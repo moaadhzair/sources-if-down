@@ -13,7 +13,7 @@
         {
             "search": {
                 "url": "http://m.iyinghua.com/search/",
-                "parameter": "",
+                "parameter": "blank",
                 "documentSelector": "div.listtit",
                 "title": "div.itemimgtext",
                 "image": {
