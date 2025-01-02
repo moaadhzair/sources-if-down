@@ -12,8 +12,8 @@
     "module": [
         {
             "search": {
-                "url": "https://grani.me/",
-                "parameter": "s",
+                "url": "https://grani.me/?s=",
+                "parameter": "blank",
                 "documentSelector": "div.iep",
                 "title": "a.cona",
                 "image": {
