@@ -12,7 +12,7 @@
     "module": [
         {
             "search": {
-                "url": "http://m.iyinghua.com/search/",
+                "url": "http://iyinghua.com/search/",
                 "parameter": "blank",
                 "documentSelector": "div.lpic",
                 "title": "a.title",
@@ -23,9 +23,9 @@
                 "href": "a"
             },
             "featured": {
-                "url": "https://animeheaven.me/new.php",
-                "documentSelector": "div.chart.bc1",
-                "title": "a.c",
+                "url": "",
+                "documentSelector": "",
+                "title": "",
                 "image": {
                     "url": "img",
                     "attribute": "src"
@@ -33,12 +33,12 @@
                 "href": "a"
             },
             "details": {
-                "baseURL": "http://m.iyinghua.com/",
+                "baseURL": "http://iyinghua.com/",
                 "aliases": {
                     "selector": "",
                     "attribute": ""
                 },
-                "synopsis": "div.infodes2 entry-content entry-content-single",
+                "synopsis": "div.info",
                 "airdate": "",
                 "stars": ""
             },
