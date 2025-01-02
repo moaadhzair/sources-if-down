@@ -5,7 +5,7 @@
         "name": "50/50",
         "website": "https://github.com/50n50"
     },
-    "iconURL": "http://m.iyinghua.com/js/20180601/favicon.ico",
+    "iconURL": "https://i.ibb.co/mzBpzd1/favicon.png",
     "stream": "MP4",
     "language": "CH",
     "extractor": "normal",
@@ -14,8 +14,8 @@
             "search": {
                 "url": "http://m.iyinghua.com/search/",
                 "parameter": "blank",
-                "documentSelector": "div.list",
-                "title": "a.itemtext",
+                "documentSelector": "div.lpic",
+                "title": "a.title",
                 "image": {
                     "url": "img",
                     "attribute": "src"
