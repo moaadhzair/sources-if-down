@@ -43,7 +43,7 @@
                 "stars": ""
             },
             "episodes": {
-                "selector": "div.playlists a",
+                "selector": "div.movurl a",
                 "order": "",
                 "pattern": ""
             }
