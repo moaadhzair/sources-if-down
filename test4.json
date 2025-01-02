@@ -15,7 +15,7 @@
                 "url": "http://iyinghua.com/search/",
                 "parameter": "blank",
                 "documentSelector": "div.lpic li",
-                "title": "h2",
+                "title": "h2 a",
                 "image": {
                     "url": "img",
                     "attribute": "src"
