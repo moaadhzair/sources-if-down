@@ -24,7 +24,7 @@
             },
             "featured": {
                 "url": "https://grani.me/",
-                "documentSelector": "div.iepbox",
+                "documentSelector": "div.iep",
                 "title": "a.cona",
                 "image": {
                     "url": "img",
