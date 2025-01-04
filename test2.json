@@ -23,9 +23,9 @@
                 "href": "a"
             },
             "featured": {
-                "url": "https://animeheaven.me/new.php",
-                "documentSelector": "div.chart.bc1",
-                "title": "a.c",
+                "url": "https://grani.me/",
+                "documentSelector": "div.iepbox",
+                "title": "a.cona",
                 "image": {
                     "url": "img",
                     "attribute": "src"
