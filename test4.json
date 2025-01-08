@@ -23,9 +23,9 @@
                 "href": "a"
             },
             "featured": {
-                "url": "",
-                "documentSelector": "",
-                "title": "",
+                "url": "http://www.iyinghua.com/",
+                "documentSelector": "div.img li",
+                "title": "p.tname a",
                 "image": {
                     "url": "img",
                     "attribute": "src"
