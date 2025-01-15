@@ -1,0 +1,10 @@
+{
+    "sourceName": "AnimeWorld",
+    "author": "cranci1",
+    "iconUrl": "https://raw.githubusercontent.com/bshar1865/MFS/refs/heads/main/assets/animeworld.png",
+    "version": "1.0.0",
+    "language": "Italian",
+    "baseUrl": "https://animeworld.so",
+    "searchBaseUrl": "https://www.animeworld.so/search?keyword=%s",
+    "scriptUrl": "https://raw.githubusercontent.com/cranci1/tests/refs/heads/main/animeworld/animeworld.js?token=GHSAT0AAAAAACYSHNISKDQL4NZEIBP66ETIZ4AGCZQ"
+}
