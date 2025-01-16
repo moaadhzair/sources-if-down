@@ -2,7 +2,7 @@ function searchResults(html) {
     const results = [];
     const baseUrl = "https://grani.me/";
     
-    const filmListRegex = /<div class="film-list">([\s\S]*?)<\/div>/;
+    const filmListRegex = /<div class="iepbox">([\s\S]*?)<\/div>/;
     const filmListMatch = html.match(filmListRegex);
     
     if (!filmListMatch) {
