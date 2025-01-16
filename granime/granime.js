@@ -2,25 +2,20 @@ function searchResults(html) {
     const results = [];
     const baseUrl = "https://grani.me/";
 
-    // Adjust regex for content_episode instead of iepbox
     const filmListRegex = /<div class="content_episode"[\s\S]*?<\/div>/g;
     const items = html.match(filmListRegex) || [];
 
     items.forEach(itemHtml => {
-        // Extract image URL
         const imgMatch = itemHtml.match(/<img class="coveri" src="([^"]+)"/);
         let imageUrl = imgMatch ? imgMatch[1] : '';
 
-        // Extract title
         const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
         const title = titleMatch ? titleMatch[2] : '';
 
-        // Extract href for the main link
         const hrefMatch = itemHtml.match(/<a class="an" href="([^"]+)"/);
         let href = hrefMatch ? hrefMatch[1] : '';
 
         if (imageUrl && title && href) {
-            // Ensure imageUrl is correctly formed
             if (!imageUrl.startsWith("https")) {
                 if (imageUrl.startsWith("/")) {
                     imageUrl = baseUrl + imageUrl;
@@ -29,7 +24,6 @@ function searchResults(html) {
                 }
             }
 
-            // Ensure href is correctly formed
             if (!href.startsWith("https")) {
                 if (href.startsWith("/")) {
                     href = baseUrl + href;
