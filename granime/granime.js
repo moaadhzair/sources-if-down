@@ -1,58 +1,53 @@
 function searchResults(html) {
     const results = [];
     const baseUrl = "https://grani.me/";
-    
-    const filmListRegex = /<div class="iepbox">([\s\S]*?)<\/div>/;
-    const filmListMatch = html.match(filmListRegex);
-    
-    if (!filmListMatch) {
-        return results;
-    }
-    
-    const filmListContent = filmListMatch[1];
-const itemRegex = /<div class="iep">[\s\S]*?<\/div>[\s]*<\/div>/g;
-const items = filmListContent.match(itemRegex) || [];
-const results = [];
-const baseUrl = "https://grani.me/";
 
-items.forEach(itemHtml => {
-    // Extract image URL
-    const imgMatch = itemHtml.match(/<img class="coveri" src="([^"]+)"/);
-    let imageUrl = imgMatch ? imgMatch[1] : '';
+    // Adjust regex for content_episode instead of iepbox
+    const filmListRegex = /<div class="content_episode"[\s\S]*?<\/div>/g;
+    const items = html.match(filmListRegex) || [];
 
-    // Extract title
-    const titleMatch = itemHtml.match(/class="cona">([^<]+)<\/a>/);
-    const title = titleMatch ? titleMatch[1] : '';
+    items.forEach(itemHtml => {
+        // Extract image URL
+        const imgMatch = itemHtml.match(/<img class="coveri" src="([^"]+)"/);
+        let imageUrl = imgMatch ? imgMatch[1] : '';
 
-    // Extract href
-    const hrefMatch = itemHtml.match(/<a class="an" href="([^"]+)"/);
-    let href = hrefMatch ? hrefMatch[1] : '';
+        // Extract title
+        const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
+        const title = titleMatch ? titleMatch[2] : '';
 
-    if (imageUrl && title && href) {
-        if (!imageUrl.startsWith("https")) {
-            if (imageUrl.startsWith("/")) {
-                imageUrl = baseUrl + imageUrl;
-            } else {
-                imageUrl = baseUrl + "/" + imageUrl;
+        // Extract href for the main link
+        const hrefMatch = itemHtml.match(/<a class="an" href="([^"]+)"/);
+        let href = hrefMatch ? hrefMatch[1] : '';
+
+        if (imageUrl && title && href) {
+            // Ensure imageUrl is correctly formed
+            if (!imageUrl.startsWith("https")) {
+                if (imageUrl.startsWith("/")) {
+                    imageUrl = baseUrl + imageUrl;
+                } else {
+                    imageUrl = baseUrl + "/" + imageUrl;
+                }
             }
-        }
 
-        if (!href.startsWith("https")) {
-            if (href.startsWith("/")) {
-                href = baseUrl + href;
-            } else {
-                href = baseUrl + "/" + href;
+            // Ensure href is correctly formed
+            if (!href.startsWith("https")) {
+                if (href.startsWith("/")) {
+                    href = baseUrl + href;
+                } else {
+                    href = baseUrl + "/" + href;
+                }
             }
-        }
 
-        results.push({
-            title: title.trim(),
-            image: imageUrl,
-            href: href
-        });
-    }
-});
+            results.push({
+                title: title.trim(),
+                image: imageUrl,
+                href: href
+            });
+        }
+    });
+
     return results;
+
 }
 function extractDetails(html) {
     const details = [];
