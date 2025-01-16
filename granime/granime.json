@@ -6,5 +6,5 @@
     "language": "English",
     "baseUrl": "https://grani.me/",
     "searchBaseUrl": "https://grani.me/?s=",
-    "scriptUrl": "INSERT URL"
+    "scriptUrl": "https://raw.githubusercontent.com/50n50/maisgay/refs/heads/main/granime/granime.js"
 }
