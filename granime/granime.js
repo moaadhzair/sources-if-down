@@ -10,44 +10,50 @@ function searchResults(html) {
     }
     
     const filmListContent = filmListMatch[1];
-    const itemRegex = /<div class="iep">[\s\S]*?<\/div>[\s]*<\/div>/g;
-    const items = filmListContent.match(itemRegex) || [];
-    
-    items.forEach(itemHtml => {
-        const imgMatch = itemHtml.match(/src="([^"]+)"/);
-        let imageUrl = imgMatch ? imgMatch[1] : '';
-        
-        const titleMatch = itemHtml.match(/class="cona">([^<]+)</);
-        const title = titleMatch ? titleMatch[1] : '';
-        
-        const hrefMatch = itemHtml.match(/href="([^"]+)"/);
-        let href = hrefMatch ? hrefMatch[1] : '';
-        
-        if (imageUrl && title && href) {
-            if (!imageUrl.startsWith("https")) {
-                if (imageUrl.startsWith("/")) {
-                    imageUrl = baseUrl + imageUrl;
-                } else {
-                    imageUrl = baseUrl + "/" + href;
-                }
+const itemRegex = /<div class="iep">[\s\S]*?<\/div>[\s]*<\/div>/g;
+const items = filmListContent.match(itemRegex) || [];
+const results = [];
+const baseUrl = "https://grani.me/";
+
+items.forEach(itemHtml => {
+    // Extract image URL
+    const imgMatch = itemHtml.match(/<img class="coveri" src="([^"]+)"/);
+    let imageUrl = imgMatch ? imgMatch[1] : '';
+
+    // Extract title
+    const titleMatch = itemHtml.match(/class="cona">([^<]+)<\/a>/);
+    const title = titleMatch ? titleMatch[1] : '';
+
+    // Extract href
+    const hrefMatch = itemHtml.match(/<a class="an" href="([^"]+)"/);
+    let href = hrefMatch ? hrefMatch[1] : '';
+
+    if (imageUrl && title && href) {
+        if (!imageUrl.startsWith("https")) {
+            if (imageUrl.startsWith("/")) {
+                imageUrl = baseUrl + imageUrl;
+            } else {
+                imageUrl = baseUrl + "/" + imageUrl;
             }
-            if (!href.startsWith("https")) {
-                if (href.startsWith("/")) {
-                    href = baseUrl + href;
-                } else {
-                    href = baseUrl + "/" + href;
-                }
-            }
-            results.push({
-                title: title.trim(),
-                image: imageUrl,
-                href: href
-            });
         }
-    });
+
+        if (!href.startsWith("https")) {
+            if (href.startsWith("/")) {
+                href = baseUrl + href;
+            } else {
+                href = baseUrl + "/" + href;
+            }
+        }
+
+        results.push({
+            title: title.trim(),
+            image: imageUrl,
+            href: href
+        });
+    }
+});
     return results;
 }
-
 function extractDetails(html) {
     const details = [];
     
