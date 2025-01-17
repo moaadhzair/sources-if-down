@@ -15,36 +15,25 @@ function searchResults(html) {
         console.log(`Extracted imageUrl: ${imageUrl}`);
 
         const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
+        const href = titleMatch ? titleMatch[1] : '';
         const title = titleMatch ? titleMatch[2] : '';
-        console.log(`Extracted title: ${title}`);
+        console.log(`Extracted title: ${title}, href: ${href}`);
 
-        const hrefMatch = itemHtml.match(/<a class="an" href="([^"]+)"/);
-        let href = hrefMatch ? hrefMatch[1] : '';
-        console.log(`Extracted href: ${href}`);
+        if (imageUrl && !imageUrl.startsWith("https")) {
+            imageUrl = imageUrl.startsWith("/") ? baseUrl + imageUrl : baseUrl + "/" + imageUrl;
+        }
 
-        if (imageUrl && title && href) {
-            if (!imageUrl.startsWith("https")) {
-                if (imageUrl.startsWith("/")) {
-                    imageUrl = baseUrl + imageUrl;
-                } else {
-                    imageUrl = baseUrl + "/" + imageUrl;
-                }
-            }
+        if (href && !href.startsWith("https")) {
+            href = href.startsWith("/") ? baseUrl + href : baseUrl + "/" + href;
+        }
 
-            if (!href.startsWith("https")) {
-                if (href.startsWith("/")) {
-                    href = baseUrl + href;
-                } else {
-                    href = baseUrl + "/" + href;
-                }
-            }
-
+        if (title && href) {
             results.push({
                 title: title.trim(),
                 image: imageUrl,
-                href: href
+                href: href.trim()
             });
-            console.log("Added to results:", { title: title.trim(), image: imageUrl, href: href });
+            console.log("Added to results:", { title: title.trim(), image: imageUrl, href: href.trim() });
         } else {
             console.log("Skipping item due to missing fields.");
         }
