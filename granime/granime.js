@@ -81,3 +81,10 @@ function extractEpisodes(html) {
 
    return episodes;
 }
+
+function extractStreamUrl(html) {
+    const sourceRegex = /<source[^>]+id="iframevideo"[^>]+src="([^"]+)"/;
+    const match = html.match(sourceRegex);
+    return match ? match[1] : null;
+}
+
