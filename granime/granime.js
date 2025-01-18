@@ -1,5 +1,4 @@
 function searchResults(html) {
-    window.open('https://www.google.com', '_blank');
     const results = [];
     const baseUrl = "https://grani.me/";
 
