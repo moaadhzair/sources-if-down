@@ -78,7 +78,7 @@ function extractEpisodes(html) {
            });
        }
    });
-
+   episodes.reverse();
    return episodes;
 }
 
