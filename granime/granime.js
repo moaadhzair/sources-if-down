@@ -1,126 +1,83 @@
 function searchResults(html) {
-    console.log("Starting searchResults function...");
     const results = [];
     const baseUrl = "https://grani.me/";
 
-    const filmListRegex = /<div class="content_episode"[\s\S]*?<\/div>/g;
+    const filmListRegex = /<div class="content_episode"[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/g;
     const items = html.match(filmListRegex) || [];
-    console.log(`Found ${items.length} film items.`);
+
 
     items.forEach((itemHtml, index) => {
-        console.log(`Processing item ${index + 1}:`, itemHtml);
-
-        const imgMatch = itemHtml.match(/<img class="coveri" src="([^"]+)"/);
-        let imageUrl = imgMatch ? imgMatch[1] : '';
-        console.log(`Extracted imageUrl: ${imageUrl}`);
-
-        const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
-        const href = titleMatch ? titleMatch[1] : '';
-        const title = titleMatch ? titleMatch[2] : '';
-        console.log(`Extracted title: ${title}, href: ${href}`);
-
-        if (imageUrl && !imageUrl.startsWith("https")) {
-            imageUrl = imageUrl.startsWith("/") ? baseUrl + imageUrl : baseUrl + "/" + imageUrl;
-        }
-
-        if (href && !href.startsWith("https")) {
-            href = href.startsWith("/") ? baseUrl + href : baseUrl + "/" + href;
-        }
-
-        if (title && href) {
-            results.push({
-                title: title.trim(),
-                image: imageUrl,
-                href: href.trim()
-            });
-            console.log("Added to results:", { title: title.trim(), image: imageUrl, href: href.trim() });
-        } else {
-            console.log("Skipping item due to missing fields.");
-        }
-    });
-
-    console.log("Final results:", results);
-    return results;
+      const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
+      const href = titleMatch ? titleMatch[1] : '';
+      const title = titleMatch ? titleMatch[2] : '';
+      console.log(`Extracted title: ${title}, href: ${href}`);
+  
+      const imgMatch = itemHtml.match(/<img[^>]*class="coveri"[^>]*src="([^"]+)"[^>]*>/);
+      const imageUrl = imgMatch ? imgMatch[1] : '';
+      
+      if (title && href) {
+          results.push({
+              title: title.trim(),
+              image: imageUrl.trim(),
+              href: href.trim()
+          });
+      }
+  });
+  
+  return results;
 }
 
 function extractDetails(html) {
-    console.log("Starting extractDetails function...");
-    const details = [];
+   const details = [];
 
-    const descriptionMatch = html.match(/<div class="infodes2 entry-content entry-content-single" itemprop="description">[\s\S]*?<p>([\s\S]*?)<\/p>/);
-    let description = descriptionMatch ? descriptionMatch[1] : '';
-    console.log(`Extracted description: ${description}`);
+   const descriptionMatch = html.match(/<div class="infodes2 entry-content entry-content-single" itemprop="description">[\s\S]*?<p>([\s\S]*?)<\/p>/);
+   let description = descriptionMatch ? descriptionMatch[1] : '';
 
-    const aliasesMatch = html.match(/<h1 class="entry-title" itemprop="name""([^"]+)">/);
-    let aliases = aliasesMatch ? aliasesMatch[1] : '';
-    console.log(`Extracted aliases: ${aliases}`);
+   const aliasesMatch = html.match(/<h1 class="entry-title" itemprop="name""([^"]+)">/);
+   let aliases = aliasesMatch ? aliasesMatch[1] : '';
 
-    const airdateMatch = html.match(/<div class="textd">Year:<\/div>\s*<div class="textc">([^<]+)<\/div>/);
-    let airdate = airdateMatch ? airdateMatch[1] : '';
-    console.log(`Extracted airdate: ${airdate}`);
+   const airdateMatch = html.match(/<div class="textd">Year:<\/div>\s*<div class="textc">([^<]+)<\/div>/);
+   let airdate = airdateMatch ? airdateMatch[1] : '';
 
-    if (description && aliases && airdate) {
-        details.push({
-            description: description,
-            aliases: aliases,
-            airdate: airdate
-        });
-        console.log("Details added:", details[0]);
-    } else {
-        console.log("Missing fields in extractDetails, skipping.");
-    }
+   if (description && airdate) {
+       details.push({
+           description: description,
+           aliases: aliases || 'N/A',
+           airdate: airdate
+       });
+   }
 
-    return details;
+   return details;
 }
 
 function extractEpisodes(html) {
-    console.log("Starting extractEpisodes function...");
-    const episodes = [];
-    const baseUrl = "https://grani.me/";
+   const episodes = [];
+   const baseUrl = "https://grani.me/";
 
-    const serverActiveRegex = /<div class="infoepbox"[^>]*>([\s\S]*?)<\/div>/;
-    const serverActiveMatch = html.match(serverActiveRegex);
+   const episodeLinks = html.match(/<a class="infovan"[^>]*href="([^"]+)"[\s\S]*?<div class="centerv">(\d+)<\/div>/g);
+   
+   if (!episodeLinks) {
+       return episodes;
+   }
 
-    if (!serverActiveMatch) {
-        console.log("No server active content found.");
-        return episodes;
-    }
+   episodeLinks.forEach(link => {
+       const hrefMatch = link.match(/href="([^"]+)"/);
+       const numberMatch = link.match(/<div class="centerv">(\d+)<\/div>/);
 
-    const serverActiveContent = serverActiveMatch[1];
-    const episodeRegex = /<a class="infovan" href="([^"]+)">[\s\S]*?<div class="infoept2">[\s\S]*?<div class="centerv">([^<]+)<\/div>/g;
+       if (hrefMatch && numberMatch) {
+           let href = hrefMatch[1];
+           const number = numberMatch[1];
 
-    let match;
-    let episodeCount = 0;
+           if (!href.startsWith("https")) {
+               href = href.startsWith("/") ? baseUrl + href.slice(1) : baseUrl + href;
+           }
 
-    while ((match = episodeRegex.exec(serverActiveContent)) !== null) {
-        let href = match[1];
-        const number = match[2];
-        console.log(`Found episode ${number} with href: ${href}`);
+           episodes.push({
+               href: href,
+               number: number
+           });
+       }
+   });
 
-        if (!href.startsWith("https")) {
-            if (href.startsWith("/")) {
-                href = baseUrl + href;
-            } else {
-                href = baseUrl + "/" + href;
-            }
-        }
-
-        episodes.push({
-            href: href,
-            number: number
-        });
-        episodeCount++;
-    }
-
-    console.log(`Extracted ${episodeCount} episodes:`, episodes);
-    return episodes;
-}
-
-function extractStreamUrl(html) {
-    console.log("Starting extractStreamUrl function...");
-    const idRegex = /<a[^>]+href="([^"]+)"[^>]*class="an"/;
-    const match = html.match(idRegex);
-    const streamUrl = match ? match[1] : null;
-    console.log(`Extracted stream URL: ${streamUrl}`);
-    return streamUrl;
+   return episodes;
 }
