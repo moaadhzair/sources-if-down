@@ -1,12 +1,5 @@
-const baseUrl = 'https://https://aniwatch140.vercel.app/anime/home';
-const searchUrl = 'https://aniwatch140.vercel.app/anime/search?q=';
-
-async function searchResults(search) {
+async function searchResults(data) {
     try {
-        const fetchUrl = `${searchUrl}${search}`;
-        const response = await fetch(fetchUrl);
-        const data = await response.json();  // Get the JSON data from the response
-
         const matches = [];
 
         // Loop through the fetched animes
@@ -19,7 +12,6 @@ async function searchResults(search) {
                 });
             }
         });
-        console.log("Final JSON Output:", JSON.stringify(matches, null, 2));
 
         // Return the result as a JSON string
         return JSON.stringify(matches);
@@ -29,7 +21,6 @@ async function searchResults(search) {
     }
 }
 
-searchResults();
 
 async function extractDetails(url) {
     try {
