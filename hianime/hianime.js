@@ -2,18 +2,17 @@ function searchResults(data) {
     try {
         const matches = [];
 
-        // Loop through the fetched animes
+       
         data.animes.forEach(anime => {
             if (anime.id && anime.name) {
                 matches.push({
                     title: anime.name.trim(),
-                    image: anime.poster || "No Image",  // If there's no poster, return "No Image"
-                    href: `https://hianime.to/watch/${anime.id}`  // Construct the URL with the ID
+                    image: anime.poster || "No Image",  
+                    href: `https://hianime.to/watch/${anime.id}` 
                 });
             }
         });
 
-        // Return the result as a JSON string
         return matches;
     } catch (error) {
         console.log('Error processing the data:', error);
@@ -23,7 +22,7 @@ function searchResults(data) {
 
 function extractDetails(url) {
     try {
-        const text = fetch(url).then(response => response.text()); // Fetch the page content (synchronously for the example)
+        const text = fetch(url).then(response => response.text()); 
         const descriptionRegex = /<div\s+class="film-description\s+m-hide">[\s\S]*?<div\s+class="text">([\s\S]*?)<\/div>/;
         const aliasesRegex = /data-alternativetitles="([^"]+)"/i;
 
@@ -52,7 +51,7 @@ function extractDetails(url) {
 
 function extractEpisodes(url) {
     try {
-        const text = fetch(url).then(response => response.text()); // Fetch the page content (synchronously)
+        const text = fetch(url).then(response => response.text()); 
         const finishedList = [];
         const seasonLinks = getSeasonLinks(text);
         
@@ -61,7 +60,7 @@ function extractEpisodes(url) {
             finishedList.push(...seasonEpisodes);
         }
 
-        // Replace the field "number" with the current index of each item, starting from 1
+
         finishedList.forEach((item, index) => {
             item.number = index + 1;
         });
@@ -74,11 +73,10 @@ function extractEpisodes(url) {
     }
 }
 
-// Helper function to fetch episodes for a season
-// Site specific structure
+
 function fetchSeasonEpisodes(url) {
     try {
-        const text = fetch(url).then(response => response.text()); // Fetch the page content
+        const text = fetch(url).then(response => response.text()); 
         const regex = /<td class="seasonEpisodeTitle">\s*<a[^>]*href="([^"]+)"[^>]*>.*?<strong>([^<]*)<\/strong>.*?<span>([^<]+)<\/span>.*?<\/a>/g;
 
         const matches = [];
@@ -98,8 +96,6 @@ function fetchSeasonEpisodes(url) {
     }
 }
 
-// Helper function to get the list of seasons
-// Site specific structure
 function getSeasonLinks(html) {
     const seasonLinks = [];
     const seasonRegex = /<div class="hosterSiteDirectNav" id="stream">.*?<ul>(.*?)<\/ul>/s;
