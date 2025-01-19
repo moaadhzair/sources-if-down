@@ -6,5 +6,5 @@
     "language": "English",
     "baseUrl": "https://https://aniwatch140.vercel.app/anime/home",
     "searchBaseUrl": "https://aniwatch140.vercel.app/anime/search?q=",
-    "scriptUrl": "https://raw.githubusercontent.com/50n50/maisgay/refs/heads/main/granime/granime.js"
+    "scriptUrl": "https://raw.githubusercontent.com/50n50/maisgay/refs/heads/main/hianime/hianime.js"
 }
