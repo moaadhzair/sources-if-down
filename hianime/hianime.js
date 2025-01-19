@@ -1,4 +1,4 @@
-async function searchResults(data) {
+function searchResults(data) {
     try {
         const matches = [];
 
@@ -14,18 +14,16 @@ async function searchResults(data) {
         });
 
         // Return the result as a JSON string
-        return JSON.stringify(matches);
+        return matches;
     } catch (error) {
-        console.log('Fetch error:', error);
+        console.log('Error processing the data:', error);
         return JSON.stringify([{ title: 'Error', href: '', image: '' }]);
     }
 }
 
-
-async function extractDetails(url) {
+function extractDetails(url) {
     try {
-        const response = await fetch(url);
-        const text = await response.text();
+        const text = fetch(url).then(response => response.text()); // Fetch the page content (synchronously for the example)
         const descriptionRegex = /<div\s+class="film-description\s+m-hide">[\s\S]*?<div\s+class="text">([\s\S]*?)<\/div>/;
         const aliasesRegex = /data-alternativetitles="([^"]+)"/i;
 
@@ -45,27 +43,21 @@ async function extractDetails(url) {
 
         console.log("JSON Output:", JSON.stringify(result, null, 2));
 
-        return result
+        return result;
     } catch (error) {
         console.log('Fetch error:', error);
         return JSON.stringify([{ description: 'Error', aliases: 'Error', airdate: 'Error' }]);
     }
 }
-//Test url
-//const testurl = 'https://hianime.to/watch/one-piece-fan-letter-19406';
-//extractDetails(testurl);
 
-
-async function extractEpisodes(url){
+function extractEpisodes(url) {
     try {
-        const fetchUrl = `${url}`;
-        const text = await fetch(fetchUrl);
-
+        const text = fetch(url).then(response => response.text()); // Fetch the page content (synchronously)
         const finishedList = [];
         const seasonLinks = getSeasonLinks(text);
         
         for (const seasonLink of seasonLinks) {
-            const seasonEpisodes = await fetchSeasonEpisodes(`${baseUrl}${seasonLink}`);
+            const seasonEpisodes = fetchSeasonEpisodes(`${baseUrl}${seasonLink}`);
             finishedList.push(...seasonEpisodes);
         }
 
@@ -82,17 +74,11 @@ async function extractEpisodes(url){
     }
 }
 
-
-
-
 // Helper function to fetch episodes for a season
 // Site specific structure
-async function fetchSeasonEpisodes(url) {
+function fetchSeasonEpisodes(url) {
     try {
-        const fetchUrl = `${url}`;
-        const text = await fetch(fetchUrl);
-
-        // Updated regex to allow empty <strong> content
+        const text = fetch(url).then(response => response.text()); // Fetch the page content
         const regex = /<td class="seasonEpisodeTitle">\s*<a[^>]*href="([^"]+)"[^>]*>.*?<strong>([^<]*)<\/strong>.*?<span>([^<]+)<\/span>.*?<\/a>/g;
 
         const matches = [];
@@ -111,9 +97,6 @@ async function fetchSeasonEpisodes(url) {
         return [{ number: '1', href: 'https://error.org' }];
     }
 }
-
-
-
 
 // Helper function to get the list of seasons
 // Site specific structure
