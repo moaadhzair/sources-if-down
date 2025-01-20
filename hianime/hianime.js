@@ -1,20 +1,22 @@
-function searchResults(data) {
-        const matches = [];
-        data.animes.forEach((animes) => {
-            if (animes.id && animes.name) {
-                matches.push({
-                    title: animes.name.trim(),
-                    image: animes.poster || "No Image",  
-                    href: `https://hianime.to/watch/${animes.id}` 
-                });
-            }
-        });
-
-        return matches;
-    } catch (error) {
-        console.log('Error processing the data:', error);
-        return JSON.stringify([{ title: 'Error', href: '', image: '' }]);
+function searchResults(html) {
+  let data;
+  try {
+    data = JSON.parse(html);
+  } catch (e) {
+    console.error('Failed to parse results');
+    return [];
+  }
+  const results = [];
+  data.animes.forEach((animes) => {
+    if (animes.name && animes.id) {
+      results.push({
+        title: animes.name,
+        image: animes.poster || "N/A",
+        href: https://hianime.to/watch/${animes.id}
+      });
     }
+  });
+  return results;
 }
 
 function extractDetails(url) {
@@ -22,7 +24,7 @@ function extractDetails(url) {
         const text = fetch(url).then(response => response.text()); 
         const descriptionRegex = /<div\s+class="film-description\s+m-hide">[\s\S]*?<div\s+class="text">([\s\S]*?)<\/div>/;
         const aliasesRegex = /data-alternativetitles="([^"]+)"/i;
-
+        
         const aliasesMatch = aliasesRegex.exec(text);
         const descriptionMatch = descriptionRegex.exec(text);
 
@@ -48,7 +50,7 @@ function extractDetails(url) {
 
 function extractEpisodes(url) {
     try {
-        const text = fetch(url).then(response => response.text()); 
+        const text = fetch(url).then(response => response.text());
         const finishedList = [];
         const seasonLinks = getSeasonLinks(text);
         
@@ -56,7 +58,6 @@ function extractEpisodes(url) {
             const seasonEpisodes = fetchSeasonEpisodes(`${baseUrl}${seasonLink}`);
             finishedList.push(...seasonEpisodes);
         }
-
 
         finishedList.forEach((item, index) => {
             item.number = index + 1;
@@ -69,7 +70,6 @@ function extractEpisodes(url) {
         return JSON.stringify([{ title: 'Error1', link: '' }]);
     }
 }
-
 
 function fetchSeasonEpisodes(url) {
     try {
