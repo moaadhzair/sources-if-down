@@ -1,11 +1,15 @@
-function searchResults(html) {
+async function searchResults(query) {
+    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${query}`;
+    const response = await fetch(fetchUrl);
     let data;
     try {
-      data = JSON.parse(html);
+      const html = await response.text();
+      data = JSON.parse(html); 
     } catch (e) {
-      console.error('Failed to parse results');
+      console.error('Failed to parse results:', e);
       return [];
     }
+  
     const results = [];
     data.animes.forEach((anime) => {
       if (anime.name && anime.id) {
@@ -16,21 +20,24 @@ function searchResults(html) {
         });
       }
     });
+    console.log(results);
     return results;
   }
   
+  searchResults('one piece');
+  
   async function extractDetails(greenfn) {
     try {
-        /*const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
+        const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
         const idMatch = greenfn.match(headerRegex);
 
         if (!idMatch) {
             return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
         }
 
-        const animeId = idMatch[1]; */
+        const animeId = idMatch[1]; 
         
-        const resp = await fetch(`https://aniwatch140.vercel.app/anime/info?id=one-piece-fan-letter-19406`);
+        const resp = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${animeId}`);
         if (!resp.ok) {
             return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
         }
@@ -53,7 +60,7 @@ function searchResults(html) {
   
 async function extractEpisodes(greenfn) {
     try {
-        /*const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
+        const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
         const idMatch = greenfn.match(headerRegex);
 
         if (!idMatch) {
@@ -61,9 +68,9 @@ async function extractEpisodes(greenfn) {
             return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
         }
 
-        const animeId = idMatch[1]; */
+        const animeId = idMatch[1]; 
         
-        const resp = await fetch(`https://aniwatch140.vercel.app/anime/episodes/one-piece-fan-letter-19406`);
+        const resp = await fetch(`https://aniwatch140.vercel.app/anime/episodes/${animeId}`);
         if (!resp.ok) {
             console.log("Fetch failed");
             return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
@@ -93,10 +100,7 @@ async function extractEpisodes(greenfn) {
     }
 }
 
-const testhtml = '<meta property="og:url" content="https://hianime.to/watch/one-piece-fan-letter-19406?ep=128693">';
-extractEpisodes(testhtml).then(result => {
-    console.log("Test Result:", JSON.stringify(result, null, 2));
-});
+
 
   
   function fetchSeasonEpisodes(url) {
