@@ -19,10 +19,10 @@ function searchResults(html) {
     return results;
   }
 
-async function extractDetails(url) {
+async function extractDetails(greenfn) {
         try {
             const headerRegex = /og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
-            const idMatch = url.match(headerRegex);
+            const idMatch = greenfn.match(headerRegex);
              
             if (idMatch) {
                 const animeId = idMatch[1]; 
