@@ -21,12 +21,12 @@ function searchResults(html) {
 
 async function extractDetails(url) {
       try {
-          const headerRegex = /og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
-          const idMatch = url.match(headerRegex);
-         
+          //const headerRegex = /og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
+          //const idMatch = url.match(headerRegex);
+         //${animeId}
           if (idMatch) {
-            const animeId = idMatch[1];      
-            const resp = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${animeId}`);
+            //const animeId = idMatch[1];      
+            const resp = await fetch(`https://aniwatch140.vercel.app/anime/info?id=one-piece-fan-letter-19406`);
             const data = await resp.json();
 
             const info = data.anime.info;
