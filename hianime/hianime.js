@@ -1,11 +1,11 @@
 function searchResults(data) {
         const matches = [];
-        data.animes.forEach(anime => {
-            if (anime.id && anime.name) {
+        data.animes.forEach((animes) => {
+            if (animes.id && animes.name) {
                 matches.push({
-                    title: anime.name.trim(),
-                    image: anime.poster || "No Image",  
-                    href: `https://hianime.to/watch/${anime.id}` 
+                    title: animes.name.trim(),
+                    image: animes.poster || "No Image",  
+                    href: `https://hianime.to/watch/${animes.id}` 
                 });
             }
         });
