@@ -1,3 +1,10 @@
+function cleanTitle(title) {
+    return title
+        .replace(/&#8217;/g, "'")  
+        .replace(/&#8211;/g, "-")  
+        .replace(/&#[0-9]+;/g, ""); 
+}
+
 function searchResults(html) {
     const results = [];
     const baseUrl = "https://grani.me/";
@@ -10,6 +17,7 @@ function searchResults(html) {
       const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
       const href = titleMatch ? titleMatch[1] : '';
       const title = titleMatch ? titleMatch[2] : '';  
+      title = cleanTitle(title);
       const imgMatch = itemHtml.match(/<img[^>]*class="coveri"[^>]*src="([^"]+)"[^>]*>/);
       const imageUrl = imgMatch ? imgMatch[1] : '';
       
