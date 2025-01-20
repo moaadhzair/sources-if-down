@@ -5,7 +5,6 @@
     "version": "1.0.0",
     "language": "English",
     "baseUrl": "https://aniwatch140.vercel.app/anime/home",
-    "searchBaseUrl": "https://aniwatch140.vercel.app/anime/search?q=%s",
     "scriptUrl": "https://raw.githubusercontent.com/50n50/maisgay/refs/heads/main/hianime/hianime.js",
     "asyncJS": true
 }
