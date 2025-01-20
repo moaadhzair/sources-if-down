@@ -23,7 +23,7 @@ function searchResults(html) {
     try {
         const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
         const idMatch = greenfn.match(headerRegex);
-        
+
         if (!idMatch) {
             return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
         }
@@ -37,24 +37,13 @@ function searchResults(html) {
         
         const data = await resp.json();
 
-        let result;
+        const result = [];
 
-        if (data.anime && data.anime.info) {
-            const info = data.anime.info;
-            const description = info.description || "N/A";
-            const aliases = info.aliases || "N/A";  
-            const airdate = info.airdate || "N/A";  
-
-            result = [
-                { 
-                    description: description,
-                    aliases: aliases,
-                    airdate: airdate
-                }
-            ];
-        } else {
-            result = [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
-        }
+        result.push({
+            description: data.anime?.info?.description || "N/A",
+            aliases: data.anime?.info?.aliases || "N/A",
+            airdate: data.anime?.info?.airdate || "N/A"
+        });
 
         return result;
     } catch (error) {
@@ -62,28 +51,53 @@ function searchResults(html) {
     }
 }
   
-  function extractEpisodes(url) {
-      try {
-          const text = fetch(url).then(response => response.text());
-          const finishedList = [];
-          const seasonLinks = getSeasonLinks(text);
-          
-          for (const seasonLink of seasonLinks) {
-              const seasonEpisodes = fetchSeasonEpisodes(`${baseUrl}${seasonLink}`);
-              finishedList.push(...seasonEpisodes);
-          }
-  
-          finishedList.forEach((item, index) => {
-              item.number = index + 1;
-          });
-  
-          return JSON.stringify(finishedList);
-  
-      } catch (error) {
-          log('Fetch error:', error);
-          return JSON.stringify([{ title: 'Error1', link: '' }]);
-      }
-  }
+async function extractEpisodes(greenfn) {
+    try {
+        const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
+        const idMatch = greenfn.match(headerRegex);
+
+        if (!idMatch) {
+            console.log("No match for ID");
+            return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
+        }
+
+        const animeId = idMatch[1]; 
+        
+        const resp = await fetch(`https://aniwatch140.vercel.app/anime/episodes/${animeId}`);
+        if (!resp.ok) {
+            console.log("Fetch failed");
+            return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
+        }
+        
+        const data = await resp.json();
+
+        console.log("Data:", data);
+
+        const result = [];
+
+        if (data.episodes && Array.isArray(data.episodes)) {
+            data.episodes.forEach(episode => {
+                result.push({
+                    href: episode.link || "No link",
+                    number: episode.title || "No title"
+                });
+            });
+        }
+
+        console.log("Result:", result);
+        return result;
+
+    } catch (error) {
+        console.log('Fetch error:', error);
+        return [{ title: 'Error1', link: '' }];
+    }
+}
+
+const testhtml = '<meta property="og:url" content="https://hianime.to/watch/one-piece-fan-letter-19406?ep=128693">';
+extractEpisodes(testhtml).then(result => {
+    console.log("Test Result:", JSON.stringify(result, null, 2));
+});
+
   
   function fetchSeasonEpisodes(url) {
       try {
