@@ -9,37 +9,40 @@ async function searchResults(query) {
             responseData = response.json ? await response.json() : JSON.parse(response);
         } catch (parseError) {
             console.log('Parse error:', parseError);
-            return '[]';  
+            // Return a minimal valid JSON string
+            return '{"status":"error","data":[]}';
         }
         
         if (!responseData || !responseData.animes) {
             console.log('Error: Unexpected response structure');
-            return '[]';
+            return '{"status":"error","data":[]}';
         }
 
-        const results = responseData.animes.map(anime => {
-            return {
-                title: (anime.name || "Unknown Title").toString(),
-                image: (anime.poster || "N/A").toString(),
-                href: `https://hianime.to/watch/${anime.id}`
-            };
-        });
+        // Create a clean data object
+        const results = responseData.animes.map(anime => ({
+            title: String(anime.name || "Unknown Title").replace(/"/g, '\\"'),
+            image: String(anime.poster || "N/A").replace(/"/g, '\\"'),
+            href: String(`https://hianime.to/watch/${anime.id}`).replace(/"/g, '\\"')
+        }));
 
-        const jsonString = JSON.stringify({
+        // Create a minimal response object
+        const responseObject = {
             status: "success",
             data: results
-        });
+        };
 
-        console.log('Raw JSON output:', jsonString);
+        // Convert to string with minimal whitespace
+        const jsonString = JSON.stringify(responseObject, null, 0);
+        
+        // Log for debugging
+        console.log('Response length:', jsonString.length);
+        console.log('First 100 chars:', jsonString.substring(0, 100));
         
         return jsonString;
 
     } catch (e) {
         console.log('Failed to fetch or parse results:', e);
-        return JSON.stringify({
-            status: "error",
-            data: []
-        });
+        return '{"status":"error","data":[]}';
     }
 }
 
