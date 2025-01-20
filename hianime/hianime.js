@@ -1,31 +1,38 @@
 async function searchResults(query) {
     console.log('Search Query:', query);    
-    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${query}`;
-    const response = await fetch(fetchUrl);
-    let data;
+    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${(query)}`;
+    console.log('Fetch URL:', fetchUrl);
+
     try {
-      const html = await response.text();
-      console.log('Raw Response:', html);
-      data = JSON.parse(html); 
+        const response = await fetch(fetchUrl);
+        if (!response || !response.ok) {
+            console.error('API request failed with status:', response?.status);
+            return [];
+        }
+
+        const data = await response.json();
+        console.log('Parsed JSON:', data);
+
+        if (!data || !data.animes) {
+            console.error('Error: Unexpected response structure:', data);
+            return [];
+        }
+
+        const results = data.animes.map(anime => ({
+            title: anime.name || "Unknown Title",
+            image: anime.poster || "N/A",
+            href: `https://hianime.to/watch/${anime.id}`
+        }));
+
+        console.log('Final Results:', results);
+        return results;
+
     } catch (e) {
-      console.log('Failed to parse results:', e);
-      return [];
+        console.error('Failed to fetch or parse results:', e);
+        return [];
     }
-  
-    const results = [];
-    data.animes.forEach((anime) => {
-      if (anime.name && anime.id) {
-        results.push({
-          title: anime.name,
-          image: anime.poster || "N/A",
-          href: `https://hianime.to/watch/${anime.id}`
-        });
-      }
-    });
-    console.log(results);
-    return results;
-  }
-  
+}
+
   
   async function extractDetails(greenfn) {
     try {
