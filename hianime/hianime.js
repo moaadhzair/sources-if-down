@@ -6,8 +6,8 @@ async function searchResults(query) {
         const responseData = response.json ? await response.json() : JSON.parse(response);
         
         if (!responseData || !responseData.animes) {
-            console.log('Error: Unexpected response structure:', responseData);
-            return [];
+            console.log('Error: Unexpected response structure:', JSON.stringify(responseData));
+            return JSON.stringify([]);
         }
 
         const results = responseData.animes.map(anime => ({
@@ -16,16 +16,16 @@ async function searchResults(query) {
             href: `https://hianime.to/watch/${anime.id}`
         }));
 
-        console.log('Final Results:', results);
-        return results;
+        const jsonResults = JSON.stringify(results);
+        console.log('Final Results:', jsonResults);
+        return jsonResults;
 
     } catch (e) {
         console.log('Failed to fetch or parse results:', e);
-        return [];
+        return JSON.stringify([]);
     }
 }
 
-  
   async function extractDetails(greenfn) {
     try {
         const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
