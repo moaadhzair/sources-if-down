@@ -1,11 +1,5 @@
 function searchResults(data) {
-    try {
-        if (!data || !Array.isArray(data.animes)) {
-            throw new Error("Invalid data format");
-        }
-
         const matches = [];
-
         data.animes.forEach(anime => {
             if (anime.id && anime.name) {
                 matches.push({
