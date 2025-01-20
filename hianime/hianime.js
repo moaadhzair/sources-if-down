@@ -48,8 +48,7 @@ async function extractDetails(url) {
                 } else {
                     result = [{ description: 'Error', aliases: 'Error', airdate: 'Error' }];
                 }
-    
-                console.log("Result:", JSON.stringify(result, null, 2));
+
                 return result;
             }
         } catch (error) {
@@ -57,10 +56,7 @@ async function extractDetails(url) {
             return [{ description: 'Error', aliases: 'Error', airdate: 'Error' }];
         }
 }
-    
-const testhtml = '<meta property="og:url" content="https://hianime.to/watch/one-piece-fan-letter-19406?ep=128693">';
-extractDetails(testhtml);
-  
+
   function extractEpisodes(url) {
       try {
           const text = fetch(url).then(response => response.text());
