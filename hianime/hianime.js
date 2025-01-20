@@ -24,9 +24,7 @@ async function searchResults(query) {
     return results;
   }
   
-  searchResults('one piece');
-  
-  async function extractDetails(greenfn) {
+async function extractDetails(greenfn) {
     try {
         const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
         const idMatch = greenfn.match(headerRegex);
