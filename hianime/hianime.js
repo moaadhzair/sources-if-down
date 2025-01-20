@@ -18,10 +18,10 @@ function searchResults(html) {
     });
     return results;
   }
+  
   async function extractDetails(greenfn) {
-      console.log("running");
     try {
-        const headerRegex = /og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
+        const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
         const idMatch = greenfn.match(headerRegex);
         
         if (!idMatch) {
