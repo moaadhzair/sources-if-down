@@ -3,26 +3,43 @@ async function searchResults(query) {
 
     try {
         const response = await fetch(fetchUrl);
-        const responseData = response.json ? await response.json() : JSON.parse(response);
+        let responseData;
+        
+        try {
+            responseData = response.json ? await response.json() : JSON.parse(response);
+        } catch (parseError) {
+            console.log('Parse error:', parseError);
+            return '[]';  
+        }
         
         if (!responseData || !responseData.animes) {
-            console.log('Error: Unexpected response structure:', JSON.stringify(responseData));
-            return JSON.stringify([]);
+            console.log('Error: Unexpected response structure');
+            return '[]';
         }
 
-        const results = responseData.animes.map(anime => ({
-            title: anime.name || "Unknown Title",
-            image: anime.poster || "N/A",
-            href: `https://hianime.to/watch/${anime.id}`
-        }));
+        const results = responseData.animes.map(anime => {
+            return {
+                title: (anime.name || "Unknown Title").toString(),
+                image: (anime.poster || "N/A").toString(),
+                href: `https://hianime.to/watch/${anime.id}`
+            };
+        });
 
-        const jsonResults = JSON.stringify(results);
-        console.log('Final Results:', jsonResults);
-        return jsonResults;
+        const jsonString = JSON.stringify({
+            status: "success",
+            data: results
+        });
+
+        console.log('Raw JSON output:', jsonString);
+        
+        return jsonString;
 
     } catch (e) {
         console.log('Failed to fetch or parse results:', e);
-        return JSON.stringify([]);
+        return JSON.stringify({
+            status: "error",
+            data: []
+        });
     }
 }
 
