@@ -9,7 +9,6 @@ async function searchResults(query) {
             responseData = response.json ? await response.json() : JSON.parse(response);
         } catch (parseError) {
             console.log('Parse error:', parseError);
-            // Return a minimal valid JSON string
             return '{"status":"error","data":[]}';
         }
         
@@ -18,23 +17,19 @@ async function searchResults(query) {
             return '{"status":"error","data":[]}';
         }
 
-        // Create a clean data object
         const results = responseData.animes.map(anime => ({
             title: String(anime.name || "Unknown Title").replace(/"/g, '\\"'),
             image: String(anime.poster || "N/A").replace(/"/g, '\\"'),
             href: String(`https://hianime.to/watch/${anime.id}`).replace(/"/g, '\\"')
         }));
 
-        // Create a minimal response object
         const responseObject = {
             status: "success",
             data: results
         };
 
-        // Convert to string with minimal whitespace
         const jsonString = JSON.stringify(responseObject, null, 0);
         
-        // Log for debugging
         console.log('Response length:', jsonString.length);
         console.log('First 100 chars:', jsonString.substring(0, 100));
         
