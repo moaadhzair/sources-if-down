@@ -9,9 +9,7 @@ function searchResults(html) {
     items.forEach((itemHtml, index) => {
       const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
       const href = titleMatch ? titleMatch[1] : '';
-      const title = titleMatch ? titleMatch[2] : '';
-      console.log(Extracted title: ${title}, href: ${href});
-  
+      const title = titleMatch ? titleMatch[2] : '';  
       const imgMatch = itemHtml.match(/<img[^>]*class="coveri"[^>]*src="([^"]+)"[^>]*>/);
       const imageUrl = imgMatch ? imgMatch[1] : '';
       
