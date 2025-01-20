@@ -1,15 +1,16 @@
 async function searchResults(query) {   
-    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${(query)}`;
+    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${encodeURIComponent(query)}`;
 
     try {
         const response = await fetch(fetchUrl);
-        const data = await response.json();
-        if (!data || !data.animes) {
-            console.log('Error: Unexpected response structure:', data);
+        const responseData = response.json ? await response.json() : JSON.parse(response);
+        
+        if (!responseData || !responseData.animes) {
+            console.log('Error: Unexpected response structure:', responseData);
             return [];
         }
 
-        const results = data.animes.map(anime => ({
+        const results = responseData.animes.map(anime => ({
             title: anime.name || "Unknown Title",
             image: anime.poster || "N/A",
             href: `https://hianime.to/watch/${anime.id}`
