@@ -8,7 +8,7 @@ async function searchResults(query) {
       console.log('Raw Response:', html);
       data = JSON.parse(html); 
     } catch (e) {
-      console.error('Failed to parse results:', e);
+      console.log('Failed to parse results:', e);
       return [];
     }
   
