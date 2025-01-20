@@ -16,7 +16,7 @@ function searchResults(html) {
     items.forEach((itemHtml, index) => {
       const titleMatch = itemHtml.match(/<a class="cona" href="([^"]+)">([^<]+)<\/a>/);
       const href = titleMatch ? titleMatch[1] : '';
-      const title = titleMatch ? titleMatch[2] : '';  
+      let title = titleMatch ? titleMatch[2] : '';  
       title = cleanTitle(title);
       const imgMatch = itemHtml.match(/<img[^>]*class="coveri"[^>]*src="([^"]+)"[^>]*>/);
       const imageUrl = imgMatch ? imgMatch[1] : '';
