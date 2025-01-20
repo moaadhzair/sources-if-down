@@ -18,45 +18,49 @@ function searchResults(html) {
     });
     return results;
   }
-
-async function extractDetails(greenfn) {
-        try {
-            const headerRegex = /og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
-            const idMatch = greenfn.match(headerRegex);
-             
-            if (idMatch) {
-                const animeId = idMatch[1]; 
-                
-                const resp = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${animeId}`);
-                const data = await resp.json();
-    
-                let result; 
-                if (data.anime && data.anime.info) {
-                    const info = data.anime.info;
-    
-                    const description = info.description || "N/A";
-                    const aliases = info.aliases || "N/A";  
-                    const airdate = info.airdate || "N/A";  
-    
-                    result = [
-                        { 
-                            description: description,
-                            aliases: aliases,
-                            airdate: airdate
-                        }
-                    ];
-                } else {
-                    result = [{ description: 'Error', aliases: 'Error', airdate: 'Error' }];
-                }
-
-                return result;
-            }
-        } catch (error) {
-            console.log("Error:", error);
-            return [{ description: 'Error', aliases: 'Error', airdate: 'Error' }];
+  async function extractDetails(greenfn) {
+    try {
+        const headerRegex = /og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
+        const idMatch = greenfn.match(headerRegex);
+        
+        if (!idMatch) {
+            return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
         }
-}
 
+        const animeId = idMatch[1]; 
+        
+        const resp = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${animeId}`);
+        if (!resp.ok) {
+            return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
+        }
+        
+        const data = await resp.json();
+
+        let result;
+
+        if (data.anime && data.anime.info) {
+            const info = data.anime.info;
+            const description = info.description || "N/A";
+            const aliases = info.aliases || "N/A";  
+            const airdate = info.airdate || "N/A";  
+
+            result = [
+                { 
+                    description: description,
+                    aliases: aliases,
+                    airdate: airdate
+                }
+            ];
+        } else {
+            result = [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
+        }
+
+        return result;
+    } catch (error) {
+        return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
+    }
+}
+  
   function extractEpisodes(url) {
       try {
           const text = fetch(url).then(response => response.text());
