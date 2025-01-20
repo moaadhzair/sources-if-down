@@ -1,20 +1,11 @@
-async function searchResults(query) {
-    console.log('Search Query:', query);    
+async function searchResults(query) {   
     const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${(query)}`;
-    console.log('Fetch URL:', fetchUrl);
 
     try {
         const response = await fetch(fetchUrl);
-        if (!response || !response.ok) {
-            console.error('API request failed with status:', response?.status);
-            return [];
-        }
-
         const data = await response.json();
-        console.log('Parsed JSON:', data);
-
         if (!data || !data.animes) {
-            console.error('Error: Unexpected response structure:', data);
+            console.log('Error: Unexpected response structure:', data);
             return [];
         }
 
@@ -28,7 +19,7 @@ async function searchResults(query) {
         return results;
 
     } catch (e) {
-        console.error('Failed to fetch or parse results:', e);
+        console.log('Failed to fetch or parse results:', e);
         return [];
     }
 }
