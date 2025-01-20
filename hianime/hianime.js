@@ -1,5 +1,8 @@
+const baseUrl = 'https://aniwatch140.vercel.app';
+const searchUrl = 'https://aniwatch140.vercel.app/anime/search?q=';
+
 async function searchResults(query) {
-    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${query}`;
+    const fetchUrl = `${searchUrl}${query}`;
     const response = await fetch(fetchUrl);
     let data;
     try {
@@ -24,7 +27,8 @@ async function searchResults(query) {
     return results;
   }
   
-async function extractDetails(greenfn) {
+  
+  async function extractDetails(greenfn) {
     try {
         const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
         const idMatch = greenfn.match(headerRegex);
