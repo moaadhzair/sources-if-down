@@ -7,12 +7,12 @@ function searchResults(html) {
     return [];
   }
   const results = [];
-  data.animes.forEach((animes) => {
-    if (animes.name && animes.id) {
+  data.animes.forEach((anime) => {
+    if (anime.name && anime.id) {
       results.push({
-        title: animes.name,
-        image: animes.poster || "N/A",
-        href: https://hianime.to/watch/${animes.id}
+        title: anime.name,
+        image: anime.poster || "N/A",
+        href: `https://hianime.to/watch/${anime.id}`
       });
     }
   });
