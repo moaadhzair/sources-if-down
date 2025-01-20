@@ -1,13 +1,11 @@
-const baseUrl = 'https://aniwatch140.vercel.app';
-const searchUrl = 'https://aniwatch140.vercel.app/anime/search?q=';
-
 async function searchResults(query) {
     console.log('Search Query:', query);    
-    const fetchUrl = `${searchUrl}${query}`;
+    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${query}`;
     const response = await fetch(fetchUrl);
     let data;
     try {
       const html = await response.text();
+      console.log('Raw Response:', html);
       data = JSON.parse(html); 
     } catch (e) {
       console.error('Failed to parse results:', e);
