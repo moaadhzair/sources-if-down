@@ -18,35 +18,6 @@ function searchResults(html) {
     });
     return results;
   }
-  
-  /*function extractDetails(url) {
-      try {
-          const text = fetch(url).then(response => response.text()); 
-          const descriptionRegex = /<div\s+class="film-description\s+m-hide">[\s\S]*?<div\s+class="text">([\s\S]*?)<\/div>/;
-          const aliasesRegex = /data-alternativetitles="([^"]+)"/i;
-          
-          const aliasesMatch = aliasesRegex.exec(text);
-          const descriptionMatch = descriptionRegex.exec(text);
-  
-          console.log("Aliases:", aliasesMatch ? aliasesMatch[1] : "N/A");
-          console.log("Description:", descriptionMatch ? descriptionMatch[1] : "N/A");
-  
-          const result = [
-              { 
-                  description: descriptionMatch ? descriptionMatch[1].trim() : "N/A", 
-                  aliases: aliasesMatch ? aliasesMatch[1].trim() : "N/A", 
-                  airdate: "N/A" 
-              }
-          ];
-  
-          console.log("JSON Output:", JSON.stringify(result, null, 2));
-  
-          return result;
-      } catch (error) {
-          console.log('Fetch error:', error);
-          return JSON.stringify([{ description: 'Error', aliases: 'Error', airdate: 'Error' }]);
-      }
-  }*/
 
 async function extractDetails(url) {
       try {
