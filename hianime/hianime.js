@@ -2,7 +2,7 @@ const baseUrl = 'https://aniwatch140.vercel.app';
 const searchUrl = 'https://aniwatch140.vercel.app/anime/search?q=';
 
 async function searchResults(query) {
-    console.log(${query});
+    console.log('Search Query:', query);    
     const fetchUrl = `${searchUrl}${query}`;
     const response = await fetch(fetchUrl);
     let data;
