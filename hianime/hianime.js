@@ -19,43 +19,36 @@ async function searchResults(keyword) {
     }
 }
 
-
 async function extractDetails(url) {
     try {
-        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
-        const encodedID = match[1];
-        const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
-        const responseText = response.toString();
-        
-        let data;
-        try {
-            data = JSON.parse(responseText);
-        } catch (parseError) {
-            console.log('Parse error:', parseError);
-            data = response;
-        }
-            
-        if (!data || !data.anime || !data.anime.info) {
-            throw new Error('Invalid response format');
-        }
+        const response = await fetch(url);
+        const html = await response.text();
 
-        const animeInfo = data.anime.info;
-        
+        const descriptionMatch = html.match(/<div class="film-description m-hide">\s*<div class="text">\s*([\s\S]*?)\s*<span class="btn-more-desc (?:less|more)">/);
+        const durationMatch = html.match(/<span class="item">(\d+m)<\/span>/);
+        const ratingMatch = html.match(/<div class="tick-item tick-pg">([^<]+)<\/div>/);
+
+        const description = descriptionMatch ? descriptionMatch[1] : 'No description available';
+        const duration = durationMatch ? durationMatch[1] : 'Unknown';
+        const rating = ratingMatch ? ratingMatch[1] : 'Unknown';
+
         const transformedResults = [{
-            description: animeInfo.description || 'No description available',
-            aliases: `Duration: ${animeInfo.stats?.duration || 'Unknown'}`,
-            airdate: `Rating: ${animeInfo.stats?.rating || 'Unknown'}`
+            description: description,
+            aliases: `Duration: ${duration}`,
+            airdate: `Rating: ${rating}`
         }];
 
-        console.log('Transformed results:', transformedResults); 
+        console.log('Transformed results:', transformedResults);
         return JSON.stringify(transformedResults);
-        
+
     } catch (error) {
         console.log('Details error:', error);
-        return JSON.stringify([{
-            description: 'Error loading description',
-            aliases: 'Duration: Unknown',
-            airdate: 'Rating: Unknown'
-        }]);
+        return JSON.stringify([
+            {
+                description: 'Error loading description',
+                aliases: 'Duration: Unknown',
+                airdate: 'Rating: Unknown'
+            }
+        ]);
     }
 }
