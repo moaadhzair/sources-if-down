@@ -21,7 +21,6 @@ async function searchResults(keyword) {
     }
 }
 
-  
 async function extractDetails(url) {
     try {
         const encodedID = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/)[1];
@@ -35,8 +34,8 @@ async function extractDetails(url) {
             airdate: `Rating: ${animeInfo.stats.rating}`
         }];
         
-        console.log('Transformed Results:', transformedResults);
-        return transformedResults;
+        console.log('Transformed Results:', JSON.stringify(transformedResults));
+        return JSON.stringify(transformedResults);
         
     } catch (error) {
         console.log('Error fetching anime data:', error);
