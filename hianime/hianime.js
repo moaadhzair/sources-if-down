@@ -1,68 +1,21 @@
-function searchResults(keyword) {
-    return new Promise((resolve, reject) => {
-        const encodedKeyword = encodeURIComponent(keyword);
-        const url = `https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`;
-        
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-        
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                try {
-                    const data = JSON.parse(xhr.responseText);
-                    
-                    const transformedResults = data.animes.map(anime => ({
-                        title: anime.name,
-                        image: anime.poster,
-                        href: `https://hianime.to/watch/${anime.id}`
-                    }));
-                    
-                    resolve(transformedResults);
-                } catch (error) {
-                    reject(new Error('Error parsing JSON: ' + error.message));
-                }
-            } else {
-                reject(new Error('HTTP Error: ' + xhr.status));
-            }
-        };
-        
-        xhr.onerror = function() {
-            reject(new Error('Network Error'));
-        };
-        
-        xhr.send();
-    });
-}
-
-  async function extractDetails(greenfn) {
+async function searchResults(keyword) {
     try {
-        const headerRegex = /<meta property="og:url" content="https:\/\/hianime\.to\/watch\/([^?]+)/;
-        const idMatch = greenfn.match(headerRegex);
-
-        if (!idMatch) {
-            return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
-        }
-
-        const animeId = idMatch[1]; 
+        const encodedKeyword = encodeURIComponent(keyword);
+        const response = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
         
-        const resp = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${animeId}`);
-        if (!resp.ok) {
-            return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
-        }
+        const data = await response.json();
         
-        const data = await resp.json();
-
-        const result = [];
-
-        result.push({
-            description: data.anime?.info?.description || "N/A",
-            aliases: data.anime?.info?.aliases || "N/A",
-            airdate: data.anime?.info?.airdate || "N/A"
-        });
-
-        return result;
+        const transformedResults = data.animes.map(anime => ({
+            title: anime.name,
+            image: anime.poster,
+            href: `https://hianime.to/watch/${anime.id}`
+        }));
+        
+        return transformedResults;
+        
     } catch (error) {
-        return [{ description: 'N/A', aliases: 'N/A', airdate: 'N/A' }];
+        console.log('Error fetching anime data:', error);
+        throw error; 
     }
 }
   
