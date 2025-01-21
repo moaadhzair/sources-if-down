@@ -22,7 +22,7 @@ async function searchResults(keyword) {
 async function extractDetails(url) {
     try {
         const response = await fetch(url);
-        const html = await response.text();
+        const html = await response.blob();
 
         const descriptionMatch = html.match(/<div class="film-description m-hide">\s*<div class="text">\s*([\s\S]*?)\s*<span class="btn-more-desc (?:less|more)">/);
         const durationMatch = html.match(/<span class="item">(\d+m)<\/span>/);
