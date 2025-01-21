@@ -2,9 +2,7 @@ async function searchResults(keyword) {
         console.log('Inshallah it will work');
     try {
         const encodedKeyword = encodeURIComponent(keyword);
-        
         const responseText = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
-        
         const data = JSON.parse(responseText);
         
         const transformedResults = data.animes.map(anime => ({
@@ -21,24 +19,28 @@ async function searchResults(keyword) {
     }
 }
 
+
 async function extractDetails(url) {
     try {
-        const encodedID = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/)[1];
+        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
+        const encodedID = match[1];
         const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
-        const data = JSON.parse(response);
+
+        const responseText = await response.text();
+        const data = JSON.parse(responseText);
         const animeInfo = data.anime.info;
         
         const transformedResults = [{
-            description: animeInfo.description,
-            aliases: `Duration: ${animeInfo.stats.duration}`,
-            airdate: `Rating: ${animeInfo.stats.rating}`
+            description: animeInfo.description || 'No description available',
+            aliases: `Duration: ${animeInfo.stats?.duration || 'Unknown'}`,
+            airdate: `Rating: ${animeInfo.stats?.rating || 'Unknown'}`
         }];
-        
-        console.log('Transformed Results:', JSON.stringify(transformedResults));
+
+        console.log(transformedResults);
         return JSON.stringify(transformedResults);
         
     } catch (error) {
-        console.log('Error fetching anime data:', error);
+        console.log('Details error:', error);
         return JSON.stringify([{
             description: 'Error loading description',
             aliases: 'Duration: Unknown',
