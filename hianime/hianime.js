@@ -26,7 +26,6 @@ async function extractDetails(url) {
         const encodedID = match[1];
         const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
         const responseText = response.toString();
-        console.log('Raw response:', responseText);
         
         let data;
         try {
@@ -36,14 +35,11 @@ async function extractDetails(url) {
             data = response;
         }
             
-        console.log('Parsed data:', data);
-        
         if (!data || !data.anime || !data.anime.info) {
             throw new Error('Invalid response format');
         }
 
         const animeInfo = data.anime.info;
-        console.log('Anime info:', animeInfo); 
         
         const transformedResults = [{
             description: animeInfo.description || 'No description available',
