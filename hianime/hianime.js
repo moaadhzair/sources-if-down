@@ -52,7 +52,7 @@ async function extractDetails(url) {
         }];
 
         console.log('Transformed results:', transformedResults); 
-        return transformedResults;
+        return JSON.stringify(transformedResults);
         
     } catch (error) {
         console.log('Details error:', error);
