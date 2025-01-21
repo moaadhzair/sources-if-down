@@ -1,10 +1,11 @@
 async function searchResults(keyword) {
-    console.log('Inshallah it will work');
+        console.log('Inshallah it will work');
     try {
         const encodedKeyword = encodeURIComponent(keyword);
-        const response = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
         
-        const data = await response.json();
+        const responseText = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
+        
+        const data = JSON.parse(responseText);
         
         const transformedResults = data.animes.map(anime => ({
             title: anime.name,
@@ -12,11 +13,11 @@ async function searchResults(keyword) {
             href: `https://hianime.to/watch/${anime.id}`
         }));
         
-        return transformedResults;
+        return JSON.stringify(transformedResults);
         
     } catch (error) {
-        console.log('Error fetching anime data:', error);
-        throw error; 
+        console.log('Fetch error:', error);
+        return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
     }
 }
 
