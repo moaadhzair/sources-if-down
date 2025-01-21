@@ -1,26 +1,37 @@
-async function searchResults(keyword) {
-    try {
+function searchResults(keyword) {
+    return new Promise((resolve, reject) => {
         const encodedKeyword = encodeURIComponent(keyword);
-        const response = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
+        const url = `https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`;
         
-        if (!response.ok) {
-            console.log(`HTTP error! status: ${response.status}`);
-        }
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
         
-        const data = await response.json();
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                try {
+                    const data = JSON.parse(xhr.responseText);
+                    
+                    const transformedResults = data.animes.map(anime => ({
+                        title: anime.name,
+                        image: anime.poster,
+                        href: `https://hianime.to/watch/${anime.id}`
+                    }));
+                    
+                    resolve(transformedResults);
+                } catch (error) {
+                    reject(new Error('Error parsing JSON: ' + error.message));
+                }
+            } else {
+                reject(new Error('HTTP Error: ' + xhr.status));
+            }
+        };
         
-        const transformedResults = data.animes.map(anime => ({
-            title: anime.name,
-            image: anime.poster,
-            href: `https://hianime.to/watch/${anime.id}`
-        }));
+        xhr.onerror = function() {
+            reject(new Error('Network Error'));
+        };
         
-        return transformedResults;
-        
-    } catch (error) {
-        console.log('Error fetching anime data:', error);
-        throw error; 
-    }
+        xhr.send();
+    });
 }
 
   async function extractDetails(greenfn) {
