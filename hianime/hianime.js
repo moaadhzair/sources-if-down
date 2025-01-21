@@ -23,20 +23,16 @@ async function extractDetails(url) {
     try {
         const encodedID = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/)[1];
         const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
-        
-        // Handle both Node.js and iOS environments
-        const data = response.json ? await response.json() : JSON.parse(response);
-        
+        const data = JSON.parse(response);
         const animeInfo = data.anime.info;
+        
         const transformedResults = [{
             description: animeInfo.description,
             aliases: `Duration: ${animeInfo.stats.duration}`,
             airdate: `Rating: ${animeInfo.stats.rating}`
         }];
-        
-        console.log('Transformed Results:', transformedResults);
+        console.log(transformedResults)
         return JSON.stringify(transformedResults);
-        
     } catch (error) {
         console.log('Error fetching anime data:', error);
         return JSON.stringify([{
