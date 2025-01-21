@@ -1,24 +1,26 @@
 async function searchResults(keyword) {
-    console.log('Inshallah it will work _/\_');
+    console.log('Inshallah it will work');
     try {
         const encodedKeyword = encodeURIComponent(keyword);
-        const responseText = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
-        const data = JSON.parse(responseText);
-
+        const response = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
+        
+        const data = await response.json();
+        
         const transformedResults = data.animes.map(anime => ({
             title: anime.name,
             image: anime.poster,
             href: `https://hianime.to/watch/${anime.id}`
         }));
-
-        return JSON.stringify(transformedResults);
+        
+        return transformedResults;
         
     } catch (error) {
-        console.log('Fetch error:', error);
-        return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
+        console.log('Error fetching anime data:', error);
+        throw error; 
     }
 }
 
+  
 async function extractDetails(url) {
     try {
         const encodedID = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/)[1];
@@ -31,8 +33,10 @@ async function extractDetails(url) {
             aliases: `Duration: ${animeInfo.stats.duration}`,
             airdate: `Rating: ${animeInfo.stats.rating}`
         }];
-        console.log(transformedResults)
-        return JSON.stringify(transformedResults);
+        
+        console.log('Transformed Results:', transformedResults);
+        return transformedResults;
+        
     } catch (error) {
         console.log('Error fetching anime data:', error);
         return JSON.stringify([{
