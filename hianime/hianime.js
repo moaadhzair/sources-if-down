@@ -1,43 +1,25 @@
-async function searchResults(query) {   
-    const fetchUrl = `https://aniwatch140.vercel.app/anime/search?q=${encodeURIComponent(query)}`;
-
+async function searchResults(keyword) {
     try {
-        const response = await fetch(fetchUrl);
-        let responseData;
+        const encodedKeyword = encodeURIComponent(keyword);
+        const response = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
         
-        try {
-            responseData = response.json ? await response.json() : JSON.parse(response);
-        } catch (parseError) {
-            console.log('Parse error:', parseError);
-            return '{"status":"error","data":[]}';
+        if (!response.ok) {
+            console.log(`HTTP error! status: ${response.status}`);
         }
         
-        if (!responseData || !responseData.animes) {
-            console.log('Error: Unexpected response structure');
-            return '{"status":"error","data":[]}';
-        }
-
-        const results = responseData.animes.map(anime => ({
-            title: String(anime.name || "Unknown Title").replace(/"/g, '\\"'),
-            image: String(anime.poster || "N/A").replace(/"/g, '\\"'),
-            href: String(`https://hianime.to/watch/${anime.id}`).replace(/"/g, '\\"')
+        const data = await response.json();
+        
+        const transformedResults = data.animes.map(anime => ({
+            title: anime.name,
+            image: anime.poster,
+            href: `https://hianime.to/watch/${anime.id}`
         }));
-
-        const responseObject = {
-            status: "success",
-            data: results
-        };
-
-        const jsonString = JSON.stringify(responseObject, null, 0);
         
-        console.log('Response length:', jsonString.length);
-        console.log('First 100 chars:', jsonString.substring(0, 100));
+        return transformedResults;
         
-        return jsonString;
-
-    } catch (e) {
-        console.log('Failed to fetch or parse results:', e);
-        return '{"status":"error","data":[]}';
+    } catch (error) {
+        console.log('Error fetching anime data:', error);
+        throw error; 
     }
 }
 
