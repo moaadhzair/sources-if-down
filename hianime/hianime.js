@@ -17,7 +17,6 @@ async function searchResults(keyword) {
         return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
     }
 }
-let detailsLoaded = false;  
 
 async function extractDetails(url) {
     try {
@@ -34,8 +33,7 @@ async function extractDetails(url) {
             aliases: `Duration: ${animeInfo.stats?.duration || 'Unknown'}`,
             airdate: `Rating: ${animeInfo.stats?.rating || 'Unknown'}`
         }];
-
-        detailsLoaded = true;  
+ 
         return JSON.stringify(transformedResults);
         
     } catch (error) {
@@ -49,15 +47,7 @@ async function extractDetails(url) {
     }
 }
 
-async function waitForDetails() {
-    while (!detailsLoaded) {
-        await new Promise(resolve => setTimeout(resolve, 500));  
-    }
-}
-
 async function extractEpisodes(url) {
-    await waitForDetails();  
-
     try {
         const testData = [
             { number: '1', href: 'https://hianime.to/watch/one-piece-episode-1' },
