@@ -21,7 +21,7 @@ async function searchResults(keyword) {
 
 async function extractDetails(url) {
     try {
-        const html = await fetch(url);
+        /*const html = await fetch(url);
 
         const descriptionMatch = html.match(/<div class="film-description m-hide">\s*<div class="text">\s*<p>([\s\S]*?)<\/p>\s*<\/div>/);
         const durationMatch = html.match(/<span class="item">(\d+m)<\/span>/);
@@ -29,12 +29,12 @@ async function extractDetails(url) {
 
         const description = descriptionMatch ? descriptionMatch[1] : 'No description available';
         const duration = durationMatch ? durationMatch[1] : 'Unknown';
-        const rating = ratingMatch ? ratingMatch[1] : 'Unknown';
+        const rating = ratingMatch ? ratingMatch[1] : 'Unknown';*/
 
         const transformedResults = [{
-            description: description,
-            aliases: `Duration: ${duration}`,
-            airdate: `Rating: ${rating}`
+            description: 'Test',
+            aliases: 'Test',
+            airdate: 'Test'
         }];
 
         console.log('Transformed results:', transformedResults);
