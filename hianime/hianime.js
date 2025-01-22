@@ -24,7 +24,7 @@ async function extractDetails(url) {
         const html = await fetch(url);
         console.log(html);
 
-        const descriptionMatch = html.match(/<div class="film-description m-hide">\s*<div class="text">\s*([\s\S]*?)\s*<span class="btn-more-desc (?:less|more)">/);
+        const descriptionMatch = html.match(/<div class="film-description m-hide">\s*<div class="text">\s*<p>([\s\S]*?)<\/p>\s*<\/div>/);
         const durationMatch = html.match(/<span class="item">(\d+m)<\/span>/);
         const ratingMatch = html.match(/<div class="tick-item tick-pg">([^<]+)<\/div>/);
 
