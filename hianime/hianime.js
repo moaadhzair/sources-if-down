@@ -1,5 +1,4 @@
 async function searchResults(keyword) {
-        console.log('Inshallah it will work');
     try {
         const encodedKeyword = encodeURIComponent(keyword);
         const responseText = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
@@ -32,12 +31,11 @@ async function extractDetails(url) {
         const rating = ratingMatch ? ratingMatch[1] : 'Unknown';
 
         const transformedResults = [{
-            description: 'Test',
-            aliases: 'Test',
-            airdate: 'Test'
+            description: description,
+            aliases: `Duration: ${duration}`,
+            airdate: `Rating: ${rating}`
         }];
 
-        console.log('Transformed results:', transformedResults);
         return JSON.stringify(transformedResults);
 
     } catch (error) {
