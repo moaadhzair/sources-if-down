@@ -20,8 +20,9 @@ async function searchResults(keyword) {
 }
 
 async function extractDetails(url) {
-    try {
-        /*const html = await fetch(url);
+        //Cranci fix yo shit
+    /*try {
+        const html = await fetch(url);
 
         const descriptionMatch = html.match(/<div class="film-description m-hide">\s*<div class="text">\s*<p>([\s\S]*?)<\/p>\s*<\/div>/);
         const durationMatch = html.match(/<span class="item">(\d+m)<\/span>/);
@@ -29,7 +30,7 @@ async function extractDetails(url) {
 
         const description = descriptionMatch ? descriptionMatch[1] : 'No description available';
         const duration = durationMatch ? durationMatch[1] : 'Unknown';
-        const rating = ratingMatch ? ratingMatch[1] : 'Unknown';*/
+        const rating = ratingMatch ? ratingMatch[1] : 'Unknown';
 
         const transformedResults = [{
             description: 'Test',
@@ -49,5 +50,5 @@ async function extractDetails(url) {
                 airdate: 'Rating: Unknown'
             }
         ]);
-    }
+    }*/
 }
