@@ -19,32 +19,32 @@ async function searchResults(keyword) {
 }
 
 async function extractDetails(url) {
-    try {
-        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
-        const encodedID = match[1];
-        const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
-        const responseText = await response.json();
-        
-        let data = JSON.parse(responseText);
-        const animeInfo = data.anime.info;
-        
-        const transformedResults = [{
-            description: animeInfo.description || 'No description available',
-            aliases: `Duration: ${animeInfo.stats?.duration || 'Unknown'}`,
-            airdate: `Rating: ${animeInfo.stats?.rating || 'Unknown'}`
-        }];
- 
-        return JSON.stringify(transformedResults);
-        
-    } catch (error) {
-        console.log('Details error:', error);
-        detailsLoaded = true;  
-        return JSON.stringify([{
-            description: 'Error loading description',
-            aliases: 'Duration: Unknown',
-            airdate: 'Rating: Unknown'
-        }]);
-    }
+   try {
+       const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
+       const encodedID = match[1];
+       const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
+       const data = await response;
+       console.log('Raw response:', response);
+       
+       const animeInfo = data.anime.info;
+       const moreInfo = data.anime.moreInfo;
+       
+       const transformedResults = [{
+           description: animeInfo.description || 'No description available',
+           aliases: `Duration: ${animeInfo.stats?.duration || 'Unknown'}`,
+           airdate: moreInfo?.aired || 'Unknown'
+       }];
+
+       return JSON.stringify(transformedResults);
+       
+   } catch (error) {
+       console.log('Details error:', error);
+       return JSON.stringify([{
+           description: 'Error loading description',
+           aliases: 'Duration: Unknown',
+           airdate: 'Unknown'
+       }]);
+   }
 }
 
 async function extractEpisodes(url) {
