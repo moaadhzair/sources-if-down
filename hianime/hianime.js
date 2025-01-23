@@ -52,10 +52,8 @@ async function extractEpisodes(url) {
     const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
     const data = JSON.parse(response);
 
-    console.log(data);
-    
     const transformedResults = data.episodes.map(episode => ({
-        href: `https://hianime.to/watch/${encodedID}`,
+        href: `https://hianime.to/watch/${encodedID}?ep=${episode.episodeId.split('=')[1]}`,
         number: episode.number
     }));
     
