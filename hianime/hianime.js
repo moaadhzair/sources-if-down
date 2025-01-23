@@ -26,7 +26,7 @@ async function extractDetails(url) {
         const durationMatch = html.match(/<span class="item">(\d+m)<\/span>/);
         const ratingMatch = html.match(/<div class="tick-item tick-pg">([^<]+)<\/div>/);
 
-        const description = descriptionMatch ? descriptionMatch[1] : 'No description available';
+        const description = descriptionMatch ? descriptionMatch[1].replace(/<br\s*\/?>/g, ' ') : 'No description available';
         const duration = durationMatch ? durationMatch[1] : 'Unknown';
         const rating = ratingMatch ? ratingMatch[1] : 'Unknown';
 
