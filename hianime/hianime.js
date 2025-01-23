@@ -64,3 +64,19 @@ async function extractEpisodes(url) {
         return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
     }    
 }
+
+async function extractStreamUrl(url) {
+    try {
+       const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
+       const encodedID = match[1];
+       const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}`);
+       const data = JSON.parse(response);
+       
+       const hlsSource = data.data.sources.find(source => source.type === 'hls');
+       
+       return hlsSource ? hlsSource.url : null;
+    } catch (error) {
+       console.log('Fetch error:', error);
+       return null;
+    }
+}
