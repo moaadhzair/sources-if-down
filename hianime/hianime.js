@@ -23,7 +23,7 @@ async function extractDetails(url) {
         const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
         const encodedID = match[1];
         const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
-        const responseText = await response.text();
+        const responseText = await response.json();
         
         let data = JSON.parse(responseText);
         const animeInfo = data.anime.info;
