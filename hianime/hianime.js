@@ -23,13 +23,15 @@ async function extractDetails(url) {
     const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
     const encodedID = match[1];
     const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
-    const data = response; 
+    const data = JSON.parse(response);
     
-    const animeInfo = data.anime[0].info;
+    const animeInfo = data.anime.info;
+    const moreInfo = data.anime.moreInfo;
+    
     const transformedResults = [{
       description: animeInfo.description || 'No description available',
       aliases: `Duration: ${animeInfo.stats?.duration || 'Unknown'}`,
-      airdate: `Rating: ${animeInfo.stats?.rating || 'Unknown'}`
+      airdate: `Aired: ${moreInfo.aired || 'Unknown'}`
     }];
     
     return JSON.stringify(transformedResults);
@@ -38,7 +40,7 @@ async function extractDetails(url) {
     return JSON.stringify([{
       description: 'Error loading description',
       aliases: 'Duration: Unknown',
-      airdate: 'Rating: Unknown'
+      airdate: 'Aired: Unknown'
     }]);
   }
 }
