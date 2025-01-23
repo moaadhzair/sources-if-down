@@ -47,18 +47,18 @@ async function extractDetails(url) {
 
 async function extractEpisodes(url) {
     try {
-    const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
-    const encodedID = match[1];
-    const response = await fetch(`https://aniwatch140.vercel.app/anime/info?id=${encodedID}`);
-    const data = JSON.parse(response);
+        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
+        const encodedID = match[1];
+        const response = await fetch(`https://aniwatch140.vercel.app/anime/episodes/${encodedID}`);
+        const data = JSON.parse(response);
 
-    const transformedResults = data.episodes.map(episode => ({
-        href: `https://hianime.to/watch/${encodedID}?ep=${episode.episodeId.split('=')[1]}`,
-        number: episode.number
-    }));
-    
-    return JSON.stringify(transformedResults);
-    
+        const transformedResults = data.episodes.map(episode => ({
+            href: `https://hianime.to/watch/${encodedID}?ep=${episode.episodeId.split('?ep=')[1]}`,
+            number: episode.number
+        }));
+        
+        return JSON.stringify(transformedResults);
+        
     } catch (error) {
         console.log('Fetch error:', error);
         return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
