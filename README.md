@@ -1,7 +1,8 @@
 # Sources
 
 <div align="center"> 
-<img src="https://i.ibb.co/41qyCzd/1358296.png" width="500px">
+<img src="https://i.ibb.co/41qyCzd/1358296.png" width="500px"><br>
+<i>Sowy Granime devs, love you <3<i>
 </div>
 
 >#### Ganime.json: Granime javascript module (uses granime.js)
