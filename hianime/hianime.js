@@ -69,7 +69,7 @@ async function extractStreamUrl(url) {
     try {
        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
        const encodedID = match[1];
-       const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}`);
+       const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&server=hd-1&category=dub`);
        const data = JSON.parse(response);
        
        const hlsSource = data.data.sources.find(source => source.type === 'hls');
