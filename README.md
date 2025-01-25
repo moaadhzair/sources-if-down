@@ -1,21 +1,43 @@
 # Sources
 
 <div align="center"> 
-<img src="https://i.ibb.co/41qyCzd/1358296.png" width="500px"><br>
-<i>Sorry Granime devs, love you <3</i>
+  <img src="https://i.ibb.co/41qyCzd/1358296.png" width="500px">
+  <br>
+  <i>Sorry Granime devs, love you &lt;3</i>
 </div>
 
->### <b>Ganime.json:<b> Granime javascript module (uses granime.js)
->
->### Ganime_noJS.json: Granime json module
->
->### HiAnime.json: HiAnime javascript module using the aniwatch api (uses hianime.js)‎
->##### HIANIME: CURRENTLY ONLY DUB FOR SUPPORTED ANIMES UNTIL WE FIX THE SOFT SUBS
->
->### AniWatch.json: AniWatch javascript module using the Anime-API (uses aniwatch.js) 
->##### ANIWATCH: CURRENTLY ONLY DUB FOR SUPPORTED ANIMES UNTIL WE FIX THE SOFT SUBS
+## Available Modules
 
-<div align="center"> 
-For any problems message me on discord
-</div>
+### Ganime
+**File:** `Ganime.json`  
+**Description:** Granime JavaScript module (depends on `granime.js`).
+
+---
+
+### Ganime (No JS)
+**File:** `Ganime_noJS.json`  
+**Description:** Granime JSON module without JavaScript dependency.
+
+---
+
+### HiAnime
+**File:** `HiAnime.json`  
+**Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).  
+**Note:** *Currently supports only dubbed versions until soft subs issue is resolved.*
+
+---
+
+### AniWatch
+**File:** `AniWatch.json`  
+**Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatch.js`).  
+**Note:** *Currently supports only dubbed versions until soft subs issue is resolved.*
+
+---
+
+## Need Help?
+If you encounter any issues, feel free to message me on Discord.  
+I'll probably be too lazy to fix them right away, but at least I'll be aware. 
+
+
+
 
