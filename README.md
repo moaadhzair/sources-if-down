@@ -8,5 +8,6 @@
 >#### Ganime.json: Granime javascript module (uses granime.js)
 >#### Ganime_noJS.json: Granime json module
 >#### HiAnime.json: HiAnime javascript module using the aniwatch api (uses hianime.js)
+>#### AniWatch.json: AniWatch javascript module using the Anime-API (uses aniwatch.js) WIP CURRENTLY ONLY RAW (NO SUB/DUB)
 
 For any problems message me on discord
