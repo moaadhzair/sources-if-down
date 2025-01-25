@@ -1,0 +1,11 @@
+{
+    "sourceName": "Aniwatch",
+    "author": "50/50",
+    "iconUrl": "https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/icon.png",
+    "version": "1.0.0",
+    "language": "English (DUB)",
+    "baseUrl": "https://api-anime-rouge.vercel.app/",
+    "searchBaseUrl": "https://api-anime-rouge.vercel.app/aniwatch/search?keyword=%s",
+    "scriptUrl": "https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.js",
+    "asyncJS": true
+}
