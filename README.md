@@ -1,7 +1,7 @@
 # Sources
 
 <div align="center"> 
-  <img src="https://i.ibb.co/41qyCzd/1358296.png" width="500px">
+  <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
   <br>
   <i>Sorry Granime devs, love you &lt;3</i>
 </div>
