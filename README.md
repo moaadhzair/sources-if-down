@@ -12,7 +12,7 @@
 >### HiAnime.json: HiAnime javascript module using the aniwatch api (uses hianime.js)‎
 >##### HIANIME: CURRENTLY ONLY DUB FOR SUPPORTED ANIMES UNTIL WE FIX THE SOFT SUBS
 >
->### AniWatch.json: AniWatch javascript module using the Anime-API (uses aniwatch.js) CURRENTLY ONLY DUB FOR SUPPORTED ANIMES UNTIL WE FIX THE SOFT SUBS
+>### AniWatch.json: AniWatch javascript module using the Anime-API (uses aniwatch.js) 
 >##### ANIWATCH: CURRENTLY ONLY DUB FOR SUPPORTED ANIMES UNTIL WE FIX THE SOFT SUBS
 
 <div align="center"> 
