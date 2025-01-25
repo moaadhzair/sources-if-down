@@ -20,7 +20,8 @@
 **File:** `Ganime.json`  
 **Description:** Granime JavaScript module (depends on `granime.js`). <br>
 **Language:** English. (SUB/DUB)<br>
-**App version:** V2 and up
+**App version:** V2 and up <br>
+**URL (Paste in app):** https://raw.githubusercontent.com/50n50/sources/refs/heads/main/granime/granime.json
 </details>
 
 ---
@@ -37,7 +38,8 @@
 **File:** `Ganime_noJS.json`  
 **Description:** Granime JSON module without JavaScript dependency. <br>
 **Language:** English. (SUB/DUB)<br>
-**App version:** V1 and up
+**App version:** V1 and up <br>
+**URL (Paste in app):** https://raw.githubusercontent.com/50n50/sources/refs/heads/main/granime/granime_noJS
 </details>
 
 ---
@@ -55,7 +57,8 @@
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).<br>
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
 **Language:** English. (DUB)<br>
-**App version:** V2 and up
+**App version:** V2 and up <br>
+**URL (Paste in app):** https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianime/hianime.json
 </details>
 
 ---
@@ -73,7 +76,8 @@
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatch.js`). <br> 
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
 **Language:** English. (DUB) <br>
-**App version:** V2 and up
+**App version:** V2 and up <br>
+**URL (Paste in app):** https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.json
 </details>
 
 ---
