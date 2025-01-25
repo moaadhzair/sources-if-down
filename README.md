@@ -11,6 +11,7 @@
 ### Ganime
 **File:** `Ganime.json`  
 **Description:** Granime JavaScript module (depends on `granime.js`). <br>
+**Language:** English. <br>
 **App version:** V2 and up
 
 ---
@@ -18,6 +19,7 @@
 ### Ganime (No JS)
 **File:** `Ganime_noJS.json`  
 **Description:** Granime JSON module without JavaScript dependency. <br>
+**Language:** English. <br>
 **App version:** V1 and up
 
 ---
@@ -26,6 +28,7 @@
 **File:** `HiAnime.json`  
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
+**Language:** English. <br>
 **App version:** V2 and up
 
 ---
@@ -34,6 +37,7 @@
 **File:** `AniWatch.json`  
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatch.js`).  
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
+**Language:** English. <br>
 **App version:** V2 and up
 
 ---
