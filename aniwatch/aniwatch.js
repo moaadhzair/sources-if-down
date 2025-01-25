@@ -67,7 +67,7 @@ async function extractStreamUrl(url) {
     try {
        const match = url.match(/https:\/\/aniwatchtv\.to\/(.+)$/);
        const encodedID = match[1];
-       const response = await fetch(`https://api-anime-rouge.vercel.app/aniwatch/episode-srcs?id=${encodedID}`);
+       const response = await fetch(`https://api-anime-rouge.vercel.app/aniwatch/episode-srcs?id=${encodedID}&server=vidstreaming&category=dub`);
        const data = JSON.parse(response);
        
        const hlsSource = data.sources.find(source => source.type === 'hls');
