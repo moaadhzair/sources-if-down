@@ -28,7 +28,7 @@ async function extractDetails(id) {
 
         const transformedResults = [{
             description: animeInfo.description || 'No description available',
-            aliases: `Duration: Unknown`,
+            aliases: `Alias: Unknown`,
             airdate: `Aired: Unknown`
         }];
         
