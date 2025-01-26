@@ -71,7 +71,7 @@ async function extractStreamUrl(url) {
     try {
        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
        const encodedID = match[1];
-       const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}`);
+       const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`);
        const data = JSON.parse(response);
        
        const hlsSource = data.data.sources.find(source => source.type === 'hls');
