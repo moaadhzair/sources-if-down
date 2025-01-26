@@ -1,0 +1,11 @@
+{
+    "sourceName": "AniLibria",
+    "author": "50/50",
+    "iconUrl": "https://raw.githubusercontent.com/50n50/maisgay/refs/heads/main/hianime/icon.png",
+    "version": "1.0.0",
+    "language": "Russian",
+    "baseUrl": "https://api.anilibria.tv/",
+    "searchBaseUrl": "https://api.anilibria.tv/v3/title/search?search=%s",
+    "scriptUrl": "https://api.anilibria.tv/v3/title/search?search=",
+    "asyncJS": true
+}
