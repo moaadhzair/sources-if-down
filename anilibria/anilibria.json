@@ -1,7 +1,7 @@
 {
     "sourceName": "AniLibria",
     "author": "50/50",
-    "iconUrl": "https://raw.githubusercontent.com/50n50/maisgay/refs/heads/main/hianime/icon.png",
+    "iconUrl": "https://github.com/50n50/sources/blob/main/anilibria/icon.png?raw=true",
     "version": "1.0.0",
     "language": "Russian",
     "baseUrl": "https://api.anilibria.tv/",
