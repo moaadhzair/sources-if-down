@@ -1,7 +1,7 @@
 async function searchResults(keyword) {
     try {
         const encodedKeyword = encodeURIComponent(keyword);
-        const responseText = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}`);
+        const responseText = await fetch(`https://aniwatch140.vercel.app/anime/search?q=${encodedKeyword}&language=dub`);
         const data = JSON.parse(responseText);
         
         const transformedResults = data.animes.map(anime => ({
