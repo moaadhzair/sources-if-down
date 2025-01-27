@@ -57,7 +57,7 @@
 **Description:** AniLibria JavaScript module utilizing the AniLibria-API (requires `AniLibria.js`). <br> 
 **Language:** Russian. <br>
 **App version:** V2 and up <br>
-**URL (Paste in app):** https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json
+https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json
 </details>
 
 ---
@@ -65,6 +65,11 @@
 ## Need Help?
 If you encounter any issues, feel free to message me on Discord.  
 I'll probably be too lazy to fix them right away, but at least I'll be aware.
+
+
+
+<kbd> <br> [Add to sora](sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json) <br> </kbd>
+
 
 
 
