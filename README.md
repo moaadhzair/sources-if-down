@@ -68,7 +68,8 @@ I'll probably be too lazy to fix them right away, but at least I'll be aware.
 
 
 
-//<kbd> <br> [Add to sora](sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json) <br> </kbd>
+<a href="sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json">Add to sora</a>
+ 
 
 
 
