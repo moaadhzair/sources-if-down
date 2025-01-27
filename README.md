@@ -1,4 +1,4 @@
-# Sources
+# Sources for [Sora](https://github.com/cranci1/Sora)
 
 <div align="center"> 
   <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
