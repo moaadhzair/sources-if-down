@@ -20,8 +20,8 @@
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).<br>
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
 **Language:** English. (DUB)<br>
-**App version:** V2 and up <br>
-**URL (Paste in app):** https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianime/hianime.json
+**App version:** V2 and up <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/yeynb6kp)
 </details>
 
 ---
@@ -39,8 +39,8 @@
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatch.js`). <br> 
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
 **Language:** English. (DUB) <br>
-**App version:** V2 and up <br>
-**URL (Paste in app):** https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.json
+**App version:** V2 and up <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/4hsud48m)
 </details>
 
 ---
@@ -56,8 +56,8 @@
 **File:** `AniLibria.json`  
 **Description:** AniLibria JavaScript module utilizing the AniLibria-API (requires `AniLibria.js`). <br> 
 **Language:** Russian. <br>
-**App version:** V2 and up <br>
-https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json
+**App version:** V2 and up <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3ke8j42n)
 </details>
 
 ---
@@ -66,9 +66,6 @@ https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilib
 If you encounter any issues, feel free to message me on Discord.  
 I'll probably be too lazy to fix them right away, but at least I'll be aware.
 
-
-
-<a href="sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json">Add to sora</a>
  
 
 
