@@ -1,4 +1,4 @@
-# Sources for [Sora](https://github.com/cranci1/Sora)
+# Anime sources for [Sora](https://github.com/cranci1/Sora)
 
 <div align="center"> 
   <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
@@ -87,6 +87,8 @@
 ## Need Help?
 If you encounter any issues, feel free to message me on Discord.  
 I'll probably be too lazy to fix them right away, but at least I'll be aware.
+
+
 
  
 
