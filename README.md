@@ -20,7 +20,8 @@
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).<br>
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
 **Language:** English. (DUB)<br>
-**App version:** V2 and up <br><br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/yeynb6kp)
 </details>
 
@@ -39,7 +40,8 @@
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatch.js`). <br> 
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
 **Language:** English. (DUB) <br>
-**App version:** V2 and up <br><br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/4hsud48m)
 </details>
 
@@ -56,8 +58,29 @@
 **File:** `AniLibria.json`  
 **Description:** AniLibria JavaScript module utilizing the AniLibria-API (requires `AniLibria.js`). <br> 
 **Language:** Russian. <br>
-**App version:** V2 and up <br><br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3ke8j42n)
+</details>
+
+---
+
+---
+<details>
+
+<summary>
+  
+### AnimeUnity
+
+</summary>
+
+### AnimeUnity
+**File:** `AnimeUnity.json`  
+**Description:** AnimeUnity JavaScript module with direct HTML scraping (requires `AniLibria.js`). <br> 
+**Language:** Italian. <br>
+**App version:** V2 and up <br>
+**Author:** Cranc1 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3harpvfh)
 </details>
 
 ---
