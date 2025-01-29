@@ -15,7 +15,6 @@
 
 </summary>
 
-### HiAnime
 **File:** `HiAnime.json`  
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).<br>
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
@@ -35,7 +34,6 @@
 
 </summary>
 
-### AniWatch
 **File:** `AniWatch.json`  
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatch.js`). <br> 
 **Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
@@ -54,7 +52,6 @@
 
 </summary>
 
-### AniLibria
 **File:** `AniLibria.json`  
 **Description:** AniLibria JavaScript module utilizing the AniLibria-API (requires `AniLibria.js`). <br> 
 **Language:** Russian. <br>
@@ -75,7 +72,6 @@
 
 </summary>
 
-### AnimeUnity
 **File:** `AnimeUnity.json`  
 **Description:** AnimeUnity JavaScript module with direct HTML scraping (requires `AniLibria.js`). <br> 
 **Language:** Italian. <br>
