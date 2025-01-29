@@ -78,7 +78,7 @@
 **Description:** AnimeUnity JavaScript module with direct HTML scraping (requires `AniLibria.js`). <br> 
 **Language:** Italian. <br>
 **App version:** V2 and up <br>
-**Author:** Cranc1 <br><br>
+**Author:** Sobet <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3harpvfh)
 </details>
 
