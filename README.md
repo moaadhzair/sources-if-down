@@ -65,6 +65,8 @@
 
 ---
 
+## Other authors
+
 <details>
 
 <summary>
