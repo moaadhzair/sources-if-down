@@ -83,7 +83,7 @@
 ---
 
 ## Need Help?
-If you encounter any issues, feel free to message me on Discord.  
+If you encounter any issues, feel free to message me on Discord -> 50/50 
 I'll probably be too lazy to fix them right away, but at least I'll be aware.
 
 
