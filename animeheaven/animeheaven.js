@@ -1,30 +1,31 @@
 function searchResults(html) {
-    const results = [];
-    const filmListRegex = /<div class="p1">([\s\S]*?)<\/div><\/div>/g;
-    const items = html.match(filmListRegex) || [];
-    
-    items.forEach((itemHtml) => {
-      const titleMatch = itemHtml.match(/<a href="[^"]+" class="c">([^<]+)<\/a>/);
-      const hrefMatch = itemHtml.match(/<a href="([^"]+)"/);
-      const imgMatch = itemHtml.match(/<img class="coverimg" src="([^"]+)" alt="([^"]+)">/);
-      
-      const title = titleMatch ? titleMatch[1] : '';
-      const href = hrefMatch ? hrefMatch[1] : '';
-      const imageUrl = imgMatch ? imgMatch[1] : '';      
-      const fullHref = href ? `https://animeheaven.me/${href}` : '';
-      const fullImageUrl = `https://animeheaven.me/${imageUrl}`;
+  const results = [];
+  const filmListRegex = /<div class='similarimg'><div class='p1'>([\s\S]*?)<\/div><\/div>/g;
+  const items = html.matchAll(filmListRegex);
 
-      if (title && fullHref) {
-        results.push({
-          title: title.trim(),
-          image: fullImageUrl.trim(),
-          href: fullHref.trim()
-        });
+  for (const item of items) {
+      const itemHtml = item[1];
+      
+      const titleMatch = itemHtml.match(/<a href='[^']+' class='c'>([^<]+)<\/a>/);
+      const hrefMatch = itemHtml.match(/<a href='([^']+)'/);
+      const imgMatch = itemHtml.match(/<img class='coverimg' src='([^']+)' alt='([^']+)'>/);
+
+      if (titleMatch && hrefMatch && imgMatch) {
+          const title = titleMatch[1];
+          const href = hrefMatch[1];
+          const imageUrl = imgMatch[1];
+          
+          const fullHref = `https://animeheaven.me${href}`;
+          const fullImageUrl = `https://animeheaven.me${imageUrl}`;
+
+          results.push({
+              title: title.trim(),
+              image: fullImageUrl.trim(),
+              href: fullHref.trim()
+          });
       }
-    });
-    
-    console.log(results);
-    return results;
+  }
+  return results;
 }
 
 function extractDetails(html) {
