@@ -15,8 +15,8 @@ function searchResults(html) {
           const href = hrefMatch[1];
           const imageUrl = imgMatch[1];
           
-          const fullHref = `https://animeheaven.me${href}`;
-          const fullImageUrl = `https://animeheaven.me${imageUrl}`;
+          const fullHref = `https://animeheaven.me/${href}`;
+          const fullImageUrl = `https://animeheaven.me/${imageUrl}`;
 
           results.push({
               title: title.trim(),
