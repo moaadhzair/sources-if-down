@@ -5,6 +5,6 @@
     "version": "1.0.0",
     "language": "English",
     "baseUrl": "https://animeheaven.me/",
-    "searchBaseUrl": "animeheaven.me/search.php?s=%s",
+    "searchBaseUrl": "https://animeheaven.me/search.php?s=%s",
     "scriptUrl": "https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeheaven/animeheaven.js"
 }
