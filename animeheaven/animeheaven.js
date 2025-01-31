@@ -53,21 +53,23 @@ function extractDetails(html) {
 
 function extractEpisodes(html) {
     const episodes = [];
-    const episodeLinks = html.match(/<a href='([^']+)'[^>]*class='ac3'[\s\S]*?<div class='watch2 bc'>(\d+)<\/div>/g);
     const baseUrl = 'https://animeheaven.me/';
+    
+    const episodeLinks = html.match(/<a href="[^"]+" class="ac3">[\s\S]*?<div class="watch2 bc">(\d+)<\/div>[\s\S]*?<\/a>/g);
     
     if (!episodeLinks) {
         return episodes;
     }
     
     episodeLinks.forEach(link => {
-        const hrefMatch = link.match(/href='([^']+)'/);
-        const numberMatch = link.match(/<div class='watch2 bc'>(\d+)<\/div>/);
+        const hrefMatch = link.match(/href="([^"]+)"/);
+        const numberMatch = link.match(/<div class="watch2 bc">(\d+)<\/div>/);
         
         if (hrefMatch && numberMatch) {
             let href = hrefMatch[1];
             const number = numberMatch[1];
             
+            // Handle relative URLs
             if (!href.startsWith('https')) {
                 href = href.startsWith('/') ? baseUrl + href.slice(1) : baseUrl + href;
             }
@@ -80,7 +82,6 @@ function extractEpisodes(html) {
     });
     
     episodes.reverse();
-    console.log(episodes);
     return episodes;
 }
 
