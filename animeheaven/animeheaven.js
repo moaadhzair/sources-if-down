@@ -52,37 +52,23 @@ function extractDetails(html) {
 }
 
 function extractEpisodes(html) {
-    const episodes = [];
-    const baseUrl = 'https://animeheaven.me/';
-    
-    const episodeLinks = html.match(/<a href="[^"]+" class="ac3">[\s\S]*?<div class="watch2 bc">(\d+)<\/div>[\s\S]*?<\/a>/g);
-    
-    if (!episodeLinks) {
-        return episodes;
-    }
-    
-    episodeLinks.forEach(link => {
-        const hrefMatch = link.match(/href="([^"]+)"/);
-        const numberMatch = link.match(/<div class="watch2 bc">(\d+)<\/div>/);
-        
-        if (hrefMatch && numberMatch) {
-            let href = hrefMatch[1];
-            const number = numberMatch[1];
-            
-            // Handle relative URLs
-            if (!href.startsWith('https')) {
-                href = href.startsWith('/') ? baseUrl + href.slice(1) : baseUrl + href;
-            }
-            
-            episodes.push({
-                href: href,
-                number: number
-            });
-        }
-    });
-    
-    episodes.reverse();
-    return episodes;
+	const episodes = [];
+	const baseUrl = 'https://animeheaven.me/';
+	
+	const episodePattern = /<a href='episode\.php\?([a-f0-9]{32}).*?watch2 bc'.*?>(\d+)<\/div>/g;
+	let match;
+	
+	while ((match = episodePattern.exec(html)) !== null) {
+	  const [_, id, number] = match;
+	  episodes.push({
+		href: `${baseUrl}episode.php?${id}`,
+		number: parseInt(number)
+	  });
+	}
+	
+	episodes.sort((a, b) => b.number - a.number);
+	console.log(episodes);
+	return episodes;
 }
 
 function extractStreamUrl(html) {
