@@ -66,8 +66,7 @@ function extractEpisodes(html) {
 	  });
 	}
 	
-	episodes.sort((a, b) => b.number - a.number);
-	console.log(episodes);
+  	episodes.reverse();	
 	return episodes;
 }
 
