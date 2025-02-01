@@ -77,7 +77,7 @@
 **Language:** Italian. <br>
 **App version:** V2 and up <br>
 **Author:** Sobet <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3harpvfh)
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/yc6anpu7)
 </details>
 
 ---
