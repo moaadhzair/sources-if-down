@@ -54,7 +54,7 @@ function extractDetails(html) {
 function extractEpisodes(html) {
 	const episodes = [];
 	const baseUrl = 'https://animeheaven.me/';
-	
+	console.log(html);
 	const episodePattern = /<a href='episode\.php\?([a-f0-9]{32}).*?watch2 bc'.*?>(\d+)<\/div>/g;
 	let match;
 	
