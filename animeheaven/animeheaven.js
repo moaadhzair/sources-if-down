@@ -52,22 +52,24 @@ function extractDetails(html) {
 }
 
 function extractEpisodes(html) {
-	const episodes = [];
-	const baseUrl = 'https://animeheaven.me/';
-	console.log(html);
-	const episodePattern = /<a href='episode\.php\?([a-f0-9]{32}).*?watch2 bc'.*?>(\d+)<\/div>/g;
-	let match;
-	
-	while ((match = episodePattern.exec(html)) !== null) {
-	  const [_, id, number] = match;
-	  episodes.push({
-		href: `${baseUrl}episode.php?${id}`,
-		number: parseInt(number)
-	  });
-	}
-	
-  	episodes.reverse();	
-	return episodes;
+  const episodes = [];
+  const baseUrl = 'https://animeheaven.me/';
+  
+ 
+  const episodePattern = /<a href='episode\.php\?([^']+)'[^>]*>.*?<div class='watch2 bc'>(\d+)<\/div>/gs;
+  
+  let match;
+  
+  while ((match = episodePattern.exec(html)) !== null) {
+    const [_, id, number] = match;
+    episodes.push({
+      href: `${baseUrl}episode.php?${id}`,
+      number: parseInt(number)
+    });
+  }
+  
+  episodes.reverse();
+  return episodes;
 }
 
 function extractStreamUrl(html) {
