@@ -83,10 +83,8 @@
 
 ---
 
-## Need Help?
-If you encounter any issues, feel free to message me on Discord -> 50/50 <br>
-I'll probably be too lazy to fix them right away, but at least I'll be aware.
-
+## Credits
+Made by 50/50<sup><i>(as always)</i></sup>
 
 
  
