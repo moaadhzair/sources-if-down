@@ -1,6 +1,6 @@
 function searchResults(html) {
     const results = [];
-    const baseUrl = "https://anime3rb.com/";
+
     
     const titleRegex = /<h2[^>]*>(.*?)<\/h2>/;
     const hrefRegex = /<a\s+href="([^"]+)"\s*[^>]*>/;
@@ -14,7 +14,7 @@ function searchResults(html) {
        const title = titleMatch ? titleMatch[1].trim() : '';
        
        const hrefMatch = itemHtml.match(hrefRegex);
-       const href = hrefMatch ? baseUrl + hrefMatch[1].trim() : '';
+       const href = hrefMatch ? hrefMatch[1].trim() : '';
        
        const imgMatch = itemHtml.match(imgRegex);
        const imageUrl = imgMatch ? imgMatch[1].trim() : '';
