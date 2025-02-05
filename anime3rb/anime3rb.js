@@ -90,7 +90,7 @@ function extractEpisodes(html) {
 async function extractStreamUrl(url) {
     try {
         const response = await fetch(url);
-        const html = response; 
+        const html = await response; 
 
         const jsonLdRegex = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
         const match = html.match(jsonLdRegex);
