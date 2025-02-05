@@ -50,40 +50,41 @@ function extractDetails(html) {
    return details;
 }
 
-async function extractStreamUrl(url) {
-    try {
-        // Fetch the HTML data from the initial URL
-        const response = await fetch(url);
-        const data = await response.text();
+function extractEpisodes(html) {
+    const episodes = [];
+    const htmlRegex = /<a\s+[^>]*href="([^"]*?\/episode\/[^"]*?)"[^>]*>[\s\S]*?الحلقة\s+(\d+)[\s\S]*?<\/a>/gi;
+    const plainTextRegex = /الحلقة\s+(\d+)/g;
 
-        // Extract embed URL from JSON-LD
-        const jsonLdRegex = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
-        const match = data.match(jsonLdRegex);
-        if (match) {
-            const jsonData = JSON.parse(match[1]);
-            const embedUrl = jsonData.video && jsonData.video[0] ? jsonData.video[0].embedUrl : null;
-            if (embedUrl) {
-                // Fetch the embed URL page to extract the video source
-                const embedResponse = await fetch(embedUrl);
-                const embedData = await embedResponse.text();
+    let matches;
 
-                // Extract the video source from the embed page
-                const videoSrcRegex = /src:\s*'(https:\/\/[^']+\.mp4[^']*)'/g;
-                const videoMatches = [...embedData.matchAll(videoSrcRegex)];
-
-                if (videoMatches.length > 0) {
-                    const firstVideoSrc = videoMatches[0][1];
-                    return firstVideoSrc;
-                } else {
-                    console.log('No video sources found on the embed page.');
-                }
+    if ((matches = html.match(htmlRegex))) {
+        matches.forEach(link => {
+            const hrefMatch = link.match(/href="([^"]+)"/);
+            const numberMatch = link.match(/الحلقة\s+(\d+)/);
+            if (hrefMatch && numberMatch) {
+                const href = hrefMatch[1];
+                const number = numberMatch[1];
+                episodes.push({
+                    href: href,
+                    number: number
+                });
             }
-        }
-        return null;
-
-    } catch (error) {
-        console.error('Error:', error);
+        });
+    } 
+    else if ((matches = html.match(plainTextRegex))) {
+        matches.forEach(match => {
+            const numberMatch = match.match(/\d+/);
+            if (numberMatch) {
+                episodes.push({
+                    href: null, 
+                    number: numberMatch[0]
+                });
+            }
+        });
     }
+
+    console.log(episodes);
+    return episodes;
 }
 
 async function extractStreamUrl(url) {
