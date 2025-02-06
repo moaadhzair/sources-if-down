@@ -63,6 +63,24 @@
 
 ---
 
+<details>
+
+<summary>
+  
+### Anime3rb
+
+</summary>
+
+**File:** `Anime3rb.json`  
+**Description:** Anime3rb JavaScript module that directly scrapes the website (requires `Anime3rb.js`). <br> 
+**Language:** Arabic. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/2snakzfa)
+</details>
+
+---
+
 ## Other authors
 
 <details>
