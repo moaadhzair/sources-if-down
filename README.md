@@ -31,6 +31,25 @@
 
 <summary>
 
+### HiAnime RAW
+
+</summary>
+
+**File:** `HiAnimeRAW.json`  
+**Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianimeRAW.js`).<br>
+**Note:** *This is just SUB stream but without the actual subtitles.* <br>
+**Language:** Japanese. <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/bdeynu77)
+</details>
+
+---
+
+<details>
+
+<summary>
+
 ### AniWatch
 
 </summary>
@@ -42,6 +61,24 @@
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/4hsud48m)
+</details>
+
+---
+<details>
+
+<summary>
+
+### AniWatch RAW
+
+</summary>
+
+**File:** `AniWatchRAW.json`  
+**Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatchRAW.js`). <br> 
+**Note:** *This is just SUB stream but without the actual subtitles.* <br>
+**Language:** Japanese. <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3kmcxjuz)
 </details>
 
 ---
