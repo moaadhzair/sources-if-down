@@ -94,7 +94,7 @@ async function extractStreamUrl(html) {
         if (!embedUrl) return null;
 
         const response = await fetch(embedUrl);
-        const data = await response.text();
+        const data = await response;
         const videoUrl = data.match(/src:\s*'(https:\/\/[^']+\.mp4[^']*)'/)?.[1];
         console.log(videoUrl);
         return videoUrl || null;
