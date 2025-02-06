@@ -89,17 +89,16 @@ function extractEpisodes(html) {
 
 async function extractStreamUrl(html) {
     try {
-      const scriptContent = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
-      const { video } = JSON.parse(scriptContent);
-      const embedUrl = video?.[0]?.embedUrl?.replace(/&amp;/g, '&');
-  
-      const response = await fetch(embedUrl);
-      const data = await response.text();
-      const videoUrl = data.match(/src:\s*'(https:\/\/[^']+\.mp4[^']*)'/)?.[1];
-      console.log(videoUrl);
-      return videoUrl || null;
+        const sourceMatch = html.match(/data-source="([^"]+)"/);
+        const embedUrl = sourceMatch?.[1]?.replace(/&amp;/g, '&');
+        if (!embedUrl) return null;
+
+        const response = await fetch(embedUrl);
+        const data = await response.text();
+        const videoUrl = data.match(/src:\s*'(https:\/\/[^']+\.mp4[^']*)'/)?.[1];
+        console.log(videoUrl);
+        return videoUrl || null;
     } catch (error) {
-      console.error('Error:', error);
-      return null;
+        return null;
     }
 }
