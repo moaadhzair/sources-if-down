@@ -87,15 +87,10 @@ function extractEpisodes(html) {
     return episodes;
 }
 
-async function extractStreamUrl(url) {
+async function extractStreamUrl(html) {
     try {
-        const response = await fetch(url);
-        console.log(url);
-        console.error(url);
-        const html = await response; 
-
-        const jsonLdRegex = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
-        const match = html.match(jsonLdRegex);
+        const anime3rbMatch = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
+        const match = html.match(anime3rbMatch);
         
         if (match) {
             const jsonData = JSON.parse(match[1]);
@@ -124,3 +119,4 @@ async function extractStreamUrl(url) {
 
     return null;
 }
+
