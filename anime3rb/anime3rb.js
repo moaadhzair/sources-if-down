@@ -89,34 +89,17 @@ function extractEpisodes(html) {
 
 async function extractStreamUrl(html) {
     try {
-        const anime3rbMatch = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
-        const match = html.match(anime3rbMatch);
-        
-        if (match) {
-            const jsonData = JSON.parse(match[1]);
-            const embedUrl = jsonData.video && jsonData.video[0] ? jsonData.video[0].embedUrl : null;
-
-            if (embedUrl) {
-                const tempUrl = embedUrl.replace(/&amp;/g, '&');
-                const response2 = await fetch(tempUrl);
-                const data = await response2.text();
-                
-                const videoSrcRegex = /src:\s*'(https:\/\/[^']+\.mp4[^']*)'/g;
-                const matches = [...data.matchAll(videoSrcRegex)];
-                
-                if (matches.length > 0) {
-                    const firstVideoSrc = matches[0][1];
-                    console.log(firstVideoSrc);
-                    return firstVideoSrc;
-                } else {
-                    console.log('No video sources found.');
-                }
-            }
-        }
+      const scriptContent = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+      const { video } = JSON.parse(scriptContent);
+      const embedUrl = video?.[0]?.embedUrl?.replace(/&amp;/g, '&');
+  
+      const response = await fetch(embedUrl);
+      const data = await response.text();
+      const videoUrl = data.match(/src:\s*'(https:\/\/[^']+\.mp4[^']*)'/)?.[1];
+      console.log(videoUrl);
+      return videoUrl || null;
     } catch (error) {
-        console.error('Error:', error);
+      console.error('Error:', error);
+      return null;
     }
-
-    return null;
 }
-
