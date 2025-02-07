@@ -47,15 +47,8 @@ async function extractEpisodes(slug) {
     try {
         const encodedID = encodeURIComponent(slug);
         const response = await fetch(`https://fireani.me/api/anime?slug=${encodedID}`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        
-        if (!data || !data.data || !Array.isArray(data.data.anime_seasons)) {
-            throw new Error("Invalid API response structure");
-        }
-
+        const data = await JSON.parse(response);
+        console.error(response);
         const episodes = data.data.anime_seasons.reduce((acc, season, seasonIndex) => {
             const seasonNumber = seasonIndex + 1;  
             const seasonEpisodes = season.anime_episodes || [];
@@ -75,7 +68,7 @@ async function extractEpisodes(slug) {
             return acc;
         }, []);
 
-        console.log(episodes);
+        console.error(episodes);
         return JSON.stringify(episodes);
     } catch (error) {
         console.error('Fetch error:', error.message);
