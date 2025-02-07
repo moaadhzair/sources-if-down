@@ -47,25 +47,39 @@ async function extractEpisodes(slug) {
     try {
         const encodedID = encodeURIComponent(slug);
         const response = await fetch(`https://fireani.me/api/anime?slug=${encodedID}`);
-        const data = await JSON.parse(response);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        
+        if (!data || !data.data || !Array.isArray(data.data.anime_seasons)) {
+            throw new Error("Invalid API response structure");
+        }
 
         const episodes = data.data.anime_seasons.reduce((acc, season, seasonIndex) => {
             const seasonNumber = seasonIndex + 1;  
             const seasonEpisodes = season.anime_episodes || [];
+
             seasonEpisodes.forEach(episode => {
-                const customEpisodeNumber = seasonNumber * 10 + episode.episode; 
+                const episodeNumber = episode.episode || 0; 
+                if (episodeNumber === 0) {
+                    console.warn(`Episode number is missing or invalid for slug: ${slug}, season: ${seasonNumber}`);
+                }
+                const customEpisodeNumber = seasonNumber * 10 + episodeNumber;
                 acc.push({
-                    href: `${encodedID}&season=${seasonNumber}&episode=${episode.episode}`,
+                    href: `${encodedID}&season=${seasonNumber}&episode=${episodeNumber}`,
                     number: customEpisodeNumber
                 });
             });
+
             return acc;
         }, []);
 
         console.log(episodes);
         return JSON.stringify(episodes);
     } catch (error) {
-        console.log('Fetch error:', error);
+        console.error('Fetch error:', error.message);
+        return JSON.stringify({ error: error.message });
     }    
 }
 
