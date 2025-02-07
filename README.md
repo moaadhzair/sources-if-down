@@ -22,7 +22,7 @@
 **Language:** English. (DUB)<br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/yeynb6kp)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianime/hianime.json)
 </details>
 
 ---
@@ -41,7 +41,7 @@
 **Language:** Japanese. <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/bdeynu77)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeRAW/hianimeRAW.json)
 </details>
 
 ---
@@ -60,7 +60,7 @@
 **Language:** English. (DUB) <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/4hsud48m)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.json)
 </details>
 
 ---
@@ -78,7 +78,7 @@
 **Language:** Japanese. <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3kmcxjuz)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchRAW/aniwatchRAW.json)
 </details>
 
 ---
@@ -95,7 +95,7 @@
 **Language:** Russian. <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/3ke8j42n)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json)
 </details>
 
 ---
@@ -113,7 +113,7 @@
 **Language:** Arabic. (SUB) <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/2snakzfa)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anime3rb/anime3rb.json)
 </details>
 
 ---
@@ -133,7 +133,7 @@
 **Language:** Italian. <br>
 **App version:** V2 and up <br>
 **Author:** sobet <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://tinyurl.com/yc6anpu7)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeunity/animeuntiy.json)
 </details>
 
 ---
