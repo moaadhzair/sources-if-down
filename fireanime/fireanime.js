@@ -50,12 +50,13 @@ async function extractEpisodes(slug) {
         const data = await JSON.parse(response);
 
         const episodes = data.data.anime_seasons.reduce((acc, season, seasonIndex) => {
-            const seasonNumber = seasonIndex + 1; 
+            const seasonNumber = seasonIndex + 1;  
             const seasonEpisodes = season.anime_episodes || [];
             seasonEpisodes.forEach(episode => {
+                const customEpisodeNumber = seasonNumber * 10 + episode.episode; 
                 acc.push({
                     href: `${encodedID}&season=${seasonNumber}&episode=${episode.episode}`,
-                    number: episode.episode
+                    number: customEpisodeNumber
                 });
             });
             return acc;
@@ -68,34 +69,39 @@ async function extractEpisodes(slug) {
     }    
 }
 
-
-
-extractEpisodes('naruto-shippuden');
-
 async function extractStreamUrl(id) {
     try {
-        const encodedID = encodeURIComponent(id);
-        const response = await fetch(`https://fireani.me/api/anime/episode?slug=${encodedID}`);
-        const data = JSON.parse(response);
-       
-       const voeStream = data.data.anime_episode_links.find(link => link.name === 'VOE' && link.lang === 'eng-sub');
+        const encodedID = `https://fireani.me/api/anime/episode?slug=${id}`;
+        const response = await fetch(`${encodedID}`);
+        const data = await JSON.parse(response);
 
-       if (voeStream) {
-        const newLink = voeStream.link.replace('https://voe.sx/e/', 'https://maxfinishseveral.com/e/');
-        const tempHTML = await fetch(newLink);
+        const voeStream = data.data.anime_episode_links.find(link => link.name === 'VOE' && link.lang === 'eng-sub');
 
-        const hlsMatch = tempHTML.match(/var\s+sources\s*=\s*({.*?})/s);
-        if (hlsMatch) {
-            const sources = JSON.parse(hlsMatch[1]);
-            const hlsEncodedUrl = sources.hls;
+        if (voeStream) {
+            const newLink = voeStream.link.replace('https://voe.sx/e/', 'https://maxfinishseveral.com/e/');
+            const tempHTML = await fetch(newLink);
 
-            const decodedUrl = atob(hlsEncodedUrl);
-            return decodedUrl;
+            const htmlContent = await tempHTML;
+
+            const scriptMatch = htmlContent.match(/var\s+sources\s*=\s*({.*?});/s);
+            if (scriptMatch) {
+                let rawSourcesData = scriptMatch[1];
+                const hlsMatch = rawSourcesData.match(/['"]hls['"]\s*:\s*['"]([^'"]+)['"]/);
+                if (hlsMatch) {
+                    const hlsEncodedUrl = hlsMatch[1]; 
+
+                    const decodedUrl = atob(hlsEncodedUrl);
+                    return decodedUrl;
+                } else {
+                    console.log('HLS URL not found in the sources data.');
+                }
+            } else {
+                console.log('No sources variable found in the page.');
+            }
         }
-    }
         return null;
     } catch (error) {
-       console.log('Fetch error:', error);
-       return null;
+        console.log('Fetch error:', error);
+        return null;
     }
 }
