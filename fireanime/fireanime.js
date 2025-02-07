@@ -54,7 +54,7 @@ async function extractEpisodes(slug) {
             const seasonEpisodes = season.anime_episodes || [];
 
             seasonEpisodes.forEach(episode => {
-                const episodeNumber = episode.episode || 0; 
+                const episodeNumber = parseInt(episode.episode, 10) || 0; 
                 if (episodeNumber === 0) {
                     console.warn(`Episode number is missing or invalid for slug: ${slug}, season: ${seasonNumber}`);
                 }
