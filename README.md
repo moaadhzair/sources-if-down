@@ -3,7 +3,11 @@
 <div align="center"> 
   <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
   <br>
-  ONLY USE THE BELOW MODULES, IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING (e.g., AnimeHeaven, Granime)
+  
+```diff
+- ONLY USE THE BELOW MODULES, IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING (e.g., AnimeHeaven)
+```
+
 </div>
 
 ## Available Modules
