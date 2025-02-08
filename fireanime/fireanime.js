@@ -42,37 +42,29 @@ async function extractDetails(slug) {
         }]);
   }
 }
-
 async function extractEpisodes(slug) {
     try {
         const encodedID = encodeURIComponent(slug);
         const response = await fetch(`https://fireani.me/api/anime?slug=${encodedID}`);
         const data = await JSON.parse(response);
-        console.error(response);
+
         const episodes = data.data.anime_seasons.reduce((acc, season, seasonIndex) => {
             const seasonNumber = seasonIndex + 1;  
             const seasonEpisodes = season.anime_episodes || [];
-
             seasonEpisodes.forEach(episode => {
-                const episodeNumber = parseInt(episode.episode, 10) || 0; 
-                if (episodeNumber === 0) {
-                    console.warn(`Episode number is missing or invalid for slug: ${slug}, season: ${seasonNumber}`);
-                }
-                const customEpisodeNumber = seasonNumber * 10 + episodeNumber;
+                const customEpisodeNumber = seasonNumber * 10 + episode.episode; 
                 acc.push({
-                    href: `${encodedID}&season=${seasonNumber}&episode=${episodeNumber}`,
+                    href: `${encodedID}&season=${seasonNumber}&episode=${episode.episode}`,
                     number: customEpisodeNumber
                 });
             });
-
             return acc;
         }, []);
 
-        console.error(episodes);
+        console.log(episodes);
         return JSON.stringify(episodes);
     } catch (error) {
-        console.error('Fetch error:', error.message);
-        return JSON.stringify({ error: error.message });
+        console.log('Fetch error:', error);
     }    
 }
 
