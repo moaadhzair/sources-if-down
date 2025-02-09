@@ -1,30 +1,33 @@
 function searchResults(html) {
     html = preprocessHtml(html);
     const results = [];
-    const baseUrl = "https://www.animesrbija.com";
-
-    const animeItems = html.match(/<h3 class="ani-title".*?>(.*?)<\/h3>/g) || [];
-
+    const baseUrl = "https://www.animesrbija.com";    
+    const animeItems = html.match(/<div class="ani-item">.*?<\/div><\/div>/gs) || [];
+    
     animeItems.forEach(itemHtml => {
-        const titleMatch = itemHtml.match(/>([^<]+)<\/h3>/);
-        const hrefMatch = itemHtml.match(/<a[^>]+href="([^"]+)"[^>]*>/);
-        const imgMatch = itemHtml.match(/<img.*?src="([^"]+)"[^>]*>/);
-
-        const title = titleMatch ? titleMatch[1].trim() : '';
-        const href = hrefMatch ? baseUrl + hrefMatch[1].trim() : '';
-        const imageUrl = imgMatch ? baseUrl + imgMatch[1].trim() : '';
-
-        if (title && href) {
-            results.push({
-                title,
-                image: imageUrl.startsWith('http') ? imageUrl : baseUrl + imageUrl,
-                href
-            });
-        }
+      const titleMatch = itemHtml.match(/<h3 class="ani-title"[^>]*>([^<]+)<\/h3>/);  
+      const hrefMatch = itemHtml.match(/<a[^>]+href="([^"]+)"[^>]*>/);  
+      const imgMatch = itemHtml.match(/\/_next\/image\?url=([^&]+)&/);
+      
+      const title = titleMatch ? titleMatch[1].trim() : '';
+      const href = hrefMatch ? baseUrl + hrefMatch[1].trim() : '';
+      let imageUrl = '';
+      if (imgMatch) {
+        imageUrl = decodeURIComponent(imgMatch[1]);
+        imageUrl = baseUrl + imageUrl;
+      }
+      
+      if (title && href) {
+        results.push({
+          title,
+          image: imageUrl,
+          href
+        });
+      }
     });
-
+    
     return results;
-}
+  }
 
 function extractDetails(html) {
     const details = [];
