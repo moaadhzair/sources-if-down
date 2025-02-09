@@ -1,9 +1,5 @@
-function preprocessHtml(html) {
-    return html.replace(/\\2605/g, '★');
-}
-
 function searchResults(html) {
-    html = preprocessHtml(html);
+
     const results = [];
     const baseUrl = "https://animebalkan.org/";
 
@@ -76,7 +72,7 @@ function extractStreamUrl(html) {
 
     if (match) {
         console.log(match[1]);
-        return match[1]; // Return the captured src value
+        return match[1];
     } else {
         console.log("No stream URL found.");
         return null;
