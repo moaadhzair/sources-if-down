@@ -142,7 +142,7 @@
 ---
 
 ## Other authors
-
+<sub>Not made by me I only manage them.</sub>
 <details>
 
 <summary>
