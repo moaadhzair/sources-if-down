@@ -1,4 +1,5 @@
 function preprocessHtml(html) {
+    //Module specefic, ignore
     return html.replace(/\\2605/g, '★');
 }
 
