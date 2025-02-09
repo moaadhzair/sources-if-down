@@ -124,6 +124,24 @@
 
 ---
 
+<details>
+
+<summary>
+  
+### AnimeBalkan
+
+</summary>
+
+**File:** `AnimeBalkan.json`  
+**Description:** AnimeBalkan JavaScript module that directly scrapes the website (requires `AnimeBalkan.js`). <br> 
+**Language:** Croatian. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animebalkan/animebalkan.json)
+</details>
+
+---
+
 ## Other authors
 
 <details>
