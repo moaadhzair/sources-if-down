@@ -162,8 +162,8 @@
 
 ---
 
-## Credits
-Made by 50/50<sup><i>(as always)</i></sup>
+## If shit don't work no more tell me
+
 
 
  
