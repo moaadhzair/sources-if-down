@@ -144,6 +144,24 @@
 
 ---
 
+<details>
+
+<summary>
+  
+### AnimeWorld
+
+</summary>
+
+**File:** `AnimeWorld.json`  
+**Description:** AnimeWorld JavaScript module with direct HTML scraping (requires `AnimeWorld.js`). <br> 
+**Language:** Italian. <br>
+**App version:** V2 and up <br>
+**Author:** sobet <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeworld/animeworld.json)
+</details>
+
+---
+
 ## Credits
 Made by 50/50<sup><i>(as always)</i></sup>
 
