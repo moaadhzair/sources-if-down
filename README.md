@@ -10,7 +10,7 @@
 - IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING
 - (e.g, AnimeHeaven, Granime)
 ````
-
+---
 ## Available Modules
 
 <details>
@@ -30,7 +30,7 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianime/hianime.json)
 </details>
 
----
+##
 
 <details>
 
@@ -49,7 +49,7 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeRAW/hianimeRAW.json)
 </details>
 
----
+##
 
 <details>
 
@@ -68,7 +68,7 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.json)
 </details>
 
----
+##
 <details>
 
 <summary>
@@ -86,7 +86,7 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchRAW/aniwatchRAW.json)
 </details>
 
----
+##
 <details>
 
 <summary>
@@ -103,7 +103,7 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json)
 </details>
 
----
+##
 
 <details>
 
@@ -121,7 +121,7 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anime3rb/anime3rb.json)
 </details>
 
----
+##
 
 <details>
 
@@ -159,7 +159,7 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeunity/animeuntiy.json)
 </details>
 
----
+##
 
 <details>
 
