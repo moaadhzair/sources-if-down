@@ -5,9 +5,9 @@
   <br>
   
 ````diff
-- ONLY USE THE BELOW MODULES
-- IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING
-- (e.g, AnimeHeaven, Granime)
+          - ONLY USE THE BELOW MODULES
+          - IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING
+          - (e.g, AnimeHeaven, Granime)
 ````
 
 </div>
