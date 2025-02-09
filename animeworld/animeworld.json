@@ -11,5 +11,5 @@
     "quality": "1080p",
     "baseUrl": "https://animeworld.so/",
     "searchBaseUrl": "https://www.animeworld.so/search?keyword=%s",
-    "scriptUrl": "https://raw.githubusercontent.com/cranci1/tests/refs/heads/main/animeworld/animeworld.js?token=GHSAT0AAAAAACLSIBKEPIABRS6FUZY2FRNCZ5IOLPQ"
+    "scriptUrl": "https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeworld/animeworld.js"
 }
