@@ -1,0 +1,15 @@
+{
+    "sourceName": "AnimeWorld",
+    "iconUrl": "https://raw.githubusercontent.com/bshar1865/MFS/refs/heads/main/assets/animeworld.png",
+    "author": {
+        "name": "sobet",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQPQ1qIiALbM3xDWGsuJzu6ItaQGwb9ICRRw&s"
+    },
+    "version": "1.0.1",
+    "language": "Italian",
+    "streamType": "MP4",
+    "quality": "1080p",
+    "baseUrl": "https://animeworld.so/",
+    "searchBaseUrl": "https://www.animeworld.so/search?keyword=%s",
+    "scriptUrl": "https://raw.githubusercontent.com/cranci1/tests/refs/heads/main/animeworld/animeworld.js?token=GHSAT0AAAAAACLSIBKEPIABRS6FUZY2FRNCZ5IOLPQ"
+}
