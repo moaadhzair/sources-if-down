@@ -17,7 +17,7 @@
 
 <summary>
 
-### HiAnime 
+### HiAnime 🇺🇸
 
 </summary>
 
@@ -36,7 +36,7 @@
 
 <summary>
 
-### HiAnime RAW
+### HiAnime RAW 🇯🇵
 
 </summary>
 
@@ -55,7 +55,7 @@
 
 <summary>
 
-### AniWatch
+### AniWatch 🇺🇸
 
 </summary>
 
@@ -73,7 +73,7 @@
 
 <summary>
 
-### AniWatch RAW
+### AniWatch RAW 🇯🇵
 
 </summary>
 
@@ -91,7 +91,7 @@
 
 <summary>
   
-### AniLibria
+### AniLibria 🇷🇺
 
 </summary>
 
@@ -109,7 +109,7 @@
 
 <summary>
   
-### Anime3rb
+### Anime3rb 🇸🇦
 
 </summary>
 
@@ -127,7 +127,7 @@
 
 <summary>
   
-### AnimeBalkan
+### AnimeBalkan 🇷🇺
 
 </summary>
 
@@ -146,7 +146,7 @@
 
 <summary>
   
-### AnimeSRBIJA
+### AnimeSRBIJA 🇷🇸
 
 </summary>
 
@@ -166,7 +166,7 @@
 
 <summary>
   
-### AnimeUnity
+### AnimeUnity 🇮🇹
 
 </summary>
 
@@ -184,7 +184,7 @@
 
 <summary>
   
-### AnimeWorld
+### AnimeWorld 🇮🇹
 
 </summary>
 
