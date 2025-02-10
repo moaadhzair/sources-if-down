@@ -160,8 +160,8 @@
 
 ---
 
-## Other authors
-<sub>Not made by me I only manage them.</sub>
+## Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
+
 <details>
 
 <summary>
