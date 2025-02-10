@@ -133,10 +133,29 @@
 
 **File:** `AnimeBalkan.json`  
 **Description:** AnimeBalkan JavaScript module that directly scrapes the website (requires `AnimeBalkan.js`). <br> 
+**Note:** *Not every anime stream will work, this is due to some anime's using an unscrapable stream,* <br>
 **Language:** Croatian. (SUB) <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animebalkan/animebalkan.json)
+</details>
+
+##
+
+<details>
+
+<summary>
+  
+### AnimeSRBIJA
+
+</summary>
+
+**File:** `AnimeSRBIJA.json`  
+**Description:** AnimeSRBIJA JavaScript module that directly scrapes the website (requires `AnimeSRBIJA.js`). <br> 
+**Language:** Serbian. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animesrbija/animesrbija.js)
 </details>
 
 ---
