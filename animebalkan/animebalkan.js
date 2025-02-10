@@ -16,7 +16,7 @@ function searchResults(html) {
         const hrefMatch = itemHtml.match(/<a[^>]+href="([^"]+)"[^>]*>/);
         const imgMatch = itemHtml.match(/<img[^>]+src="([^"]+)"[^>]*>/);
 
-        const title = titleMatch ? titleMatch[1].trim() : '';
+        let title = titleMatch ? titleMatch[1].trim().replace(/&#8211;/g, '–') : '';
         const href = hrefMatch ? hrefMatch[1].trim() : '';
         const imageUrl = imgMatch ? imgMatch[1].trim() : '';
 
@@ -32,40 +32,66 @@ function searchResults(html) {
     return results;
 }
 
+
 function extractDetails(html) {
     const details = [];
-
     const descriptionMatch = html.match(/<span class="Y2IQFc"[^>]*>([\s\S]*?)<\/span>/);
-    let description = descriptionMatch ? descriptionMatch[1].trim() : '';
-
     const airdateMatch = html.match(/<time[^>]*datetime="([^"]+)"/);
-    let airdate = airdateMatch ? airdateMatch[1].split('T')[0] : '';
-
-    if (description && airdate) {
-        details.push({
-            description: description,
-            aliases: 'N/A',
-            airdate: airdate
-        });
+    
+    if (descriptionMatch) {
+        let description = descriptionMatch[1].trim()
+            .replace(/&#8211;/g, '-')  
+            .replace(/&#8212;/g, '—')  
+            .replace(/&#8220;/g, '"')   
+            .replace(/&#8221;/g, '"')  
+            .replace(/&#8230;/g, '...') 
+            .replace(/&#8243;/g, '"')  
+            .replace(/&#8242;/g, "'");  
+        
+        let airdate = airdateMatch ? airdateMatch[1].split('T')[0] : '';
+        
+        if (description && airdate) {
+            details.push({
+                description: description,
+                aliases: 'N/A',
+                airdate: airdate
+            });
+        }
     }
+    
     return details;
 }
 
 function extractEpisodes(html) {
     const episodes = [];
-    const episodeRegex = /<a href="([^"]*epizoda-\d+[^"]*)">[^<]*<div class="epl-num">(\d+)<\/div>/g;
+    const episodeRegex = /<a href="([^"]+)">[^<]*<div class="epl-num">([^<]+)<\/div>/g;
+    
     let match;
-
     while ((match = episodeRegex.exec(html)) !== null) {
         const href = match[1];
-        const number = match[2];
-
-        episodes.push({
-            href: href,
-            number: number,
-        });
+        let number = match[2];
+        
+        const isMovie = href.includes('film') || 
+                       href.includes('movie') ||
+                       number.toLowerCase() === 'film';
+        
+        if (isMovie) {
+            number = '1';
+        }
+        
+        if (href.includes('epizoda-') || 
+            href.includes('specijalna-epizoda') || 
+            href.includes('-epizoda/') ||
+            href.includes('film') ||
+            href.includes('movie')) {
+            
+            episodes.push({
+                href: href,
+                number: number
+            });
+        }
     }
-
+    
     episodes.reverse();
     console.log(episodes);
     return episodes;
