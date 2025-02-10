@@ -1,33 +1,31 @@
 function searchResults(html) {
-    html = preprocessHtml(html);
     const results = [];
-    const baseUrl = "https://www.animesrbija.com";    
-    const animeItems = html.match(/<div class="ani-item">.*?<\/div><\/div>/gs) || [];
+    const baseUrl = "https://www.animesrbija.com";
+    const animeItems = html.match(/<div class="ani-item">.*?<\/h3><\/a><\/div>/gs) || [];
     
     animeItems.forEach(itemHtml => {
-      const titleMatch = itemHtml.match(/<h3 class="ani-title"[^>]*>([^<]+)<\/h3>/);  
-      const hrefMatch = itemHtml.match(/<a[^>]+href="([^"]+)"[^>]*>/);  
-      const imgMatch = itemHtml.match(/\/_next\/image\?url=([^&]+)&/);
-      
-      const title = titleMatch ? titleMatch[1].trim() : '';
-      const href = hrefMatch ? baseUrl + hrefMatch[1].trim() : '';
-      let imageUrl = '';
-      if (imgMatch) {
-        imageUrl = decodeURIComponent(imgMatch[1]);
-        imageUrl = baseUrl + imageUrl;
-      }
-      
-      if (title && href) {
-        results.push({
-          title,
-          image: imageUrl,
-          href
-        });
-      }
+        const titleMatch = itemHtml.match(/<h3 class="ani-title"[^>]*>([^<]+)<\/h3>/);
+        const hrefMatch = itemHtml.match(/<a href="([^"]+)"/);
+        const imgMatch = itemHtml.match(/src="\/_next\/image\?url=([^&]+)&/);
+        
+        const title = titleMatch ? titleMatch[1].trim() : '';
+        const href = hrefMatch ? baseUrl + hrefMatch[1].trim() : '';
+        let imageUrl = '';
+        if (imgMatch) {
+            imageUrl = decodeURIComponent(imgMatch[1]);
+            imageUrl = baseUrl + imageUrl;
+        }
+        if (title && href) {
+            results.push({
+                title,
+                image: imageUrl,
+                href
+            });
+        }
     });
-    
+    console.log(results);
     return results;
-  }
+}
 
 function extractDetails(html) {
     const details = [];
@@ -66,36 +64,45 @@ function extractDetails(html) {
 
 function extractEpisodes(html) {
     const episodes = [];
-    const baseUrl = 'https://www.animesrbija.com';
-
-    const episodeRegex = /<a class="anime-episode-link" href="([^"]+)">.*?<\/a>/g;
+    const baseUrl = 'https://www.animesrbija.com';    
+    const episodeRegex = /<span class="anime-episode-num">([^<]+)<\/span><a class="anime-episode-link" href="([^"]+)">.*?<\/a>/g;
+    
     let match;
-
     while ((match = episodeRegex.exec(html)) !== null) {
-        const href = baseUrl + match[1];
-        const numberMatch = href.match(/epizoda-(\d+)/);
-        const number = numberMatch ? numberMatch[1] : '';
-
+        const episodeText = match[1];  
+        const href = baseUrl + match[2];
+        
+        let number;
+        
+        if (episodeText.toLowerCase() === 'film') {
+            number = '1';  
+        } else {
+            const numberMatch = episodeText.match(/\d+/);
+            number = numberMatch ? numberMatch[0] : '';
+        }
+        
         episodes.push({
             href: href,
             number: number
         });
     }
-
+    
     episodes.reverse();
     console.log(episodes);
     return episodes;
 }
 
+
 function extractStreamUrl(html) {
-    const sourceRegex = /player\.html\?source=([^&"]+\.m3u8)/;
-    const match = html.match(sourceRegex);
+    const player2Regex = /Player\s*2.*?(https?:\/\/[^\s"']+)/i;
+
+    const match = html.match(player2Regex);
     if (match) {
-        const decodedUrl = decodeURIComponent(match[1]);
-        console.log(decodedUrl);
-        return decodedUrl;
+        const player2Url = match[1].trim();
+        console.log("URL", player2Url);
+        return player2Url;
     } else {
-        console.log("No stream URL found.");
+        console.log("Link not found");
         return null;
     }
 }
