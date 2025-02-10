@@ -127,7 +127,7 @@
 
 <summary>
   
-### AnimeBalkan 🇷🇺 (⚠️ Read note)
+### AnimeBalkan 🇭🇷 (⚠️ Read note)
 
 </summary>
 
