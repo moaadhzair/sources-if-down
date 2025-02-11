@@ -1,3 +1,39 @@
+(function(){const o=console.log;console.log=function(...a){o(...a);Logger.shared.log(a.join(' '),type:'Console');}})();
+
+async function searchResults(keyword) {
+    try {
+        const encodedKeyword = encodeURIComponent(keyword);
+        console.log('Searching for:', encodedKeyword); 
+        
+        const responseText = await fetch(`https://api.animemundo.net/api/v2/hianime/search?q=${encodedKeyword}&language=dub`);
+        console.log('API Response received'); 
+        
+        const data = await responseText.json();
+        console.log('Parsed response:', data); 
+        
+        const filteredAnimes = data.data.animes.filter(anime => anime.episodes.dub !== null); 
+        console.log('Filtered Animes:', filteredAnimes); 
+        
+        const transformedResults = data.data.animes.map(anime => ({
+            title: anime.name,
+            image: anime.poster,
+            href: `https://hianime.to/watch/${anime.id}`
+        }));
+        console.log('Transformed Results:', transformedResults);
+        
+        return JSON.stringify(transformedResults);
+        
+    } catch (error) {
+        console.log('Search error:', error); // Log any errors encountered
+        Logger.shared.log('Search error:', error.message, type: 'Search'); 
+        return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
+    }
+}
+
+
+// The rest of your functions...
+
+
 async function searchResults(keyword) {
     try {
         const encodedKeyword = encodeURIComponent(keyword);
