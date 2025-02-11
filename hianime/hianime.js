@@ -4,20 +4,24 @@ async function searchResults(keyword) {
         const responseText = await fetch(`https://api.animemundo.net/api/v2/hianime/search?q=${encodedKeyword}&language=dub`);
         const data = JSON.parse(responseText);
 
-        const filteredAnimes = data.data.animes.filter(anime => anime.episodes.dub !== null); 
+        const filteredAnimes = data.data.animes.filter(anime => anime.episodes.dub !== null);
         //Filtering out anime's that don't have dub until we fix soft subs issue
-        
+
         const transformedResults = data.data.animes.map(anime => ({
             title: anime.name,
             image: anime.poster,
             href: `https://hianime.to/watch/${anime.id}`
         }));
-        
+
         return JSON.stringify(transformedResults);
-        
+
     } catch (error) {
         console.log('Fetch error:', error);
-        return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
+        return JSON.stringify([{
+            title: 'Error',
+            image: '',
+            href: ''
+        }]);
     }
 }
 
@@ -27,7 +31,7 @@ async function extractDetails(url) {
         const encodedID = match[1];
         const response = await fetch(`https://api.animemundo.net/api/v2/hianime/anime/${encodedID}`);
         const data = JSON.parse(response);
-        
+
         const animeInfo = data.data.anime.info;
         const moreInfo = data.data.anime.moreInfo;
 
@@ -36,16 +40,16 @@ async function extractDetails(url) {
             aliases: `Duration: ${animeInfo.stats?.duration || 'Unknown'}`,
             airdate: `Aired: ${moreInfo?.aired || 'Unknown'}`
         }];
-        
+
         return JSON.stringify(transformedResults);
     } catch (error) {
         console.log('Details error:', error);
         return JSON.stringify([{
-        description: 'Error loading description',
-        aliases: 'Duration: Unknown',
-        airdate: 'Aired: Unknown'
+            description: 'Error loading description',
+            aliases: 'Duration: Unknown',
+            airdate: 'Aired: Unknown'
         }]);
-  }
+    }
 }
 
 async function extractEpisodes(url) {
@@ -59,31 +63,26 @@ async function extractEpisodes(url) {
             href: `https://hianime.to/watch/${encodedID}?ep=${episode.episodeId.split('?ep=')[1]}`,
             number: episode.number
         }));
-        
+
         return JSON.stringify(transformedResults);
-        
+
     } catch (error) {
         console.log('Fetch error:', error);
-    }    
+    }
 }
 
 async function extractStreamUrl(url) {
-    try {
-        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
-        const encodedID = match[1];
-        const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
-        const data = JSON.parse(response);
-       
-        const hlsSource = data.data.sources.find(source => source.type === 'hls');
-        const vttTrack = data.data.tracks.find(track => track.kind === 'captions' && track.default);
-        const vttUrl = vttTrack ? vttTrack.file : null; // Get the VTT file URL
-        return {
-            hlsUrl: hlsSource ? hlsSource.url : null,
-            vttUrl: vttUrl
-        };
-    } catch (error) {
-        console.log('Fetch error:', error);
-        return null;
-    }
+        try {
+            const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
+            const encodedID = match[1];
+            const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`);
+            const data = JSON.parse(response);
 
-}
+            const hlsSource = data.data.sources.find(source => source.type === 'hls');
+
+            return hlsSource ? hlsSource.url : null;
+        } catch (error) {
+            console.log('Fetch error:', error);
+            return null;
+
+        }
