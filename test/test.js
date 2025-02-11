@@ -8,7 +8,7 @@ async function searchResults(keyword) {
         const responseText = await fetch(`https://api.animemundo.net/api/v2/hianime/search?q=${encodedKeyword}&language=dub`);
         console.log('API Response received'); 
         
-        const data = await responseText.json();
+        const data = await JSON.parse(responseText);
         console.log('Parsed response:', data); 
         
         const filteredAnimes = data.data.animes.filter(anime => anime.episodes.dub !== null); 
