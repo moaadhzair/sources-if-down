@@ -69,16 +69,21 @@ async function extractEpisodes(url) {
 
 async function extractStreamUrl(url) {
     try {
-       const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
-       const encodedID = match[1];
-       const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`);
-       const data = JSON.parse(response);
+        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
+        const encodedID = match[1];
+        const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
+        const data = JSON.parse(response);
        
-       const hlsSource = data.data.sources.find(source => source.type === 'hls');
-       
-       return hlsSource ? hlsSource.url : null;
+        const hlsSource = data.data.sources.find(source => source.type === 'hls');
+        const vttTrack = data.data.tracks.find(track => track.kind === 'captions' && track.default);
+        const vttUrl = vttTrack ? vttTrack.file : null; // Get the VTT file URL
+        return {
+            hlsUrl: hlsSource ? hlsSource.url : null,
+            vttUrl: vttUrl
+        };
     } catch (error) {
-       console.log('Fetch error:', error);
-       return null;
+        console.log('Fetch error:', error);
+        return null;
     }
+
 }
