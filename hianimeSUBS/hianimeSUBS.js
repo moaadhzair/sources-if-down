@@ -79,7 +79,7 @@ async function extractStreamUrl(url) {
             stream: hlsSource ? hlsSource.url : null,
             subtitles: subtitleTrack ? subtitleTrack.file : null
         };
-        
+        console.log(results);
         return JSON.stringify(result);
     } catch (error) {
         console.log('Fetch error:', error);
