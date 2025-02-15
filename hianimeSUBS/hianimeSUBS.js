@@ -4,9 +4,6 @@ async function searchResults(keyword) {
         const responseText = await fetch(`https://api.animemundo.net/api/v2/hianime/search?q=${encodedKeyword}&language=dub`);
         const data = JSON.parse(responseText);
 
-        const filteredAnimes = data.data.animes.filter(anime => anime.episodes.dub !== null); 
-        //Filtering out anime's that don't have dub until we fix soft subs issue
-        
         const transformedResults = data.data.animes.map(anime => ({
             title: anime.name,
             image: anime.poster,
@@ -20,6 +17,7 @@ async function searchResults(keyword) {
         return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
     }
 }
+
 
 async function extractDetails(url) {
     try {
@@ -71,7 +69,7 @@ async function extractStreamUrl(url) {
     try {
        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
        const encodedID = match[1];
-       const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`);
+       const response = await fetch(`https://api.animemundo.net/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
        const data = JSON.parse(response);
        
        const hlsSource = data.data.sources.find(source => source.type === 'hls');
