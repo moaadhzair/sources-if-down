@@ -107,6 +107,23 @@
 <details>
 
 <summary>
+
+### AniWatch SUB 🇺🇸
+
+</summary>
+
+**File:** `AniWatchSUB.json`  
+**Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatchSUB.js`). <br> 
+**Language:** English. (SUB)<br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchSUBS/aniwatchSUBS.json)
+</details>
+
+##
+<details>
+
+<summary>
   
 ### AniLibria 🇷🇺
 
