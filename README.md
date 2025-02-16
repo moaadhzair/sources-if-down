@@ -23,7 +23,6 @@
 
 **File:** `HiAnime.json`  
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).<br>
-**Note:** *Currently supports only dubbed versions until soft subs issue is resolved.* <br>
 **Language:** English. (DUB)<br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
@@ -47,6 +46,24 @@
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeRAW/hianimeRAW.json)
+</details>
+
+##
+
+<details>
+
+<summary>
+
+### HiAnime SUBS 🇺🇸
+
+</summary>
+
+**File:** `HiAnimeSUBS.json`  
+**Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianimeSUBS.js`).<br>
+**Language:** English. (SUB)<br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeSUBS/hianimeSUBS.json)
 </details>
 
 ##
