@@ -71,8 +71,7 @@ async function extractStreamUrl(html) {
         const realUrl = sourceMatch ? sourceMatch[0] : null;
         if (!realUrl) return null;
 
-        const response = await fetch(realUrl);
-        const embedHtml = await response;
+        const embedhtml = await fetch(realUrl);
 
         const m3u8Match = embedHtml.match(/https:\/\/str\d+\.vtube\.network\/hls\/[^'"]+\.m3u8/);
 
