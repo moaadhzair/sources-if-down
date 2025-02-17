@@ -20,6 +20,7 @@
 ### HiAnime 🇺🇸
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/hianime/icon.png?raw=true" width="125px"><br>
 
 **File:** `HiAnime.json`  
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianime.js`).<br>
@@ -38,6 +39,7 @@
 ### HiAnime RAW 🇯🇵
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/hianimeRAW/icon.png?raw=true" width="125px"><br>
 
 **File:** `HiAnimeRAW.json`  
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianimeRAW.js`).<br>
@@ -57,6 +59,7 @@
 ### HiAnime SUBS 🇺🇸
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/hianimeSUBS/icon.png?raw=true" width="125px"><br>
 
 **File:** `HiAnimeSUBS.json`  
 **Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianimeSUBS.js`).<br>
@@ -75,6 +78,7 @@
 ### AniWatch 🇺🇸
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/aniwatch/icon.png?raw=true" width="125px"><br>
 
 **File:** `AniWatch.json`  
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatch.js`). <br> 
@@ -93,6 +97,7 @@
 ### AniWatch RAW 🇯🇵
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/aniwatchSUBS/icon.png?raw=true" width="125px"><br>
 
 **File:** `AniWatchRAW.json`  
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatchRAW.js`). <br> 
@@ -111,6 +116,7 @@
 ### AniWatch SUB 🇺🇸
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/aniwatchRAW/icon.png?raw=true" width="125px"><br>
 
 **File:** `AniWatchSUB.json`  
 **Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatchSUB.js`). <br> 
@@ -128,6 +134,7 @@
 ### AniLibria 🇷🇺
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/anilibria/iconalt.png?raw=true" width="125px"><br>
 
 **File:** `AniLibria.json`  
 **Description:** AniLibria JavaScript module utilizing the AniLibria-API (requires `AniLibria.js`). <br> 
@@ -146,6 +153,7 @@
 ### Anime3rb 🇸🇦
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/anime3rb/iconalt.png?raw=true" width="125px"><br>
 
 **File:** `Anime3rb.json`  
 **Description:** Anime3rb JavaScript module that directly scrapes the website (requires `Anime3rb.js`). <br> 
@@ -164,6 +172,7 @@
 ### AnimeBalkan 🇭🇷 (⚠️ Read note)
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/animebalkan/iconalt.png?raw=true" width="125px"><br>
 
 **File:** `AnimeBalkan.json`  
 **Description:** AnimeBalkan JavaScript module that directly scrapes the website (requires `AnimeBalkan.js`). <br> 
@@ -183,6 +192,7 @@
 ### AnimeSRBIJA 🇷🇸
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/animesrbija/iconalt.png?raw=true" width="125px"><br>
 
 **File:** `AnimeSRBIJA.json`  
 **Description:** AnimeSRBIJA JavaScript module that directly scrapes the website (requires `AnimeSRBIJA.js`). <br> 
@@ -203,6 +213,7 @@
 ### AnimeUnity 🇮🇹
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/animeunity/iconalt.png?raw=true" width="125px"><br>
 
 **File:** `AnimeUnity.json`  
 **Description:** AnimeUnity JavaScript module with direct HTML scraping (requires `AnimeUnity.js`). <br> 
@@ -221,6 +232,7 @@
 ### AnimeWorld 🇮🇹
 
 </summary>
+<img src="https://github.com/50n50/sources/blob/main/animeworld/iconalt.png?raw=true" width="125px"><br>
 
 **File:** `AnimeWorld.json`  
 **Description:** AnimeWorld JavaScript module with direct HTML scraping (requires `AnimeWorld.js`). <br> 
