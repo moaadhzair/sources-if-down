@@ -52,27 +52,31 @@ function extractDetails(html) {
 }
 
 function extractEpisodes(html) {
-  const episodes = [];
-  const baseUrl = 'https://animeheaven.me/';
+    const episodes = [];
+    const baseUrl = "https://animeheaven.me";
   
-  const episodePattern = /<a href='episode\.php\?([^']+)'[^>]*>.*?<div class='watch2 bc'>(\d+)<\/div>/gs;
+    const episodeRegex = /<a href='episode\.php\?([^']+)'[^>]*>.*?<div class='watch2 bc'\s*>(\d+)<\/div>/gs;
+    let match;
   
-  let match;
+    while ((match = episodeRegex.exec(html)) !== null) {
+        let href = match[1];
+        const number = parseInt(match[2], 10);
+      
+        if (!href.startsWith("https")) {
+            href = href.startsWith("/") ? baseUrl + href : baseUrl + "/" + href;
+        }
+        episodes.push({
+            href: href,
+            number: number.toString()
+        });
+    }
   
-  while ((match = episodePattern.exec(html)) !== null) {
-    const [_, id, number] = match;
-    episodes.push({
-      href: `${baseUrl}episode.php?${id}`,
-      number: parseInt(number)
-    });
-  }
-  
-  episodes.reverse();
-  return episodes;
+    episodes.reverse();
+    return episodes;
 }
 
 function extractStreamUrl(html) {
-    const sourceRegex = /<a href='([^']+)'[^>]*><div class='boxitem bc2 c1 mar0'/;
+    const sourceRegex = /<source\s+src=['"]([^'"]+)['"][^>]*type=['"]video\/mp4['"][^>]*>/i;
     const match = html.match(sourceRegex);
     return match ? match[1].replace(/&amp;/g, '&') : null;
 }
