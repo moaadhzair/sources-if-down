@@ -199,7 +199,25 @@
 **Language:** Serbian. (SUB) <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animesrbija/animesrbija.js)
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animesrbija/animesrbija.json)
+</details>
+
+##
+<details>
+
+<summary>
+  
+### AnineHeaven 🇺🇸
+
+</summary>
+<img src="https://github.com/50n50/sources/blob/main/animeheaven/iconalt.png?raw=true" width="125px"><br>
+
+**File:** `AnineHeaven.json`  
+**Description:** AnineHeaven JavaScript module that directly scrapes the website (requires `AnineHeaven.js`). <br> 
+**Language:** English. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeheaven/animeheaven.json)
 </details>
 
 ---
