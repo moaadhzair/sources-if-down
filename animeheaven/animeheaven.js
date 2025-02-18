@@ -53,7 +53,7 @@ function extractDetails(html) {
 
 function extractEpisodes(html) {
     const episodes = [];
-    const baseUrl = "https://animeheaven.me";
+    const baseUrl = "https://animeheaven.me/episode.php?";
   
     const episodeRegex = /<a href='episode\.php\?([^']+)'[^>]*>.*?<div class='watch2 bc'\s*>(\d+)<\/div>/gs;
     let match;
