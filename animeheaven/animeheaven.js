@@ -76,7 +76,7 @@ function extractEpisodes(html) {
 }
 
 function extractStreamUrl(html) {
-    const sourceRegex = /<a href='([^']+)'[^>]*><div class='boxitem bc2 c1 mar0'/;
+    const sourceRegex = /<source\s+src=['"]([^'"]+)['"][^>]*type=['"]video\/mp4['"][^>]*>/i;
     const match = html.match(sourceRegex);
     return match ? match[1].replace(/&amp;/g, '&') : null;
 }
