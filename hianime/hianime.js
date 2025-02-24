@@ -1,7 +1,7 @@
 async function searchResults(keyword) {
     try {
         const encodedKeyword = encodeURIComponent(keyword);
-        const responseText = await fetch(`https://bshar1865-hianime.vercel.app/v2/hianime/search?q=${encodedKeyword}&language=dub`);
+        const responseText = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/search?q=${encodedKeyword}&language=dub`);
         const data = JSON.parse(responseText);
 
         const filteredAnimes = data.data.animes.filter(anime => anime.episodes.dub !== null); 
