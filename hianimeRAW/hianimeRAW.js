@@ -1,7 +1,7 @@
 async function searchResults(keyword) {
     try {
         const encodedKeyword = encodeURIComponent(keyword);
-        const responseText = await fetch(`https://api.hianimex.to/api/v2/hianime/search?q=${encodedKeyword}&language=dub`);
+        const responseText = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/search?q=${encodedKeyword}&language=dub`);
         const data = JSON.parse(responseText);
         
         const transformedResults = data.data.animes.map(anime => ({
@@ -22,7 +22,7 @@ async function extractDetails(url) {
     try {
         const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
         const encodedID = match[1];
-        const response = await fetch(`https://api.hianimex.to/api/v2/hianime/anime/${encodedID}`);
+        const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/anime/${encodedID}`);
         const data = JSON.parse(response);
         
         const animeInfo = data.data.anime.info;
@@ -49,7 +49,7 @@ async function extractEpisodes(url) {
     try {
         const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
         const encodedID = match[1];
-        const response = await fetch(`https://api.hianimex.to/api/v2/hianime/anime/${encodedID}/episodes`);
+        const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/anime/${encodedID}/episodes`);
         const data = JSON.parse(response);
 
         const transformedResults = data.data.episodes.map(episode => ({
@@ -68,7 +68,7 @@ async function extractStreamUrl(url) {
     try {
        const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
        const encodedID = match[1];
-       const response = await fetch(`https://api.hianimex.to/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
+       const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
        const data = JSON.parse(response);
        
        const hlsSource = data.data.sources.find(source => source.type === 'hls');
