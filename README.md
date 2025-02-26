@@ -207,7 +207,7 @@
 
 <summary>
   
-### AnineHeaven 🇺🇸
+### AnimeHeaven 🇺🇸
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/animeheaven/iconalt.png?raw=true" width="125px"><br>
