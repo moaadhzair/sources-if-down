@@ -1,4 +1,4 @@
-# Anime sources for [Sora](https://github.com/cranci1/Sora)
+# Anime/Movie/TV sources for [Sora](https://github.com/cranci1/Sora)
 
 <div align="center"> 
   <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
@@ -405,6 +405,20 @@
 **App version:** V2 and up <br>
 **Author:** [Hamzo](https://github.com/hamzenis) <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldGerSub.json)
+</details>
+
+<details>
+<summary>
+  
+### 2️⃣ S.TO SUB 🇩🇪 (TV series)
+</summary>
+
+**File:** `sToGerDub.json.json`  
+**Description:** AniWorld JavaScript module that directly scrapes the website (requires `sToGerDub.js`). <br> 
+**Language:** German. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** [Hamzo](https://github.com/hamzenis) <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/s.to/sToGerDub.json)
 </details>
 </details>
 
