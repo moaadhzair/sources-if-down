@@ -106,18 +106,12 @@ async function extractStreamUrl(url) {
 
         let firstVideo = null;
 
-        const voeGermanSub = finishedList.find(video => video.provider === 'VOE' && video.language === 'mit Untertitel Deutsch');
-        if (voeGermanSub) {
-            firstVideo = voeGermanSub;
+        const voeEnglishSub = finishedList.find(video => video.provider === 'VOE' && video.language === 'mit Untertitel Englisch');
+        if (voeEnglishSub) {
+            firstVideo = voeEnglishSub;
         }
         else {
-            const voeEnglishSub = finishedList.find(video => video.provider === 'VOE' && video.language === 'mit Untertitel Englisch');
-            if (voeEnglishSub) {
-                firstVideo = voeEnglishSub;
-            }
-            else {
-                firstVideo = finishedList[0];
-            }
+            firstVideo = finishedList[0];
         }
 
 
