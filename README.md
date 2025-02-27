@@ -12,6 +12,14 @@
 ````
 ---
 ## Available Modules
+<!--- ENGLISH START --->
+<details>
+
+<summary>
+
+### English 🇺🇸
+
+</summary>
 
 <details>
 
@@ -30,28 +38,6 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianime/hianime.json)
 </details>
 
-##
-
-<details>
-
-<summary>
-
-### HiAnime RAW 🇯🇵
-
-</summary>
-<img src="https://github.com/50n50/sources/blob/main/hianimeRAW/icon.png?raw=true" width="125px"><br>
-
-**File:** `HiAnimeRAW.json`  
-**Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianimeRAW.js`).<br>
-**Note:** *This is just SUB stream but without the actual subtitles.* <br>
-**Language:** Japanese. <br>
-**App version:** V2 and up <br>
-**Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeRAW/hianimeRAW.json)
-</details>
-
-##
-
 <details>
 
 <summary>
@@ -68,8 +54,6 @@
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeSUBS/hianimeSUBS.json)
 </details>
-
-##
 
 <details>
 
@@ -89,7 +73,72 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.json)
 </details>
 
+<details>
+
+<summary>
+
+### AniWatch SUB 🇺🇸
+
+</summary>
+<img src="https://github.com/50n50/sources/blob/main/aniwatchRAW/icon.png?raw=true" width="125px"><br>
+
+**File:** `AniWatchSUB.json`  
+**Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatchSUB.js`). <br> 
+**Language:** English. (SUB)<br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchSUBS/aniwatchSUBS.json)
+</details>
+<details>
+
+<summary>
+  
+### AnimeHeaven 🇺🇸
+
+</summary>
+<img src="https://github.com/50n50/sources/blob/main/animeheaven/iconalt.png?raw=true" width="125px"><br>
+
+**File:** `AnineHeaven.json`  
+**Description:** AnineHeaven JavaScript module that directly scrapes the website (requires `AnineHeaven.js`). <br> 
+**Language:** English. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeheaven/animeheaven.json)
+</details>
+
+
+</details>
+<!--- ENGLISH END --->
+
 ##
+
+<!--- JAPANESE START --->
+<details>
+
+<summary>
+
+### Japanese 🇯🇵
+
+</summary>
+
+<details>
+
+<summary>
+
+### HiAnime RAW 🇯🇵
+
+</summary>
+<img src="https://github.com/50n50/sources/blob/main/hianimeRAW/icon.png?raw=true" width="125px"><br>
+
+**File:** `HiAnimeRAW.json`  
+**Description:** HiAnime JavaScript module utilizing the AniWatch API (requires `hianimeRAW.js`).<br>
+**Note:** *This is just SUB stream but without the actual subtitles.* <br>
+**Language:** Japanese. <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeRAW/hianimeRAW.json)
+</details>
+
 <details>
 
 <summary>
@@ -108,25 +157,20 @@
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchRAW/aniwatchRAW.json)
 </details>
 
+</details>
+<!--- JAPANESE END --->
+
 ##
+
+<!--- RUSSIAN START --->
 <details>
 
 <summary>
 
-### AniWatch SUB 🇺🇸
+### Russian 🇷🇺
 
 </summary>
-<img src="https://github.com/50n50/sources/blob/main/aniwatchRAW/icon.png?raw=true" width="125px"><br>
 
-**File:** `AniWatchSUB.json`  
-**Description:** AniWatch JavaScript module utilizing the Anime-API (requires `aniwatchSUB.js`). <br> 
-**Language:** English. (SUB)<br>
-**App version:** V2 and up <br>
-**Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchSUBS/aniwatchSUBS.json)
-</details>
-
-##
 <details>
 
 <summary>
@@ -143,9 +187,21 @@
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json)
 </details>
+</details>
+
+<!--- RUSSIAN END --->
 
 ##
 
+<!--- ARABIC START --->
+
+<details>
+
+<summary>
+
+### Arabic 🇸🇦
+
+</summary>
 <details>
 
 <summary>
@@ -162,9 +218,21 @@
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anime3rb/anime3rb.json)
 </details>
+</details>
+
+<!--- ARABIC END --->
 
 ##
 
+<!--- CROATIAN START --->
+
+<details>
+
+<summary>
+
+### Croatian 🇭🇷
+
+</summary>
 <details>
 
 <summary>
@@ -182,9 +250,21 @@
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animebalkan/animebalkan.json)
 </details>
+</details>
+
+<!--- CROATIAN END --->
 
 ##
 
+<!--- SERBIAN START --->
+
+<details>
+
+<summary>
+
+### Serbian 🇷🇸
+
+</summary>
 <details>
 
 <summary>
@@ -201,29 +281,21 @@
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animesrbija/animesrbija.json)
 </details>
-
-##
-<details>
-
-<summary>
-  
-### AnimeHeaven 🇺🇸
-
-</summary>
-<img src="https://github.com/50n50/sources/blob/main/animeheaven/iconalt.png?raw=true" width="125px"><br>
-
-**File:** `AnineHeaven.json`  
-**Description:** AnineHeaven JavaScript module that directly scrapes the website (requires `AnineHeaven.js`). <br> 
-**Language:** English. (SUB) <br>
-**App version:** V2 and up <br>
-**Author:** 50/50 <br><br>
-[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeheaven/animeheaven.json)
 </details>
+
+<!--- SERBIAN END --->
 
 ---
 
 ## Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
+<!--- ITALIAN START --->
+<details>
 
+<summary>
+
+### Italian 🇮🇹
+
+</summary>
 <details>
 
 <summary>
@@ -259,7 +331,10 @@
 **Author:** sobet <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeworld/animeworld.json)
 </details>
+</details>
+<!--- ITALIAN END --->
 
+##
 ---
 
 ## If shit don't work no more tell me
