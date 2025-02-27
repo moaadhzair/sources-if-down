@@ -349,7 +349,7 @@
 ### 1️⃣ AniWorld 🇩🇪 (⚠️ Read note)
 
 </summary>
-<img src="[https://github.com/50n50/sources/blob/main/animebalkan/iconalt.png?raw=true](https://github.com/50n50/sources/blob/main/aniworld/icon.png?raw=true)" width="125px"><br>
+<img src="https://github.com/50n50/sources/blob/main/aniworld/icon.png?raw=true" width="125px"><br>
 
 **File:** `AniWorldGerDub.json`  
 **Description:** AniWorld JavaScript module that directly scrapes the website (requires `AniWorldGerDub.js`). <br> 
