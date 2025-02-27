@@ -356,7 +356,7 @@
 **Note:** *⚠️ Disable any VPN just to be sure, the source this module scrapes has DDOS protection and might block VPN connections* <br>
 **Language:** German. (DUB) <br>
 **App version:** V2 and up <br>
-**Author:** Hamzo <br><br>
+**Author:** [Hamzo](https://github.com/hamzenis) <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldGerDub.json)
 </details>
 </details>
