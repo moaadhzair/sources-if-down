@@ -333,6 +333,35 @@
 <!--- ITALIAN END --->
 
 ##
+<!--- CROATIAN START --->
+
+<details>
+
+<summary>
+
+### German 🇩🇪
+
+</summary>
+<details>
+
+<summary>
+  
+### 1️⃣ AniWorld 🇩🇪 (⚠️ Read note)
+
+</summary>
+<img src="[https://github.com/50n50/sources/blob/main/animebalkan/iconalt.png?raw=true](https://github.com/50n50/sources/blob/main/aniworld/icon.png?raw=true)" width="125px"><br>
+
+**File:** `AniWorldGerDub.json`  
+**Description:** AniWorld JavaScript module that directly scrapes the website (requires `AniWorldGerDub.js`). <br> 
+**Note:** *⚠️ Disable any VPN just to be sure, the source this module scrapes has DDOS protection and might block VPN connections* <br>
+**Language:** German. (DUB) <br>
+**App version:** V2 and up <br>
+**Author:** Hamzo <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldGerDub.json)
+</details>
+</details>
+
+<!--- CROATIAN END --->
 ---
 
 ## If shit don't work no more tell me
