@@ -286,6 +286,37 @@
 ---
 
 ## Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
+<!--- ENGLISH START --->
+
+<details>
+
+<summary>
+
+### English 🇺🇸
+
+</summary>
+<details>
+
+<summary>
+  
+### 1️⃣ AniWorld 🇺🇸 (⚠️ Read note)
+
+</summary>
+<img src="https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/iconSubEng.png" width="125px"><br>
+
+**File:** `AniWorldEngSub.json`  
+**Description:** AniWorld JavaScript module that directly scrapes the website (requires `AniWorldEngSub.js`). <br> 
+**Note:** *⚠️ Disable any VPN just to be sure, the source this module scrapes has DDOS protection and might block VPN connections* <br>
+**Language:** English. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** [Hamzo](https://github.com/hamzenis) <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldEngSub.json)
+</details>
+</details>
+
+<!--- ENGLISH END --->
+
+##
 <!--- ITALIAN START --->
 <details>
 
