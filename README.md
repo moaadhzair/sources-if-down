@@ -5,11 +5,9 @@
   <br>
 </div>
 
-````diff
-- ONLY USE THE BELOW MODULES
-- IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING
-- (e.g, AnimeHeaven, Granime, usually I just lose interest in fixing them)
-````
+> [!WARNING]
+> **ONLY USE THE BELOW MODULES**<br>
+> **IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING**
 ---
 ## Available Modules
 <!--- ENGLISH START --->
