@@ -25,7 +25,7 @@
 
 <summary>
 
-### HiAnime 🇺🇸
+### 1️⃣ HiAnime 🇺🇸
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/hianime/icon.png?raw=true" width="125px"><br>
@@ -42,7 +42,7 @@
 
 <summary>
 
-### HiAnime SUBS 🇺🇸
+### 2️⃣ HiAnime SUBS 🇺🇸
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/hianimeSUBS/icon.png?raw=true" width="125px"><br>
@@ -59,7 +59,7 @@
 
 <summary>
 
-### AniWatch 🇺🇸
+### 3️⃣ AniWatch 🇺🇸
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/aniwatch/icon.png?raw=true" width="125px"><br>
@@ -77,7 +77,7 @@
 
 <summary>
 
-### AniWatch SUB 🇺🇸
+### 4️⃣ AniWatch SUB 🇺🇸
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/aniwatchRAW/icon.png?raw=true" width="125px"><br>
@@ -93,7 +93,7 @@
 
 <summary>
   
-### AnimeHeaven 🇺🇸
+### 5️⃣ AnimeHeaven 🇺🇸
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/animeheaven/iconalt.png?raw=true" width="125px"><br>
@@ -125,7 +125,7 @@
 
 <summary>
 
-### HiAnime RAW 🇯🇵
+### 1️⃣ HiAnime RAW 🇯🇵
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/hianimeRAW/icon.png?raw=true" width="125px"><br>
@@ -143,7 +143,7 @@
 
 <summary>
 
-### AniWatch RAW 🇯🇵
+### 2️⃣ AniWatch RAW 🇯🇵
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/aniwatchSUBS/icon.png?raw=true" width="125px"><br>
@@ -175,7 +175,7 @@
 
 <summary>
   
-### AniLibria 🇷🇺
+### 1️⃣ AniLibria 🇷🇺
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/anilibria/iconalt.png?raw=true" width="125px"><br>
@@ -206,7 +206,7 @@
 
 <summary>
   
-### Anime3rb 🇸🇦
+### 1️⃣ Anime3rb 🇸🇦
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/anime3rb/iconalt.png?raw=true" width="125px"><br>
@@ -237,7 +237,7 @@
 
 <summary>
   
-### AnimeBalkan 🇭🇷 (⚠️ Read note)
+### 1️⃣ AnimeBalkan 🇭🇷 (⚠️ Read note)
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/animebalkan/iconalt.png?raw=true" width="125px"><br>
@@ -269,7 +269,7 @@
 
 <summary>
   
-### AnimeSRBIJA 🇷🇸
+### 1️⃣ AnimeSRBIJA 🇷🇸
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/animesrbija/iconalt.png?raw=true" width="125px"><br>
@@ -300,7 +300,7 @@
 
 <summary>
   
-### AnimeUnity 🇮🇹
+### 1️⃣ AnimeUnity 🇮🇹
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/animeunity/iconalt.png?raw=true" width="125px"><br>
@@ -319,7 +319,7 @@
 
 <summary>
   
-### AnimeWorld 🇮🇹
+### 2️⃣ AnimeWorld 🇮🇹
 
 </summary>
 <img src="https://github.com/50n50/sources/blob/main/animeworld/iconalt.png?raw=true" width="125px"><br>
