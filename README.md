@@ -412,6 +412,7 @@
   
 ### 2️⃣ S.TO SUB 🇩🇪 (TV series)
 </summary>
+<img src="https://raw.githubusercontent.com/50n50/sources/refs/heads/main/s.to/stoalt.png" width="125px"><br>
 
 **File:** `sToGerDub.json.json`  
 **Description:** AniWorld JavaScript module that directly scrapes the website (requires `sToGerDub.js`). <br> 
