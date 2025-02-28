@@ -1,13 +1,13 @@
+> [!CAUTION]
+> **ONLY USE THE BELOW MODULES**<br>
+> **IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING**
+
 # Anime/Movie/TV sources for [Sora](https://github.com/cranci1/Sora)
 
 <div align="center"> 
   <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
-  <br>
 </div>
 
-> [!CAUTION]
-> **ONLY USE THE BELOW MODULES**<br>
-> **IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING**
 ---
 ## Available Modules
 <!--- ENGLISH ======================================================================================================= START--->
