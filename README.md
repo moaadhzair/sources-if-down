@@ -495,6 +495,7 @@
 - [Anime API](https://github.com/falcon71181/Anime-API) hosted by [falcon71181](https://github.com/falcon71181)
 - [AniLibria API](https://github.com/anilibria/docs) hosted by [AniLibria](https://www.anilibria.tv)
 - [FireAnime API](https://fireani.me/api) hosted by [FireAnime](https://fireani.me/)
+- Decoder by [Hamzo](https://github.com/hamzenis)
 
 
 
