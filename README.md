@@ -496,6 +496,8 @@
 - [AniLibria API](https://github.com/anilibria/docs) hosted by [AniLibria](https://www.anilibria.tv)
 - [FireAnime API](https://fireani.me/api) hosted by [FireAnime](https://fireani.me/)
 - Decoder by [Hamzo](https://github.com/hamzenis)
+---
+<img src="https://i.ibb.co/BHKwFDdT/Its-2000-x-500-px.png" alt="" width="1000" height="220">
 
 
 
