@@ -1,0 +1,16 @@
+{
+    "sourceName": "FireAnime GER",
+    "iconUrl": "https://i.ibb.co/dJ1SN5ch/favicon.png",
+    "author": {
+        "name": "50/50",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3122kQwublLkZ6rf1fEpUP79BxZOFmH9BSA&s"
+    },
+    "version": "1.0.1",
+    "language": "German (SUB)",
+    "streamType": "HLS",
+    "quality": "720p",
+    "baseUrl": "hhttps://fireani.me/api/",
+    "searchBaseUrl": "https://fireani.me/api/anime/search?q=%s",
+    "scriptUrl": "https://raw.githubusercontent.com/50n50/sources/refs/heads/main/fireanime/FireAnimeGer.js",
+    "asyncJS": true
+}
