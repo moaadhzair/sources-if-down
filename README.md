@@ -298,6 +298,50 @@
 </details>
 
 <!--- SERBIAN ======================================================================================================= END --->
+##
+<!--- GERMAN ======================================================================================================= START --->
+
+<details>
+
+<summary>
+
+### German 🇩🇪
+
+</summary>
+<details>
+
+<summary>
+  
+### 1️⃣ FireAnime 🇩🇪 
+
+</summary>
+<img src="https://github.com/50n50/sources/blob/main/fireanime/dub.png?raw=true" width="125px"><br>
+
+**File:** `FireAnimeGerDub.json`  
+**Description:** FireAnime JavaScript module utilizing the FireAnime API (requires `FireAnimeGerDub.js`). <br> 
+**Language:** German. (DUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/fireanime/FireAnimeGerDub.json)
+</details>
+<details>
+<summary>
+  
+### 2️⃣ FireAnime SUB 🇩🇪 
+
+</summary>
+<img src="https://github.com/50n50/sources/blob/main/fireanime/sub.png?raw=true" width="125px"><br>
+
+**File:** `FireAnimeGer.json`  
+**Description:** FireAnime JavaScript module utilizing the FireAnime API (requires `FireAnimeGer.js`). <br> 
+**Language:** German. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/fireanime/FireAnimeGer.json)
+</details>
+</details>
+
+<!--- GERMAN ======================================================================================================= END --->
 
 ---
 
