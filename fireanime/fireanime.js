@@ -51,6 +51,8 @@ async function extractEpisodes(slug) {
         let episodeCounter = 1; 
 
         const episodes = data.data.anime_seasons.reduce((acc, season) => {
+            if (season.season.toLowerCase() === "filme") return acc; // Skip "Filme" season
+
             const seasonEpisodes = season.anime_episodes || [];
             seasonEpisodes.forEach(episode => {
                 acc.push({
@@ -90,7 +92,8 @@ async function extractStreamUrl(id) {
                 if (hlsMatch) {
                     const hlsEncodedUrl = hlsMatch[1]; 
 
-                    const decodedUrl = atob(hlsEncodedUrl);
+                    const decodedUrl = base64Decode(hlsEncodedUrl);
+                    console.log(decodedUrl);
                     return decodedUrl;
                 } else {
                     console.log('HLS URL not found in the sources data.');
@@ -105,3 +108,23 @@ async function extractStreamUrl(id) {
         return null;
     }
 }
+
+
+//Credits to @hamzenis for decoder <3
+function base64Decode(str) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    let output = '';
+
+    str = String(str).replace(/=+$/, '');
+
+    if (str.length % 4 === 1) {
+        throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
+    }
+
+    for (let bc = 0, bs, buffer, idx = 0; (buffer = str.charAt(idx++)); ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer, bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0) {
+        buffer = chars.indexOf(buffer);
+    }
+
+    return output;
+}
+
