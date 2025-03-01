@@ -97,11 +97,27 @@
 <img src="https://github.com/50n50/sources/blob/main/animeheaven/iconalt.png?raw=true" width="125px"><br>
 
 **File:** `AnineHeaven.json`  
-**Description:** AnineHeaven JavaScript module that directly scrapes the website (requires `AnineHeaven.js`). <br> 
+**Description:** AnimeHeaven JavaScript module that directly scrapes the website (requires `AnimeHeaven.js`). <br> 
 **Language:** English. (SUB) <br>
 **App version:** V2 and up <br>
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeheaven/animeheaven.json)
+</details>
+<details>
+
+<summary>
+  
+### 6️⃣ FireAnime 🇺🇸
+
+</summary>
+<img src="https://github.com/50n50/sources/blob/main/fireanime/eng.png?raw=true" width="125px"><br>
+
+**File:** `FireAnime.json`  
+**Description:** FireAnime JavaScript module utilizing the FireAnime API (requires `FireAnime.js`). <br> 
+**Language:** English. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://github.com/50n50/sources/raw/refs/heads/main/fireanime/fireanime.json)
 </details>
 
 
@@ -434,6 +450,8 @@
 - [AniWatch API](https://github.com/ghoshRitesh12/aniwatch-api) hosted by [bshar1865](https://github.com/bshar1865/)
 - [Anime API](https://github.com/falcon71181/Anime-API) hosted by [falcon71181](https://github.com/falcon71181)
 - [AniLibria API](https://github.com/anilibria/docs) hosted by [AniLibria](https://www.anilibria.tv)
+- [FireAnime API](https://fireani.me/api) hosted by [FireAnime](https://fireani.me/)
+
 
 
  
