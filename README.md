@@ -8,8 +8,7 @@
   <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
 </div>
 
----
-## My Modules
+## ⭐️ My Modules
 <!--- ENGLISH ======================================================================================================= START--->
 <details>
 
@@ -343,9 +342,7 @@
 
 <!--- GERMAN ======================================================================================================= END --->
 
----
-
-## Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
+## ⭐️ Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
 <!--- ENGLISH ======================================================================================================= START --->
 
 <details>
@@ -484,13 +481,11 @@
 </details>
 
 <!--- GERMAN ======================================================================================================= END --->
----
 
-## If shit don't work no more tell me
+## ⚠️ If shit don't work no more tell me
 
----
 
-### Credits:
+### ❤️ Credits:
 - [AniWatch API](https://github.com/ghoshRitesh12/aniwatch-api) hosted by [bshar1865](https://github.com/bshar1865/)
 - [Anime API](https://github.com/falcon71181/Anime-API) hosted by [falcon71181](https://github.com/falcon71181)
 - [AniLibria API](https://github.com/anilibria/docs) hosted by [AniLibria](https://www.anilibria.tv)
