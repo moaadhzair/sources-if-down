@@ -3,20 +3,19 @@ async function searchResults(keyword) {
         const encodedKeyword = encodeURIComponent(keyword);
         const responseText = await fetch(`https://fireani.me/api/anime/search?q=${encodedKeyword}`);
         const data = await JSON.parse(responseText);
-        
+
         const transformedResults = data.data.map(anime => ({
             title: anime.title,
             image: `https://fireani.me/img/posters/${anime.poster}`,
             href: anime.slug
         }));
-
+        console.log(transformedResults);
         return JSON.stringify(transformedResults);
     } catch (error) {
         console.log('Fetch error:', error);
         return JSON.stringify([{ title: 'Error', image: '', href: '' }]);
     }
 }
-
 
 async function extractDetails(slug) {
     try {
@@ -42,21 +41,23 @@ async function extractDetails(slug) {
         }]);
   }
 }
+
 async function extractEpisodes(slug) {
     try {
         const encodedID = encodeURIComponent(slug);
         const response = await fetch(`https://fireani.me/api/anime?slug=${encodedID}`);
         const data = await JSON.parse(response);
 
-        const episodes = data.data.anime_seasons.reduce((acc, season, seasonIndex) => {
-            const seasonNumber = seasonIndex + 1;  
+        let episodeCounter = 1; 
+
+        const episodes = data.data.anime_seasons.reduce((acc, season) => {
             const seasonEpisodes = season.anime_episodes || [];
             seasonEpisodes.forEach(episode => {
-                const customEpisodeNumber = seasonNumber * 10 + episode.episode; 
                 acc.push({
-                    href: `${encodedID}&season=${seasonNumber}&episode=${episode.episode}`,
-                    number: customEpisodeNumber
+                    href: `${encodedID}&season=${season.season}&episode=${episode.episode}`,
+                    number: episodeCounter
                 });
+                episodeCounter++;
             });
             return acc;
         }, []);
