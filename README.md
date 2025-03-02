@@ -1,7 +1,7 @@
 > [!CAUTION]
 > **ONLY USE THE BELOW MODULES**<br>
 > **IF A MODULE IN MY REPO ISN'T LISTED BELOW THEN IT'S NOT WORKING** <br>
-> (e.g., TokyoInsider, AnimeFenix)
+> <i>(e.g., TokyoInsider, AnimeFenix)</i>
 
 # Anime/Movie/TV sources for [Sora](https://github.com/cranci1/Sora)
 
