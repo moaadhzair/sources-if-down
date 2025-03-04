@@ -23,20 +23,34 @@ async function searchResults(keyword) {
             throw new Error('No rows found in the table');
         }
 
+        const apiUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/`;
+        console.log("Test");
+
         const results = [];
-        rows.forEach(row => {
+        for (const row of rows) {
             const cells = [...row.matchAll(cellRegex)];
             if (cells.length > 0) {
-                const title = cells[0][1].replace(/<[^>]+>/g, '').trim();
-                if (title.toLowerCase().includes(keyword.toLowerCase())) {
-                    results.push({
-                        title: title,
-                        href: "https://en.wikipedia.org" + cells[0][1].match(/href="([^"]+)"/)[1],
-                        image: ""
-                    });
+                // Extract the path after /wiki/
+                const path = cells[0][1].match(/href="([^"]+)"/)[1].split('/wiki/')[1];
+                const coverImage = apiUrl + path;
+
+                try {
+                    const title = cells[0][1].replace(/<[^>]+>/g, '').trim();
+                    if (title.toLowerCase().includes(keyword.toLowerCase())) {
+                        const responseCover = await fetch(coverImage);
+                        const dataCover = await JSON.parse(responseCover);
+                        const imageUrl = dataCover.thumbnail.source;
+                        results.push({
+                            title: title,
+                            href: "https://en.wikipedia.org" + cells[0][1].match(/href="([^"]+)"/)[1],
+                            image: imageUrl || "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                        });
+                    }
+                } catch (error) {
+                    console.log('Error fetching cover image:' + error);
                 }
             }
-        });
+        }
 
         return JSON.stringify(results);
 
