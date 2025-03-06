@@ -9,7 +9,7 @@
   <img src="https://github.com/50n50/sources/blob/main/asset.png?raw=true" width="500px">
 </div>
 
-## ⭐️ My Modules
+## My Modules
 <!--- ENGLISH ======================================================================================================= START--->
 <details>
 
@@ -343,7 +343,7 @@
 
 <!--- GERMAN ======================================================================================================= END --->
 
-## ⭐️ Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
+## Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
 <!--- ENGLISH ======================================================================================================= START --->
 
 <details>
@@ -483,7 +483,7 @@
 
 <!--- GERMAN ======================================================================================================= END --->
 
-## ⚠️ If shit don't work no more tell me
+## If shit don't work no more tell me
 
 
 ### ❤️ Credits:
