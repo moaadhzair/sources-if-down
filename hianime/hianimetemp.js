@@ -85,10 +85,12 @@ async function extractStreamUrl(url) {
         const hlsSource = data.data.sources.find(source => source.type === 'hls');
         const subtitleTrack = dataTwo.data.tracks?.find(track => track.kind === 'captions');
         
-        return {
+        const result = {
             stream: hlsSource ? hlsSource.url : null,
             subtitles: subtitleTrack ? subtitleTrack.file : null
         };
+        
+        return JSON.stringify(result);
     } catch (error) {
         console.error('Fetch error:', error);
         return null;
