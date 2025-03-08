@@ -482,13 +482,14 @@
 
 <details>
 <summary>
-  
-### 4️⃣ FilmPalast SUB (TV series)
+
+### 4️⃣ FilmPalast DUB (Movie / TV Series) (⚠️ Read note)
 </summary>
 
 **File:** `filmpalast.json`  
-**Description:** S.TO JavaScript module that directly scrapes the website (requires `filmpalast.js`). <br> 
-**Language:** German. (SUB) <br>
+**Description:* Filmpalast.json is JavaScript module that directly scrapes the website (requires `filmpalast.js`). <br> 
+**Note:** *⚠️ You may need to change your DNS to be able to use this module, as it's blocked by some ISPs. [German Guide](https://web.archive.org/web/20250304094518/https://filmpalast.to/dns-sperre.html)* <br>
+**Language:** German. (DUB) <br>
 **App version:** V2 and up <br>
 **Author:** [JMcrafter26](https://github.com/JMcrafter26) <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://api.jm26.net/sora-modules/filmpalast/filmpalast.json)
