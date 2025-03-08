@@ -468,16 +468,30 @@
 <details>
 <summary>
   
-### 2️⃣ S.TO SUB (TV series)
+### 3️⃣ S.TO SUB (TV series)
 </summary>
 <img src="https://raw.githubusercontent.com/50n50/sources/refs/heads/main/s.to/stoalt.png" width="125px"><br>
 
-**File:** `sToGerDub.json.json`  
-**Description:** AniWorld JavaScript module that directly scrapes the website (requires `sToGerDub.js`). <br> 
+**File:** `sToGerDub.json`  
+**Description:** S.TO JavaScript module that directly scrapes the website (requires `sToGerDub.js`). <br> 
 **Language:** German. (SUB) <br>
 **App version:** V2 and up <br>
 **Author:** [Hamzo](https://github.com/hamzenis) <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/s.to/sToGerDub.json)
+</details>
+
+<details>
+<summary>
+  
+### 4️⃣ FilmPalast SUB (TV series)
+</summary>
+
+**File:** `filmpalast.json`  
+**Description:** S.TO JavaScript module that directly scrapes the website (requires `filmpalast.js`). <br> 
+**Language:** German. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** [JMcrafter26](https://github.com/JMcrafter26) <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://api.jm26.net/sora-modules/filmpalast/filmpalast.json)
 </details>
 </details>
 
