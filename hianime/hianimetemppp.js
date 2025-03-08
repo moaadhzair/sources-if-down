@@ -77,11 +77,12 @@ async function extractStreamUrl(url) {
         const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`);
         const responseTwo = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
 
-        const data = JSON.parse(await response.json());
-        const dataTwo = JSON.parse(await responseTwo.json());
+        // Read the raw response text and parse using JSON.parse
+        const data = await JSON.parse(response);
+        const dataTwo = await rJSON.parse(responseTwo);
 
-        const hlsSource = data.data.sources.find(source => source.type === 'hls');
-        const subtitleTrack = dataTwo.data.tracks?.find(track => track.kind === 'captions');
+        const hlsSource = parsedData.data.sources.find(source => source.type === 'hls');
+        const subtitleTrack = parsedDataTwo.data.tracks?.find(track => track.kind === 'captions');
 
         return {
             stream: hlsSource ? hlsSource.url : null,
@@ -93,5 +94,6 @@ async function extractStreamUrl(url) {
         return null;
     }
 }
+
 
 
