@@ -74,16 +74,14 @@ async function extractStreamUrl(url) {
 
         const encodedID = match[1];
 
-        const [dubResponse, subResponse] = await Promise.all([
-            fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`),
-            fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`)
-        ]);
+        const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`);
+        const responseTwo = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
 
-        const dubData = JSON.parse(await dubResponse.json());
-        const subData = JSON.parse(await subResponse.json());
+        const data = JSON.parse(await response.json());
+        const dataTwo = JSON.parse(await responseTwo.json());
 
-        const hlsSource = dubData.data.sources.find(source => source.type === 'hls');
-        const subtitleTrack = subData.data.tracks?.find(track => track.kind === 'captions');
+        const hlsSource = data.data.sources.find(source => source.type === 'hls');
+        const subtitleTrack = dataTwo.data.tracks?.find(track => track.kind === 'captions');
 
         return {
             stream: hlsSource ? hlsSource.url : null,
@@ -95,4 +93,5 @@ async function extractStreamUrl(url) {
         return null;
     }
 }
+
 
