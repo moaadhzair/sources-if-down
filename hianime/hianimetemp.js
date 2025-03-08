@@ -71,24 +71,24 @@ async function extractStreamUrl(url) {
     try {
         const match = url.match(/https:\/\/hianime\.to\/watch\/(.+)$/);
         if (!match) throw new Error("Invalid URL format");
-
         const encodedID = match[1];
-
+        
+        // These fetch calls directly return the response body as a string in your environment
         const response = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=dub`);
         const responseTwo = await fetch(`https://bshar1865-hianime.vercel.app/api/v2/hianime/episode/sources?animeEpisodeId=${encodedID}&category=sub`);
-
-        // Read the raw response text and parse using JSON.parse
-        const data = await JSON.parse(response);
-        const dataTwo = await JSON.parse(responseTwo);
-
-        const hlsSource = parsedData.data.sources.find(source => source.type === 'hls');
-        const subtitleTrack = parsedDataTwo.data.tracks?.find(track => track.kind === 'captions');
-
+        
+        // Parse the JSON strings
+        const data = JSON.parse(response);
+        const dataTwo = JSON.parse(responseTwo);
+        
+        // The original error was using parsedData instead of data
+        const hlsSource = data.data.sources.find(source => source.type === 'hls');
+        const subtitleTrack = dataTwo.data.tracks?.find(track => track.kind === 'captions');
+        
         return {
             stream: hlsSource ? hlsSource.url : null,
             subtitles: subtitleTrack ? subtitleTrack.file : null
         };
-
     } catch (error) {
         console.error('Fetch error:', error);
         return null;
