@@ -11,6 +11,6 @@
     "quality": "720p",
     "baseUrl": "https://api.hianimex.to/",
     "searchBaseUrl": "https://api.hianimex.to/api/v2/hianime/search?q=%s",
-    "scriptUrl": "https://github.com/50n50/sources/raw/refs/heads/main/hianime/hianimetempp.js",
+    "scriptUrl": "https://github.com/50n50/sources/raw/refs/heads/main/hianime/hianimetemppp.js",
     "asyncJS": true
 }
