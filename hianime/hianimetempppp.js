@@ -79,7 +79,7 @@ async function extractStreamUrl(url) {
 
         // Read the raw response text and parse using JSON.parse
         const data = await JSON.parse(response);
-        const dataTwo = await rJSON.parse(responseTwo);
+        const dataTwo = await JSON.parse(responseTwo);
 
         const hlsSource = parsedData.data.sources.find(source => source.type === 'hls');
         const subtitleTrack = parsedDataTwo.data.tracks?.find(track => track.kind === 'captions');
