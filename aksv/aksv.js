@@ -19,7 +19,7 @@ function searchResults(html) {
         }
     });
     console.log(results);
-    return results;
+    return JSON.stringify(results);
 }
 
 function extractDetails(html) {
@@ -45,7 +45,7 @@ function extractDetails(html) {
     });
 
     console.log(details);
-    return details;
+    return JSON.stringify(details);
 }
 
 function extractEpisodes(html) {
@@ -85,7 +85,7 @@ function extractEpisodes(html) {
 
     episodes.reverse();
     console.log(episodes);
-    return episodes;
+    return JSON.stringify(episodes);
 }
 
 async function extractStreamUrl(url) {
@@ -152,6 +152,6 @@ async function extractStreamUrl(url) {
       return null;
     }   
     console.log(stream);
-    return stream;
+    return JSON.stringify(stream);
     }
 }
