@@ -50,40 +50,28 @@ function extractDetails(html) {
 
 function extractEpisodes(html) {
   const episodes = [];
-
-  if (html.includes("class=\"qualities row flex-wrap align-items-center\"")) {
-    const linkBtnMatches = html.match(/<a[^>]*class="link-btn link-show d-flex align-items-center px-3"[^>]*>[\s\S]*?<\/a>/g);
-
-    if (linkBtnMatches && linkBtnMatches.length > 0) {
-      const link = linkBtnMatches[0];
-      const hrefMatch = link.match(/href="([^"]+)"/);
-
-      if (hrefMatch) {
-        episodes.push({
-          href: hrefMatch[1],
-          number: 1
-        });
-      }
-    } else {
-      console.log("Fallback pattern found no matches.");
-    }
+  const linkBtnMatches = html.match(/<a[^>]*href=["']([^"']+)["'][^>]*class=["'][^"']*link-btn link-show[^"']*["'][^>]*>/);
+  
+  if (linkBtnMatches) {
+    episodes.push({
+      href: linkBtnMatches[1],
+      number: "1"
+    });
   } else {
-    let episodeBlocks = html.match(/<div class="bg-primary2 p-4 col-lg-4 col-md-6 col-12"[^>]*>[\s\S]*?<\/div>[\s\S]*?<\/div>[\s\S]*?<\/div>/g);
+    const episodeBlocks = html.match(/<div class="col-lg-6 col">\s*<a href=["']([^"']+)["'][^>]*class=["'][^"']*link-btn link-show[^"']*["'][^>]*>/g);
     if (episodeBlocks) {
-      episodeBlocks.forEach(block => {
-        const hrefMatch = block.match(/<a href="([^"]+)"[^>]*>حلقة (\d+)/);
-
+      episodeBlocks.forEach((block, index) => {
+        const hrefMatch = block.match(/href=["']([^"']+)["']/);
         if (hrefMatch) {
           episodes.push({
             href: hrefMatch[1],
-            number: hrefMatch[2]
+            number: String(index + 1) 
           });
         }
       });
     }
   }
-
-  episodes.reverse();
+  
   console.log(episodes);
   return episodes;
 }
