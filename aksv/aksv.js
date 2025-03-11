@@ -50,31 +50,34 @@ function extractDetails(html) {
 
 function extractEpisodes(html) {
   const episodes = [];
-  const linkBtnMatches = html.match(/<a[^>]*href=["']([^"']+)["'][^>]*class=["'][^"']*link-btn link-show[^"']*["'][^>]*>/);
   
-  if (linkBtnMatches) {
+  let movieRegex = /<a[^>]+href=["']([^"']+)["'][^>]+class=["'][^"']*link-btn link-show[^"']*["'][^>]*>/i;
+  let movieMatch = movieRegex.exec(html);
+  
+  if (movieMatch && movieMatch[1]) {
     episodes.push({
-      href: linkBtnMatches[1],
-      number: "1"
+      href: movieMatch[1],
+      number: "1"  
     });
   } else {
-    const episodeBlocks = html.match(/<div class="col-lg-6 col">\s*<a href=["']([^"']+)["'][^>]*class=["'][^"']*link-btn link-show[^"']*["'][^>]*>/g);
+    const episodeBlocks = html.match(/<div class="col-md-auto text-center pb-3 pb-md-0">[\s\S]*?<a href=["']([^"']+)["'][^>]*>[\s\S]*?<\/a>/g);
+
     if (episodeBlocks) {
       episodeBlocks.forEach((block, index) => {
         const hrefMatch = block.match(/href=["']([^"']+)["']/);
         if (hrefMatch) {
           episodes.push({
             href: hrefMatch[1],
-            number: String(index + 1) 
+            number: String(index + 1)
           });
         }
       });
     }
   }
-  
-  console.log(episodes);
+  console.log(JSON.stringify(episodes));
   return episodes;
 }
+
 
 async function extractStreamUrl(html) {
   let stream = null;
