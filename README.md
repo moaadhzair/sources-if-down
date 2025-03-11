@@ -232,6 +232,22 @@
 **Author:** 50/50 <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anime3rb/anime3rb.json)
 </details>
+
+<details>
+
+<summary>
+  
+### 2️⃣ AK.SV 
+
+</summary>
+
+**File:** `aksv.json`  
+**Description:** AK.SV JavaScript module that directly scrapes the website (requires `aksv.js`). <br> 
+**Language:** Arabic. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aksv/aksv.json)
+</details>
 </details>
 
 <!--- ARABIC ======================================================================================================= END --->
