@@ -8,7 +8,7 @@
     "version": "1.0.1",
     "language": "German (DUB)",
     "streamType": "HLS",
-    "quality": "720p",
+    "quality": "1080p",
     "baseUrl": "https://fireani.me/api/",
     "searchBaseUrl": "https://fireani.me/api/anime/search?q=%s",
     "scriptUrl": "https://raw.githubusercontent.com/50n50/sources/refs/heads/main/fireanime/FireAnimeGerDub.js",
