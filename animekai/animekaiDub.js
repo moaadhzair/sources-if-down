@@ -161,10 +161,10 @@ async function extractStreamUrl(url) {
         let streamUrlJson = "";
         let streamUrl = "";
 
-        if (sub) {
+        if (dub) {
             // Find server 1 span and extract data-lid
             const serverSpanRegex = /<span class="server"[^>]*data-lid="([^"]+)"[^>]*>Server 1<\/span>/;
-            const serverMatch = serverSpanRegex.exec(sub);
+            const serverMatch = serverSpanRegex.exec(dub);
 
             if (serverMatch && serverMatch[1]) {
                 dataLid = serverMatch[1];
