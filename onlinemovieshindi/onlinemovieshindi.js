@@ -1,7 +1,6 @@
-function searchResults(html) {
-    if (typeof html !== "string") {
-        throw new TypeError("Input HTML must be a string");
-    }
+async function searchResults(keyword) {
+    const response = await fetch(`https://111.90.159.132/?s=${keyword}`);
+    const html = await response;
 
     const results = [];
     const filmListRegex = /<article[^>]+itemscope[^>]+itemtype="http:\/\/schema\.org\/Movie"[^>]*>[\s\S]*?<\/article>/g;
@@ -26,7 +25,9 @@ function searchResults(html) {
     return results;
 }
 
-function extractDetails(html) {
+async function extractDetails(url) {
+    const response = await fetch(url);
+    const html = await response;
     const details = [];
 
     const descriptionMatch = html.match(/<div class="entry-content entry-content-single"[^>]*>([\s\S]*?)<\/div>/);
@@ -48,7 +49,9 @@ function extractDetails(html) {
     return details;
 }
 
-function extractEpisodes(html) {
+async function extractEpisodes(url) {
+    const response = await fetch(url);
+    const html = await response;
     const episodes = [];
 
     const canonicalLinkMatch = html.match(/<link rel="canonical" href="([^"]+)"/);
@@ -66,10 +69,14 @@ function extractEpisodes(html) {
     return episodes;
 }
 
-function extractStreamUrl(html) {
-    const sourceRegex = /<source\s+src=['"]([^'"]+)['"][^>]*>/i;
+async function extractStreamUrl(url) {
+    const response = await fetch(url);
+    const html = await response;
+
+    const sourceRegex = /<video[^>]*>.*?<source\s+src=['"]([^'"]+)['"][^>]*>/i;
     const match = html.match(sourceRegex);
     const url = match ? match[1].replace(/&amp;/g, '&') : null;
     console.log(url);
     return url;
 }
+
