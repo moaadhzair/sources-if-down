@@ -21,8 +21,8 @@ async function searchResults(keyword) {
             });
         }
     });
-	console.log(results);
-    return results;
+	console.log(JSON.stringify(results));
+    return JSON.stringify(results);
 }
 
 async function extractDetails(url) {
@@ -32,7 +32,24 @@ async function extractDetails(url) {
 
     const descriptionMatch = html.match(/<div class="entry-content entry-content-single"[^>]*>([\s\S]*?)<\/div>/);
     let description = descriptionMatch ? descriptionMatch[1].replace(/<\/?[^>]+(>|$)/g, "").trim() : '';
-    
+
+    const entities = {
+        '&#8216;': '‘',
+        '&#8217;': '’',
+        '&#8220;': '“',
+        '&#8221;': '”',
+        '&#38;': '&',
+        '&#39;': "'",
+        '&#160;': ' ',
+        '&#169;': '©',
+        '&#174;': '®',
+        '&#8482;': '™',
+    };
+
+    for (const [entity, char] of Object.entries(entities)) {
+        description = description.replace(new RegExp(entity, 'g'), char);
+    }
+
     description = description.replace(/\s+/g, ' ').replace(/Country:[^<]+/g, '').trim();
 
     const airdateMatch = html.match(/Year: <a href="[^"]*" rel="tag">(\d{4})<\/a>/);
@@ -45,35 +62,31 @@ async function extractDetails(url) {
             airdate: airdate
         });
     }
-	console.log(details);
-    return details;
+    console.log(details);
+    return JSON.stringify(details);
 }
 
+
 async function extractEpisodes(url) {
-    const response = await fetch(url);
-    const html = await response;
     const episodes = [];
-
-    const canonicalLinkMatch = html.match(/<link rel="canonical" href="([^"]+)"/);
-    const baseUrl = canonicalLinkMatch ? canonicalLinkMatch[1] : '';
-
-    if (baseUrl) {
+    if (url) {
         const hardcodedEpisode = {
-            href: baseUrl + '#download',
-            number: '1'
+            href: url,
+            number: `1`
         };
         episodes.push(hardcodedEpisode);
     }
 
-    console.log(episodes);
-    return episodes;
+    console.log(JSON.stringify(episodes));
+    return JSON.stringify(episodes);
 }
 
-async function extractStreamUrl(url) {
-    const response = await fetch(url);
+async function extractStreamUrl(input) {
+    const response = await fetch(input);
     const html = await response;
+    console.log(html);
 
-    const sourceRegex = /<video[^>]*>.*?<source\s+src=['"]([^'"]+)['"][^>]*>/i;
+    const sourceRegex = /<video[\s\S]*?<source\s+src=["']([^"']+)["'][^>]*>/i;
     const match = html.match(sourceRegex);
     const url = match ? match[1].replace(/&amp;/g, '&') : null;
     console.log(url);
