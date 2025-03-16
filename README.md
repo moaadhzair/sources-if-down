@@ -386,6 +386,38 @@
 **Author:** [Hamzo](https://github.com/hamzenis) <br><br>
 [<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldEngSub.json)
 </details>
+<details>
+
+<summary>
+  
+### 2️⃣ AnimeKai DUB
+
+</summary>
+<img src="https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animekai/iconalt.png" width="125px"><br>
+
+**File:** `animekaiDub.json`  
+**Description:** AnimeKai JavaScript module that directly scrapes the website (requires `animekaiDub.js`). <br> 
+**Language:** English. (DUB) <br>
+**App version:** V2 and up <br>
+**Author:** [Hamzo](https://github.com/hamzenis) <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animekai/animekaiDub.json)
+</details>
+<details>
+
+<summary>
+  
+### 3️⃣ AnimeKai HardSUB
+
+</summary>
+<img src="https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animekai/iconalt.png" width="125px"><br>
+
+**File:** `animekaiHardSub.json`  
+**Description:** AnimeKai JavaScript module that directly scrapes the website (requires `animekaiHardSub.js`). <br> 
+**Language:** English. (Hard SUB) <br>
+**App version:** V2 and up <br>
+**Author:** [Hamzo](https://github.com/hamzenis) <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animekai/animekaiHardSub.json)
+</details>
 </details>
 
 <!--- ENGLISH ======================================================================================================= END --->
