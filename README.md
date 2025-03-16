@@ -358,6 +358,35 @@
 </details>
 
 <!--- GERMAN ======================================================================================================= END --->
+##
+<!--- HINDI ======================================================================================================= START --->
+
+<details>
+
+<summary>
+
+### Hindi 🇮🇳
+
+</summary>
+<details>
+
+<summary>
+  
+### 1️⃣ OnlineMoviesHindi (Movies) 
+
+</summary>
+<img src="https://cdn-icons-png.freepik.com/256/14272/14272467.png" width="125px"><br>
+
+**File:** `onlinemovieshindi.json`  
+**Description:** OnlineMoviesHindi JavaScript that directly scrapes the site (requires `onlinemovieshindi.js`). <br> 
+**Language:** Hindi. (SUB) <br>
+**App version:** V2 and up <br>
+**Author:** 50/50 <br><br>
+[<kbd> <br> Add to Sora <br> </kbd>](https://intradeus.github.io/http-protocol-redirector?r=sora://module?url=https://github.com/50n50/sources/raw/refs/heads/main/onlinemovieshindi/onlinemovieshindi.json)
+</details>
+</details>
+
+<!--- HINDI ======================================================================================================= END --->
 
 ## Other authors <sub><sup>(Not made by me I only manage them.)</sup></sub>
 <!--- ENGLISH ======================================================================================================= START --->
