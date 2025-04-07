@@ -60,9 +60,7 @@ async function extractEpisodes(id) {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetch(`https://backend.gojo.wtf/api/anime/episodes/${id}`, {
-        headers
-    });
+    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/episodes/${id}`, headers);
 
     const json = await response.json();
 
@@ -91,9 +89,7 @@ async function extractStreamUrl(url) {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetch(`https://backend.gojo.wtf/api/anime/tiddies?dub_id=${dub_id}&watchId=${watchId}&id=${id}&num=${num}&subType=dub&provider=zaza`, {
-        headers
-    });
+    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/tiddies?dub_id=${dub_id}&watchId=${watchId}&id=${id}&num=${num}&subType=dub&provider=zaza`, headers);
 
     const json = await response.json();
 
