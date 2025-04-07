@@ -1,8 +1,8 @@
 {
-    "sourceName": "GojoWTF (zaza) dubbed",
+    "sourceName": "GojoWTF (zaza)",
     "iconUrl": "https://gojo.wtf/apple-touch-icon.png",
     "author": {
-        "name": "50/50 moded by MoaadXD",
+        "name": "MoaadXD",
         "icon": "https://s4.anilist.co/file/anilistcdn/user/avatar/large/b7212376-dtk5iHmNKNyF.png"
     },
     "version": "1.0.5",
@@ -11,8 +11,8 @@
     "quality": "1080p",
     "baseUrl": "https://gojo.wtf",
     "searchBaseUrl": "https://gojo.wtf",
-    "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/moaadhzair-patch-1/gojowtf/gojowtf.js",
+    "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/gojowtf/gojowtf.js",
     "asyncJS": true,
     "type": "anime",
-    "note": "REQUIRES NEW UPDATE - PLEASE WAIT FOR IT TO RELEASE OR SIDELOAD LATEST IPA"
+    "note": "Hi there"
 }
