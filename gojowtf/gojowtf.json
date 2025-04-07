@@ -11,7 +11,7 @@
     "quality": "1080p",
     "baseUrl": "https://gojo.wtf",
     "searchBaseUrl": "https://gojo.wtf",
-    "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/gojowtf/gojowtf.js",
+    "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/moaadhzair-patch-1/gojowtf/gojowtf.js",
     "asyncJS": true,
     "type": "anime",
     "note": "REQUIRES NEW UPDATE - PLEASE WAIT FOR IT TO RELEASE OR SIDELOAD LATEST IPA"
