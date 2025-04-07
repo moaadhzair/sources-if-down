@@ -87,7 +87,7 @@ async function extractStreamUrl(url) {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/tiddies?provider=pahe&id=${id}&num=${number}&subType=sub&watchId=${number}&dub_id=null`, headers);
+    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/tiddies?provider=pahe&id=${id}&num=${number}&subType=dub&watchId=${number}&dub_id=null`, headers);
     const json = await response.json();
 
 const stream1080p = 
