@@ -60,7 +60,7 @@ async function extractEpisodes(id) {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/episodes/${id}`, { headers });
+    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/episodes/${id}`, headers );
     const json = await response.json();
 
     const zazaProvider = json.find(provider => provider.providerId === "zaza");
@@ -83,7 +83,7 @@ async function extractStreamUrl(url) {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetchv2(url, { headers });
+    const response = await fetchv2(url, headers);
     const json = await response.json();
 
     const master = json.sources.find(source => source.quality === "master") || null;
