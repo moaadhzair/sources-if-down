@@ -52,6 +52,7 @@ async function extractDetails(id) {
     return JSON.stringify(results);
 }
 
+
 async function extractEpisodes(id) {
     const results = [];
     const headers = {
@@ -59,48 +60,55 @@ async function extractEpisodes(id) {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/episodes/${id}`, headers);
+    const response = await fetch(`https://backend.gojo.wtf/api/anime/episodes/${id}`, {
+        headers
+    });
+
     const json = await response.json();
 
-    const paheProvider = json.find(provider => provider.providerId === "pahe");
+    const zazaProvider = json.find(provider => provider.providerId === "zaza");
 
-    if (paheProvider && paheProvider.episodes) {
-        paheProvider.episodes.forEach(episode => {
+    if (zazaProvider && zazaProvider.episodes) {
+        zazaProvider.episodes.forEach(episode => {
             results.push({
-                href: `${id}/${episode.id}`, 
+                href: `${episode.dub_id}/${episode.id}/${id}/${episode.number}`,
                 number: episode.number
             });
         });
     }
 
-    console.error(JSON.stringify(results));
-    return JSON.stringify(results);
+    console.log("Extracted episodes:", results);
+    return results;
 }
 
 async function extractStreamUrl(url) {
-    const [id, number] = url.split('/');  
-    
-    console.error(`ID: ${id}, Number: ${number}`);
+    const [dub_id, watchId, id, num] = url.split('/');
+
+    console.log(`ID: ${id}, Number: ${num}, Dub ID: ${dub_id}, Watch ID: ${watchId}`);
 
     const headers = {
         'Referer': 'https://gojo.wtf/',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/tiddies?provider=pahe&id=${id}&num=${number}&subType=dub&watchId=${number}&dub_id=null`, headers);
+    const response = await fetch(`https://backend.gojo.wtf/api/anime/tiddies?dub_id=${dub_id}&watchId=${watchId}&id=${id}&num=${num}&subType=dub&provider=zaza`, {
+        headers
+    });
+
     const json = await response.json();
 
-const stream1080p = 
-    json.sources.find(source => source.quality === "1080p") || 
-    json.sources.find(source => source.quality === "720p") || 
-    json.sources.find(source => source.quality === "360p");
+    console.log("Stream sources:", json);
 
-    if (stream1080p) {
-        console.log(`1080p URL: ${stream1080p.url}`);
-        return stream1080p.url;
+    const master = json.sources.find(source => source.quality === "master") || null;
+
+    if (master) {
+        const cleanUrl = master.url.replace(/\n/g, '');
+        console.log(`Best Stream URL: ${cleanUrl}`);
+        return cleanUrl;
     } else {
-        console.error("1080p stream not found.");
+        console.error("No stream found.");
         return null;
     }
 }
+
 
