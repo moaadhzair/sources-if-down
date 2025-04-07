@@ -54,6 +54,7 @@ async function extractDetails(id) {
 
 
 async function extractEpisodes(id) {
+    console.log("extracting episodes");
     const results = [];
     const headers = {
         'Referer': 'https://gojo.wtf/',
@@ -81,6 +82,7 @@ async function extractEpisodes(id) {
 
 async function extractStreamUrl(url) {
     const [/*dub_id, watchId, */id, num] = url.split('/');  
+     console.log("extracting the stream url of the ${num} episode");
     
     console.error(`ID: ${id}, Number: ${num}, Dub ID: ${dub_id}, Watch ID: ${watchId}`);
 
