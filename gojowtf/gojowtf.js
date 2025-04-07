@@ -80,27 +80,30 @@ async function extractEpisodes(id) {
 }
 
 async function extractStreamUrl(url) {
-    const [dub_id, watchId, id, num] = url.split('/');
-
-    console.log(`ID: ${id}, Number: ${num}, Dub ID: ${dub_id}, Watch ID: ${watchId}`);
+    const [/*dub_id, watchId, */id, num] = url.split('/');  
+    
+    console.error(`ID: ${id}, Number: ${num}, Dub ID: ${dub_id}, Watch ID: ${watchId}`);
 
     const headers = {
         'Referer': 'https://gojo.wtf/',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     };
 
-    const response = await fetchv2(`https://backend.gojo.wtf/api/anime/tiddies?dub_id=${dub_id}&watchId=${watchId}&id=${id}&num=${num}&subType=dub&provider=zaza`, headers);
+    const response = await fetch(`https://backend.gojo.wtf/api/anime/tiddies?dub_id=${dub_id}&watchId=${watchId}&id=${id}&num=${num}&subType=dub&provider=zaza`, {
+        headers
+    });
 
     const json = await response.json();
 
-    console.log("Stream sources:", json);
+    //console.log(json);
 
-    const master = json.sources.find(source => source.quality === "master") || null;
+    const master = 
+        json.sources.find(source => source.quality === "master") ||
+        null;
 
     if (master) {
-        const cleanUrl = master.url.replace(/\n/g, '');
-        console.log(`Best Stream URL: ${cleanUrl}`);
-        return cleanUrl;
+        console.log(`Best Stream URL: ${master.url.replace(/\n/g, '')}`);
+        return master.url.replace(/\n/g, '');
     } else {
         console.error("No stream found.");
         return null;
