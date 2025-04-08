@@ -13,6 +13,5 @@
     "searchBaseUrl": "https://gojo.wtf",
     "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/gojowtf/gojowtf.js",
     "asyncJS": true,
-    "type": "anime",
-    "note": "Hi there"
+    "type": "anime"
 }
