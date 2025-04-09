@@ -126,24 +126,9 @@ async function extractEpisodes(id) {
 
 async function extractStreamUrl(url) {
   const urls = [];
-  urls.push("https://vault-04.padorupado.ru/stream/04/14/6f846cd601e697f234ea1fda42bf3f45b8a044c74a4e10f602a7f427dfff4c2a/uwu.m3u8");
-  const headers = {
-      'Referer': 'https://gojo.wtf/',
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-  };
-
-  const response = await fetchv2(url, headers);
-  const json = await response.json();
-
-//console.log(json);
-
-  const master = json.sources.find(source => source.quality === "master") || null;
-
-  if (master) {
-      urls.push(master.url.replace(/\n/g, '').replace("https://zaza.gojo.wtf/", ""));
-  } else {
-      console.error("No stream found.");
-  }
+  urls.push("https://vault-07.padorupado.ru/stream/07/14/6fc99593e91b6e46014f5cf38d5ba43cb916a26c15dcc2f59db9158b9a803b4b/uwu.m3u8");
+  urls.push("https://vault-99.kwikie.ru/stream/99/01/5751bf4979df1af30a1a66069c322d51a0a50eb4c2de87dc08f394b75055e7e3/uwu.m3u8");
+  
   return urls;
 }
 
