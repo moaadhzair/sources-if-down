@@ -3,7 +3,7 @@
 
 # 360p
 #EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=640x360
-https://raw.githubusercontent.com/moaadhzair/TEMP-DOCS/refs/heads/main/test.m3u8
+https://cdn-c63zxatvakypfujm.orbitcache.com/engine/hls2-c/01/14034/ahbx69f4lasj_,n,l,.urlset/index-f1-v1-a1.m3u8?t=TKRd9D3_xj08fGDIaHX-oScfITLH4DJFRTPbqx_DEc4&s=1744223293&e=14400&f=70171388&node=5bOcgUusoQV7R2Oh+Zp6U9n6NifSiywIpjRwjXr8XrQ=&i=105.69&sp=2500&asn=36884&q=n,l
 
 # 480p
 #EXT-X-STREAM-INF:BANDWIDTH=1400000,RESOLUTION=854x480
