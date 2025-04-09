@@ -11,7 +11,7 @@
     "quality": "1080p",
     "baseUrl": "https://google.com",
     "searchBaseUrl": "https://gojo.wtf",
-    "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/m3u8-player.js",
+    "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/m3u8-player/player.js",
     "asyncJS": true,
     "type": "anime"
 }
