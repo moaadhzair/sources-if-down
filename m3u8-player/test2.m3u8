@@ -2,10 +2,11 @@
 #EXT-X-VERSION:3
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2734558,RESOLUTION=1920x1080,FRAME-RATE=25.000,CODECS="avc1.640032,mp4a.40.2"
-https://ee.netmagcdn.com:2228/hls-playback/0b1da44856adb02989fb193c0813f7ff483b028f8689a595f742713f10313cc1c04be998b8ef3bd95fa43f089c45879c4caf0d5470193814a128e8af3c835542df76d536d229fddecd6b28b39f7da9ce33be1c86141caebe0577368c17a661f842e7854e3e6916f426c910d43dce9aa94bed365044995609a08e428cf4adda4f4a4d47d93bf008dd2151ef9dd4db281c/index-f3-v1-a1.m3u8
+https://cdn-c63zxatvakypfujm.orbitcache.com/engine/hls2-c/01/14034/ahbx69f4lasj_,n,l,.urlset/index-f1-v1-a1.m3u8?t=TKRd9D3_xj08fGDIaHX-oScfITLH4DJFRTPbqx_DEc4&s=1744223293&e=14400&f=70171388&node=5bOcgUusoQV7R2Oh+Zp6U9n6NifSiywIpjRwjXr8XrQ=&i=105.69&sp=2500&asn=36884&q=n,l
+
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1400000,RESOLUTION=854x480,FRAME-RATE=25.000,CODECS="avc1.64001f,mp4a.40.2"
-https://raw.githubusercontent.com/moaadhzair/TEMP-DOCS/refs/heads/main/test.m3u8
+https://cdn-utzguzfstc6qeiys.orbitcache.com/engine/hls2-c/01/14034/ahbx69f4lasj_,n,l,.urlset/index-f2-v1-a1.m3u8?t=0TRBXIhvzk_iqf4uqnjm4AXBWdd0GlnoNHxAlj1L3yc&s=1744226619&e=14400&f=70171388&node=Qk+AsUej9TIMAmZHaiOElMLMYCvonNmxQQZBEr2RcQc=&i=105.69&sp=2500&asn=36884&q=n,l
 
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=800000,RESOLUTION=640x360,FRAME-RATE=25.000,CODECS="avc1.64001e,mp4a.40.2"
-https://cdn-c63zxatvakypfujm.orbitcache.com/engine/hls2-c/01/14034/ahbx69f4lasj_,n,l,.urlset/index-f1-v1-a1.m3u8?t=TKRd9D3_xj08fGDIaHX-oScfITLH4DJFRTPbqx_DEc4&s=1744223293&e=14400&f=70171388&node=5bOcgUusoQV7R2Oh+Zp6U9n6NifSiywIpjRwjXr8XrQ=&i=105.69&sp=2500&asn=36884&q=n,l
+https://ee.netmagcdn.com:2228/hls-playback/0b1da44856adb02989fb193c0813f7ff483b028f8689a595f742713f10313cc1c04be998b8ef3bd95fa43f089c45879c4caf0d5470193814a128e8af3c835542df76d536d229fddecd6b28b39f7da9ce33be1c86141caebe0577368c17a661f842e7854e3e6916f426c910d43dce9aa94bed365044995609a08e428cf4adda4f4a4d47d93bf008dd2151ef9dd4db281c/index-f3-v1-a1.m3u8
 
