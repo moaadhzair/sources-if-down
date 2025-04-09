@@ -125,9 +125,26 @@ async function extractEpisodes(id) {
 }
 
 async function extractStreamUrl(url) {
-    const res = await fetchv2("https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/m3u8-player/m3u8-link.txt");
-    const link = await res.text();
-    return link;
+  const urls = [];
+  urls.push("https://vault-04.padorupado.ru/stream/04/14/6f846cd601e697f234ea1fda42bf3f45b8a044c74a4e10f602a7f427dfff4c2a/uwu.m3u8");
+  const headers = {
+      'Referer': 'https://gojo.wtf/',
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+  };
+
+  const response = await fetchv2(url, headers);
+  const json = await response.json();
+
+//console.log(json);
+
+  const master = json.sources.find(source => source.quality === "master") || null;
+
+  if (master) {
+      urls.push(master.url.replace(/\n/g, '').replace("https://zaza.gojo.wtf/", ""));
+  } else {
+      console.error("No stream found.");
+  }
+  return urls;
 }
 
 
