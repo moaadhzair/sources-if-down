@@ -9,7 +9,7 @@
     "language": "English (DUB)",
     "streamType": "HLS",
     "quality": "1080p",
-    "baseUrl": "https://google.com",
+    "baseUrl": "https://gojo.wtf",
     "searchBaseUrl": "https://gojo.wtf",
     "scriptUrl": "https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/m3u8-player/player.js",
     "asyncJS": true,
