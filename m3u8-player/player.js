@@ -125,7 +125,9 @@ async function extractEpisodes(id) {
 }
 
 async function extractStreamUrl(url) {
-    fetchv2
+    const res = await fetchv2("https://raw.githubusercontent.com/moaadhzair/sources-if-down/refs/heads/main/m3u8-player/m3u8-link.txt");
+    const link = await res.text();
+    return link;
 }
 
 
