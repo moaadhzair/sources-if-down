@@ -126,7 +126,7 @@ async function extractEpisodes(id) {
 
 async function extractStreamUrl(url) {
   const urls = [];
-  urls.push("http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8");
+  urls.push("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8");
   urls.push("http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8");
   
   return urls;
