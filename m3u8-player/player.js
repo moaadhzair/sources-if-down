@@ -126,8 +126,8 @@ async function extractEpisodes(id) {
 
 async function extractStreamUrl(url) {
   const urls = [];
-  urls.push("https://vault-07.padorupado.ru/stream/07/14/6fc99593e91b6e46014f5cf38d5ba43cb916a26c15dcc2f59db9158b9a803b4b/uwu.m3u8");
-  urls.push("https://vault-99.kwikie.ru/stream/99/01/5751bf4979df1af30a1a66069c322d51a0a50eb4c2de87dc08f394b75055e7e3/uwu.m3u8");
+  urls.push("http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8");
+  urls.push("http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8");
   
   return urls;
 }
